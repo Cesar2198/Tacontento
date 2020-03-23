@@ -74,5 +74,9 @@ namespace DataManager.CLS
             return Resultado;
         }
         
+        public void Desconectar()
+        {
+            base.Desconectar();
+        }
     }
 }

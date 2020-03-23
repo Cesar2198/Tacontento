@@ -44,7 +44,7 @@ namespace DataManager.CLS
 
             return _Conectado;
         }
-        private void Desconectar()
+        protected void Desconectar()
         {
             try
             {
