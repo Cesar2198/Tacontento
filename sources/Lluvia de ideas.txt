@@ -1,0 +1,64 @@
+TACONTENTO.NET
+
+INVENTARIO
+FACTURAS o ticket
+---CAJA--
+
+
+PRODUCTOS
+DOCUMENTO QUE REFLEJA UNA VENTA
+INGRESOS Y EGRESOS
+
+ESTADOS: 1- ACTIVA
+2- PENDIENTE
+3- CANCELADA
+
+SELECT * FROM ORDERS WHERE ESTADO = 1;
+
+ORDENES: PRODUCTOS Y BEBIDAS
+
+detalles de cada orden
+tipo de pago 0.10 si es tarjeta
+precio u 
+cantidad
+total
+fecha
+
+VEREMOOOOOOOOS AL AÑO O ACTUALIZACION
+--CAPITAL--
+
+MYSQL
+c# windows form
+DAO
+Singleton
+reportes(Crystal report)
+
+USUARIOS:
+-admin (nombre, foto, contrasenia, telefono,rol)
+-Cajero
+-Cocinero VEREMOS
+-Mesero
+
+PERMISOS:
+-admin: TODO ver y modificar.
+-Cajero: Cobrar, ordenes.
+-Ver lista de productos.
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
