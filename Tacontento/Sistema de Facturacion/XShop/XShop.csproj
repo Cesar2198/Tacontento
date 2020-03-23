@@ -78,6 +78,12 @@
     <Compile Include="GUI\PruebaConector.Designer.cs">
       <DependentUpon>PruebaConector.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PruebaConector.resx">
       <DependentUpon>PruebaConector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
