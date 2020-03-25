@@ -21,7 +21,7 @@ namespace XShop.GUI
 
             //Modificamos las medidas de los TextBox
             txbUsuario.MinimumSize = new Size(240, 35);
-            txbUsuario.MaximumSize = new Size(300, 100);
+            //txbUsuario.MaximumSize = new Size(300, 100);
             txbContraseña.MinimumSize = new Size(240, 35);
         }
 
@@ -44,13 +44,13 @@ namespace XShop.GUI
         private void txbUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             //Activamso el Evento KeyDown para realizar el cambio de color al TextBox
-            txbUsuario.BackColor = Color.FromArgb(209, 142, 61);
+            txbUsuario.ForeColor = Color.FromArgb(209, 142, 61);
         }
 
         private void txbContraseña_KeyDown(object sender, KeyEventArgs e)
         {
             //Activamso el Evento KeyDown para realizar el cambio de color al TextBox
-            txbContraseña.BackColor = Color.FromArgb(209, 142, 61);
+            txbContraseña.ForeColor = Color.FromArgb(209, 142, 61);
         }
     }
 }
