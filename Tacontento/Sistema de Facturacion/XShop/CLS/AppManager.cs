@@ -19,7 +19,7 @@ namespace XShop.CLS
                 {
                     ///Abriremos el formulario principal
                     GUI.Principal f = new GUI.Principal();
-                    f.ShowDialog();
+                    f.ShowDialog();  
                 }
             }
         }
