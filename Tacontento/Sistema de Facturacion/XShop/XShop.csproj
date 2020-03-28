@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLS\AppManager.cs" />
+    <Compile Include="CLS\Entidades\Usuarios\UsuarioDAO.cs" />
+    <Compile Include="CLS\Entidades\Usuarios\Usuarios.cs" />
     <Compile Include="CLS\PanelMenu\panelMenu.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -57,6 +59,12 @@
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LoginTaco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoginTaco.Designer.cs">
+      <DependentUpon>LoginTaco.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +84,12 @@
     <Compile Include="GUI\PruebaConector.Designer.cs">
       <DependentUpon>PruebaConector.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +104,9 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LoginTaco.resx">
+      <DependentUpon>LoginTaco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PruebaConector.resx">
       <DependentUpon>PruebaConector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>

@@ -23,7 +23,6 @@ namespace XShop.GUI
         {
             ///para mandar a crear un nuevo formulario
             PruebaConector p = new PruebaConector();
-
             p.ShowDialog();
         }
 
@@ -37,6 +36,12 @@ namespace XShop.GUI
             MainForm mf = new MainForm();
             mf.ShowDialog();
             
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginTaco p = new LoginTaco();
+            p.ShowDialog();
         }
     }
 
