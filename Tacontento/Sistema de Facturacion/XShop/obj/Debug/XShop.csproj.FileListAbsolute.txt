@@ -83,3 +83,9 @@ C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\XSho
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.csproj.CopyComplete
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.exe
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.LoginTaco.resources
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.Registro.resources
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\Entidades.dll
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\SessionManager.dll
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\Entidades.pdb
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\SessionManager.pdb

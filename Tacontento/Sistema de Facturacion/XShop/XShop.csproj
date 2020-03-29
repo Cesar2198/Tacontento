@@ -45,8 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLS\AppManager.cs" />
-    <Compile Include="CLS\Entidades\Usuarios\UsuarioDAO.cs" />
-    <Compile Include="CLS\Entidades\Usuarios\Usuarios.cs" />
+    <Compile Include="CLS\Utility.cs" />
     <Compile Include="CLS\PanelMenu\panelMenu.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -148,6 +147,14 @@
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{f5ea50d5-e514-4ab2-ae64-fc373ff58ed0}</Project>
       <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{40e96f24-9fc7-43b4-8931-46165c60a282}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
+      <Project>{8cd73052-5d24-4b17-b121-8e725e33fbc6}</Project>
+      <Name>SessionManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

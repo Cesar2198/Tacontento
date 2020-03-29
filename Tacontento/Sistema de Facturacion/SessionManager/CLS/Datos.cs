@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entidades.Entidades.Usuarios;
 
 namespace SessionManager.CLS
 {
-    class Datos
+    public class Datos
     {
-        ///Usar una variable estatica para almacenar datos en memoria
-        ///SINGLETON
-        ///MONOSTATE
-        ///AMBAS PERTENECEN A PATRONES DE DISEÑO
+        private Usuarios usuario;
+
+        public Datos()
+        {
+            
+        }
+
+        public void setUsuario(Usuarios user)
+        {
+            this.usuario = user;
+        }
+
+        public Usuarios getUsuario()
+        {
+            return this.usuario;
+        }
     }
 }

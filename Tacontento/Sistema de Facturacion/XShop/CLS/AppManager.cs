@@ -18,7 +18,7 @@ namespace XShop.CLS
                 if (Login())
                 {
                     ///Abriremos el formulario principal
-                    GUI.Principal f = new GUI.Principal();
+                    GUI.MainForm f = new GUI.MainForm();
                     f.ShowDialog();  
                 }
             }
@@ -38,7 +38,7 @@ namespace XShop.CLS
         private Boolean Login()
         {
             Boolean Resultado = false;
-            GUI.Login f = new GUI.Login();
+            GUI.LoginTaco f = new GUI.LoginTaco();
             f.ShowDialog();
             Resultado = f.AUTORIZAR;
             return Resultado;

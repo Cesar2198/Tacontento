@@ -43,5 +43,10 @@ namespace XShop.GUI
             //empezamos con el conteo
             this.Cronometro.Start();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

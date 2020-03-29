@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XShop.CLS.Entidades.Usuarios
+namespace Entidades.Entidades.Usuarios
 {
     /// <summary>
     /// Entidad usuarios
     /// </summary>
-     class Usuarios
+     public class Usuarios
     {
         //Propiedades de la entidad
         public int idUsuario{ get; set; }
