@@ -1,4 +1,3 @@
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csprojAssemblyReference.cache
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\SessionManager.dll
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\SessionManager.pdb
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\Entidades.dll
@@ -7,6 +6,7 @@ C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionM
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\Entidades.pdb
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\DataManager.pdb
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\MySql.Data.xml
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csprojAssemblyReference.cache
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.dll
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.pdb

@@ -12,13 +12,6 @@ E:\DS2\Ejemplo2\Sistema de Facturacion\DataManager\bin\Debug\DataManager.pdb
 E:\DS2\Ejemplo2\Sistema de Facturacion\DataManager\obj\Debug\DataManager.csprojResolveAssemblyReference.cache
 E:\DS2\Ejemplo2\Sistema de Facturacion\DataManager\obj\Debug\DataManager.dll
 E:\DS2\Ejemplo2\Sistema de Facturacion\DataManager\obj\Debug\DataManager.pdb
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\DataManager.dll
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\DataManager.pdb
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\MySql.Data.dll
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\MySql.Data.xml
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.csproj.CopyComplete
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.dll
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.pdb
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\DataManager.dll
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\DataManager.pdb
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\MySql.Data.xml
@@ -27,3 +20,10 @@ C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\Data
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.csproj.CopyComplete
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.dll
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.pdb
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\DataManager.dll
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\DataManager.pdb
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\MySql.Data.dll
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\bin\Debug\MySql.Data.xml
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.csproj.CopyComplete
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.dll
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\DataManager\obj\Debug\DataManager.pdb

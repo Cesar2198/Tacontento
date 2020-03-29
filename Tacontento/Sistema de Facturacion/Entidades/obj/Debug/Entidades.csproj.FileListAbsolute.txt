@@ -1,10 +1,10 @@
-C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\Entidades.dll
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\Entidades.pdb
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\DataManager.dll
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\MySql.Data.dll
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\DataManager.pdb
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.dll
 C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.pdb

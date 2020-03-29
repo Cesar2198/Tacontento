@@ -8,22 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-<<<<<<< HEAD
+
 using SessionManager.CLS;
 using Entidades.Entidades.Usuarios;
-=======
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
+
 
 namespace XShop.GUI
 {
    
     public partial class LoginTaco : Form
-<<<<<<< HEAD
+
     {
         Boolean _AUTORIZAR = false;
-=======
-    {     
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
 
         public LoginTaco()
         {
@@ -35,15 +31,14 @@ namespace XShop.GUI
             txbContraseña.MinimumSize = new Size(240, 35);
         }
 
-<<<<<<< HEAD
+
         public Boolean AUTORIZAR
         {
             get { return _AUTORIZAR; }
         }
 
         
-=======
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -71,7 +66,7 @@ namespace XShop.GUI
             //Activamso el Evento KeyDown para realizar el cambio de color al TextBox
             txbContraseña.ForeColor = Color.FromArgb(209, 142, 61);
         }
-<<<<<<< HEAD
+
 
         private void LoginTaco_Load(object sender, EventArgs e)
         {
@@ -104,7 +99,6 @@ namespace XShop.GUI
             }
             
         }
-=======
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
+
     }
 }

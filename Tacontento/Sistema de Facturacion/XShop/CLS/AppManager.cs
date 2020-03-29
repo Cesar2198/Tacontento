@@ -18,11 +18,7 @@ namespace XShop.CLS
                 if (Login())
                 {
                     ///Abriremos el formulario principal
-<<<<<<< HEAD
                     GUI.MainForm f = new GUI.MainForm();
-=======
-                    GUI.Principal f = new GUI.Principal();
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
                     f.ShowDialog();  
                 }
             }

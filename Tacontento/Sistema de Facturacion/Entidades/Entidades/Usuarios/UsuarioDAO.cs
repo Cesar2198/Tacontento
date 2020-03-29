@@ -14,7 +14,6 @@ namespace Entidades.Entidades.Usuarios
         /// <summary>
         /// El usuario encargado de devolver usuario o algun dato del usuario
         /// </summary>
-        private Usuarios User;
         //Nuestra conexion a la base de datos junto con las operaciones y consultas
         DBOperacion Operacion = new DBOperacion();
 

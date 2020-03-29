@@ -7,11 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using Entidades.Entidades.Usuarios;
-=======
-using XShop.CLS.Entidades.Usuarios;
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
+
+
 
 
 namespace XShop.GUI

@@ -45,12 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLS\AppManager.cs" />
-<<<<<<< HEAD
     <Compile Include="CLS\Utility.cs" />
-=======
     <Compile Include="CLS\Entidades\Usuarios\UsuarioDAO.cs" />
     <Compile Include="CLS\Entidades\Usuarios\Usuarios.cs" />
->>>>>>> a5e4f0f1235316c2ff7a3ed4065316609a92c52c
     <Compile Include="CLS\PanelMenu\panelMenu.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
