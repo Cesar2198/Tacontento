@@ -37,7 +37,7 @@ namespace XShop.GUI
             this.panelMenu = new System.Windows.Forms.Panel();
             this.labelMenu = new System.Windows.Forms.Label();
             this.imageMenu = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.userRolLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,9 +50,9 @@ namespace XShop.GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
             this.panel1.Controls.Add(this.panelMenu);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.userRolLabel);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.usernameLabel);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -64,6 +64,7 @@ namespace XShop.GUI
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
             this.panelMenu.Controls.Add(this.labelMenu);
             this.panelMenu.Controls.Add(this.imageMenu);
             this.panelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -94,16 +95,16 @@ namespace XShop.GUI
             this.imageMenu.TabIndex = 4;
             this.imageMenu.TabStop = false;
             // 
-            // label1
+            // userRolLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(103, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 14);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Gerente";
+            this.userRolLabel.AutoSize = true;
+            this.userRolLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userRolLabel.ForeColor = System.Drawing.Color.Snow;
+            this.userRolLabel.Location = new System.Drawing.Point(103, 40);
+            this.userRolLabel.Name = "userRolLabel";
+            this.userRolLabel.Size = new System.Drawing.Size(52, 14);
+            this.userRolLabel.TabIndex = 3;
+            this.userRolLabel.Text = "Gerente";
             // 
             // pictureBox2
             // 
@@ -125,6 +126,7 @@ namespace XShop.GUI
             this.usernameLabel.Size = new System.Drawing.Size(131, 16);
             this.usernameLabel.TabIndex = 1;
             this.usernameLabel.Text = "Alexander Chinque";
+            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // pictureBox1
             // 
@@ -166,7 +168,7 @@ namespace XShop.GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userRolLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Label labelMenu;
