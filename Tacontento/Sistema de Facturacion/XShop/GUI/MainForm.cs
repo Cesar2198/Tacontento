@@ -56,5 +56,17 @@ namespace XShop.GUI
         {
 
         }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+            ///Cargar el formulario Agregar Order
+           
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            OrdenesForm form = new OrdenesForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -46,8 +46,6 @@
   <ItemGroup>
     <Compile Include="CLS\AppManager.cs" />
     <Compile Include="CLS\Utility.cs" />
-    <Compile Include="CLS\Entidades\Usuarios\UsuarioDAO.cs" />
-    <Compile Include="CLS\Entidades\Usuarios\Usuarios.cs" />
     <Compile Include="CLS\PanelMenu\panelMenu.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,6 +70,12 @@
     </Compile>
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OrdenesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OrdenesForm.Designer.cs">
+      <DependentUpon>OrdenesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Principal.cs">
       <SubType>Form</SubType>
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OrdenesForm.resx">
+      <DependentUpon>OrdenesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
