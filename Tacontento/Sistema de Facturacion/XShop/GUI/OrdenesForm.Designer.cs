@@ -38,7 +38,7 @@
             // cmbIdClasificacion
             // 
             this.cmbIdClasificacion.FormattingEnabled = true;
-            this.cmbIdClasificacion.Location = new System.Drawing.Point(523, 12);
+            this.cmbIdClasificacion.Location = new System.Drawing.Point(520, 25);
             this.cmbIdClasificacion.Name = "cmbIdClasificacion";
             this.cmbIdClasificacion.Size = new System.Drawing.Size(121, 21);
             this.cmbIdClasificacion.TabIndex = 10;
@@ -55,22 +55,22 @@
             // 
             // txbDescripcion
             // 
-            this.txbDescripcion.Location = new System.Drawing.Point(370, 12);
+            this.txbDescripcion.Location = new System.Drawing.Point(344, 25);
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(116, 128);
+            this.txbDescripcion.Size = new System.Drawing.Size(116, 67);
             this.txbDescripcion.TabIndex = 8;
             // 
             // txbPrecio
             // 
-            this.txbPrecio.Location = new System.Drawing.Point(247, 12);
+            this.txbPrecio.Location = new System.Drawing.Point(189, 25);
             this.txbPrecio.Name = "txbPrecio";
             this.txbPrecio.Size = new System.Drawing.Size(100, 20);
             this.txbPrecio.TabIndex = 7;
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(119, 12);
+            this.txbNombre.Location = new System.Drawing.Point(46, 25);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(100, 20);
             this.txbNombre.TabIndex = 6;

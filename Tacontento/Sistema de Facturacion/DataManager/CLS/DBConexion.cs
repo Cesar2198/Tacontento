@@ -18,7 +18,7 @@ namespace DataManager.CLS
         /// 
        protected MySqlConnection _CONEXION;
         //Nuestro famoso string de conexion para tener comunicacion con la base de datos
-       String _Cadena = "Server=localhost;Port=3306;Database=tacontento;Uid=root;Pwd=admin;SslMode = None";
+       String _Cadena = "Server=localhost;Port=3306;Database=tacontento;Uid=developer;Pwd=admin;SslMode = None";
 
         protected Boolean Conectar()
         {

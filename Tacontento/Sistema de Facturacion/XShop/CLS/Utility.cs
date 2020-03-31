@@ -26,6 +26,8 @@ namespace XShop.CLS
             return rol;
         }
 
+       
+
         public static Boolean textBoxIsEmpty(TextBox t)
         {
             Boolean ok = false;

@@ -119,3 +119,4 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\D
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.exe
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.OrdenesForm.resources
+C:\Users\ALEX\Desktop\Taco\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.OrdenesForm.resources

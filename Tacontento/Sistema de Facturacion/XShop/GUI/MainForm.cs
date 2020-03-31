@@ -65,8 +65,26 @@ namespace XShop.GUI
 
         private void label1_Click(object sender, EventArgs e)
         {
-            OrdenesForm form = new OrdenesForm();
-            form.ShowDialog();
+            openWindowFromPanel(new OrdenesForm());
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openWindowFromPanel(object form)
+        {
+            if (this.panelContainer.Controls.Count>0)
+            {
+                this.panelContainer.Controls.RemoveAt(0);
+            }
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panelContainer.Controls.Add(f);
+            this.panelContainer.Tag = f;
+            f.Show();
         }
     }
 }
