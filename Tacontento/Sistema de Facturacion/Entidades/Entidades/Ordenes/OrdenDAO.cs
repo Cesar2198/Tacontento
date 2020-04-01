@@ -180,7 +180,7 @@ namespace Entidades.Entidades.Ordenes
                 else
                 {
                     Orden = null;
-                }
+                } 
             }
             catch (Exception ex)
             {
@@ -212,6 +212,35 @@ namespace Entidades.Entidades.Ordenes
                 throw;
             }
             return Orden;
+        }
+
+        public ClasificacionOrdenes GetClasificacion(int id)
+        {
+
+            ClasificacionOrdenes clasificacion = new ClasificacionOrdenes();
+            DataTable Elemento = new DataTable();
+            string Consulta = @"select *  from clasificacionesordenes
+                                where idClasificacionOrden =  "+id+"";
+
+            try
+            {
+                if (Db.Consultar(Consulta)!=null)
+                {
+                    Elemento = Db.Consultar(Consulta);
+                    clasificacion.idClasificacion = (int)Elemento.Rows[0]["idClasificacionOrden"];
+                    clasificacion.nombre = Elemento.Rows[0]["clasificacionOrden"].ToString();
+                }
+                else
+                {
+                    clasificacion = null;
+                }
+            }
+            catch (Exception)
+            {
+                clasificacion = null;
+                throw;
+            }
+            return clasificacion;
         }
 
         

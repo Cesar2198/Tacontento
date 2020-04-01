@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.Entidades.Ordenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,21 @@ namespace XShop.CLS
 
 
             return rol;
+        }
+
+        public static string DevolverClasificacion(int id)
+        {
+            String dato;
+
+            ClasificacionOrdenes clasificacion = new ClasificacionOrdenes();
+
+            OrdenDAO dao = new OrdenDAO();
+
+           clasificacion =  dao.GetClasificacion(id);
+
+           dato =  clasificacion.nombre;
+
+            return dato;
         }
 
        

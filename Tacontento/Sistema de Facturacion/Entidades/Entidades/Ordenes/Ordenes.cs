@@ -11,7 +11,7 @@ namespace Entidades.Entidades.Ordenes
 
         public int idOrden { get; set; }
         public string nombre { get; set; }
-        public decimal precio  { get; set; }
+        public Decimal precio  { get; set; }
         public string descripcion { get; set; }
         public int idClasificacion { get; set; }
 
