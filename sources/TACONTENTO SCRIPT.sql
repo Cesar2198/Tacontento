@@ -49,6 +49,7 @@ nombre varchar(100) not null,
 precio decimal(5,2) not null,
 descripcion varchar(100),
 idClasificacionOrden  int not null,
+Estado int not null,
 foreign key(idClasificacionOrden ) references ClasificacionesOrdenes(idClasificacionOrden )
 )engine=innodb;
 

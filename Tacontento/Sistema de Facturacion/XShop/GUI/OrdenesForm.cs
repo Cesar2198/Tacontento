@@ -111,7 +111,7 @@ namespace XShop.GUI
         {
 
             InitializeComponent();
-            setStyle();
+            //setStyle();
             setComboBox();
             ///Configurar();
             CargarRegistros();
@@ -155,7 +155,86 @@ namespace XShop.GUI
 
         private void dtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+              
 
+
+            
+        }
+
+        private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dtgDatos.SelectedRows.Count > 0) // make sure user select at least 1 row 
+            {
+                ///Esto, cuando se selecciona una fila rellena los textbox y el combobox
+                ///son strings ya que el textbox solo eso detecta 
+                String Id = dtgDatos.SelectedRows[0].Cells[0].Value + string.Empty;
+                string Nombre = dtgDatos.SelectedRows[0].Cells[1].Value + string.Empty;
+                string Descripcion = dtgDatos.SelectedRows[0].Cells[3].Value + string.Empty;
+                String precio = dtgDatos.SelectedRows[0].Cells[2].Value + string.Empty;
+                String Clasificacion = dtgDatos.SelectedRows[0].Cells[4].Value + string.Empty;
+
+                txbNombre.Text = Nombre;
+                txbDescripcion.Text = Descripcion;
+                txbPrecio.Text = precio;
+                txbId.Text = Id;///Con esto buscas el valor de un combobox y lo ubicas, asi.
+                this.cmbIdClasificacion.SelectedIndex = this.cmbIdClasificacion.FindStringExact(Clasificacion);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Ordenes _orden = new Ordenes();
+            _orden.idOrden = int.Parse(this.txbId.Text);
+            _orden.nombre = this.txbNombre.Text;
+            _orden.descripcion = this.txbDescripcion.Text;
+            _orden.precio = decimal.Parse(this.txbPrecio.Text);
+            var x = (ComboItem) this.cmbIdClasificacion.Items[this.cmbIdClasificacion.SelectedIndex] as ComboItem;
+            _orden.idClasificacion = x.Key;
+
+
+            OrdenDAO dao = new OrdenDAO();
+            try
+            {
+                if (dao.Modificar(_orden)!=null)
+                {
+                    MessageBox.Show("Se ha editado con exito...");
+                    CargarRegistros();
+                }
+            }
+            catch (Exception eh)
+            {
+                MessageBox.Show("Ocurrio un error... " + eh.Message );
+                throw;
+            }
+            
+
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Ordenes orden = new Ordenes();
+            orden.idOrden = int.Parse(this.txbId.Text);
+
+            OrdenDAO dao = new OrdenDAO();
+            try
+            {
+                if (dao.Eliminar(orden) != null)
+                {
+                    CargarRegistros();
+                    MessageBox.Show("Se ha eliminado el Registro...");
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error...");
+                throw;
+            }
+            
         }
     }
 }

@@ -23,8 +23,8 @@ namespace Entidades.Entidades.Ordenes
         public Ordenes InsertarOrden(Ordenes orden)
         {
 
-            String Consulta = @"insert into ordenes(nombre,precio,descripcion,idClasificacionOrden)
-                                values('" + orden.nombre + "'," + orden.precio + ",'" + orden.descripcion + "'," + orden.idClasificacion + ");";
+            String Consulta = @"insert into ordenes(nombre,precio,descripcion,idClasificacionOrden,Estado)
+                                values('" + orden.nombre + "'," + orden.precio + ",'" + orden.descripcion + "'," + orden.idClasificacion + ",1);";
 
             try
             {
@@ -58,7 +58,7 @@ namespace Entidades.Entidades.Ordenes
              from ordenes a,
              clasificacionesordenes b
              where a.idClasificacionOrden = b.idClasificacionOrden 
-             and a.idOrden = " + id + ";";
+             and a.idOrden = " + id + " and Estado = 1;";
 
             try
             {
@@ -129,7 +129,7 @@ namespace Entidades.Entidades.Ordenes
         public List<Ordenes> TodasLasOrdenes()
         {
             DataTable Elemento = new DataTable();
-            String Consulta = @"select * from ordenes";
+            String Consulta = @"select * from ordenes where Estado = 1";
 
             try
             {
@@ -193,7 +193,7 @@ namespace Entidades.Entidades.Ordenes
 
         public Ordenes Eliminar(Ordenes orden)
         {
-            string Consulta = "delete from ordenes Where idOrden = "+orden.idOrden+";";
+            string Consulta = "update Ordenes set Estado = 2 where idOrden= "+orden.idOrden+";";
 
             try
             {

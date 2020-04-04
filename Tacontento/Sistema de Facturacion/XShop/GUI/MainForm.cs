@@ -86,5 +86,15 @@ namespace XShop.GUI
             this.panelContainer.Tag = f;
             f.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new UsuarioForm());
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
