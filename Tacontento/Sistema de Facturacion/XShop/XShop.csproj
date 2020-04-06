@@ -32,7 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,6 +78,12 @@
     </Compile>
     <Compile Include="GUI\OrdenesForm.Designer.cs">
       <DependentUpon>OrdenesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Principal.cs">
       <SubType>Form</SubType>
@@ -123,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\OrdenesForm.resx">
       <DependentUpon>OrdenesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

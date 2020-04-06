@@ -42,17 +42,49 @@ namespace XShop.CLS
             return dato;
         }
 
-       
-
-        public static Boolean textBoxIsEmpty(TextBox t)
+        public static List<TextBox> AggTextBox(TextBox n)
         {
-            Boolean ok = false;
-            if (t.Equals(""))
+            List<TextBox> Lista = new List<TextBox>();
+            try
             {
-                ok = true;
+                Lista.Add(n);
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return Lista;
+        }
+
+
+
+        public static Boolean textBoxIsEmpty(List<TextBox> t)
+        {
+            Boolean Valido = false;
+            for(int i =0; i< t.Count; i++)
+            {
+                if (t[i].Text != string.Empty)
+                {
+                    Valido = true;
+                }
+                else
+                {
+                    Valido = false;
+                }    
+            }
+            return Valido;
+        }
+
+        public static void ClearTextbox(List<TextBox> t)
+        {
             
-            return ok;
+            for (int i = 0; i < t.Count; i++)
+            {
+                t[i].Text = "";
+            }
+          
         }
 
     }
