@@ -42,21 +42,14 @@ namespace XShop.CLS
             return dato;
         }
 
-        public static List<TextBox> AggTextBox(TextBox n)
+        public static Ordenes getOrdenById(int id)
         {
-            List<TextBox> Lista = new List<TextBox>();
-            try
-            {
-                Lista.Add(n);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            return Lista;
+            OrdenDAO dao = new OrdenDAO();
+            Ordenes o = dao.ObtenerOrdenById(id);
+            return o != null ? o : new Ordenes();
         }
+
+       
 
 
 
@@ -65,7 +58,7 @@ namespace XShop.CLS
             Boolean Valido = false;
             for(int i =0; i< t.Count; i++)
             {
-                if (t[i].Text != string.Empty)
+                if (t[i].Text != string.Empty && t[i].Text != " ")
                 {
                     Valido = true;
                 }
@@ -86,6 +79,7 @@ namespace XShop.CLS
             }
           
         }
+       
 
     }
 

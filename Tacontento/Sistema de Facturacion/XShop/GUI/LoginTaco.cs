@@ -65,6 +65,31 @@ namespace XShop.GUI
         {
             //Activamso el Evento KeyDown para realizar el cambio de color al TextBox
             txbContraseña.ForeColor = Color.FromArgb(209, 142, 61);
+            if(e.KeyCode == Keys.Enter)
+            {
+                Sesion sesion = Sesion.Instance;
+                UsuarioDAO userDao = new UsuarioDAO();
+                if (userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text) != null)
+                {
+                    Usuarios userActual = new Usuarios();
+                    userActual = userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text);
+                    if (userActual.usuario == txbUsuario.Text && userActual.password == txbContraseña.Text)
+                    {
+
+                        sesion.Datos.setUsuario(userActual);
+                        _AUTORIZAR = true;
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credenciales incorrectas");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El usuario no se encuentra registrado");
+                }
+            }
         }
 
 

@@ -96,5 +96,10 @@ namespace XShop.GUI
         {
 
         }
+
+        private void labelMenu_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new dashboardForm());
+        }
     }
 }

@@ -50,7 +50,8 @@ namespace Entidades.Entidades.Ordenes
         {
             DataTable Elemento = new DataTable();
 
-            String Consulta = @"select 
+            String Consulta = @"select
+            a.idOrden,
             a.nombre,
             a.precio,
             a.descripcion,
@@ -241,6 +242,34 @@ namespace Entidades.Entidades.Ordenes
                 throw;
             }
             return clasificacion;
+        }
+
+        public List<Ordenes> getOrdenByName(string name)
+        {
+            List<Ordenes> list = new List<Ordenes>();
+            string query = @"select * from ordenes where upper(nombre) like '%"+name.ToUpper()+"%' and Estado = 1;";
+            try
+            {
+                if (Db.Consultar(query)!=null)
+                {
+                    DataTable Elemento = Db.Consultar(query);
+                    for (int i = 0; i < (Db.Consultar(query)).Rows.Count; i++)
+                    {
+                        Ordenes _Orden = new Ordenes();
+
+                        _Orden.idOrden = (int)Elemento.Rows[i]["idOrden"];
+                        _Orden.nombre = Elemento.Rows[i]["nombre"].ToString();
+                        _Orden.precio = Decimal.Parse(Elemento.Rows[i]["precio"].ToString());
+                        _Orden.descripcion = Elemento.Rows[i]["descripcion"].ToString();
+                        _Orden.idClasificacion = (int)Elemento.Rows[i]["idClasificacionOrden"];
+                        list.Add(_Orden);
+                    }
+                }
+            }catch(Exception e)
+            {
+                Console.WriteLine("Error: ", e.Message);
+            }
+            return list != null ? list : new List<Ordenes>();
         }
 
         

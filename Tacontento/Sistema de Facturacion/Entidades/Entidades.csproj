@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\DetallesPedido\DetallePedidos.cs" />
     <Compile Include="Entidades\Ordenes\ClasificacionOrdenes.cs" />
     <Compile Include="Entidades\Ordenes\OrdenDAO.cs" />
     <Compile Include="Entidades\Ordenes\Ordenes.cs" />

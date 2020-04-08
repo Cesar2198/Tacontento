@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\dashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\dashboardForm.Designer.cs">
+      <DependentUpon>dashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     <Compile Include="GUI\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\searchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\searchForm.Designer.cs">
+      <DependentUpon>searchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\dashboardForm.resx">
+      <DependentUpon>dashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -143,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\searchForm.resx">
+      <DependentUpon>searchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>

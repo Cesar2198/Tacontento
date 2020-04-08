@@ -73,7 +73,7 @@
             // txbDescripcion
             // 
             this.txbDescripcion.AcceptsTab = true;
-            this.txbDescripcion.Location = new System.Drawing.Point(78, 79);
+            this.txbDescripcion.Location = new System.Drawing.Point(95, 79);
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(257, 36);
@@ -91,7 +91,7 @@
             // txbNombre
             // 
             this.txbNombre.AcceptsTab = true;
-            this.txbNombre.Location = new System.Drawing.Point(58, 34);
+            this.txbNombre.Location = new System.Drawing.Point(78, 34);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(230, 20);
             this.txbNombre.TabIndex = 6;
@@ -190,9 +190,9 @@
             this.lblRegistros.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblRegistros.Location = new System.Drawing.Point(10, 596);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(60, 13);
+            this.lblRegistros.Size = new System.Drawing.Size(79, 13);
             this.lblRegistros.TabIndex = 14;
-            this.lblRegistros.Text = "0 Registros";
+            this.lblRegistros.Text = "0 REGISTROS";
             // 
             // txbId
             // 
@@ -208,9 +208,9 @@
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblNombre.Location = new System.Drawing.Point(8, 37);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(54, 13);
             this.lblNombre.TabIndex = 16;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "NOMBRE";
             // 
             // label1
             // 
@@ -218,30 +218,30 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(9, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Descripción";
+            this.label1.Text = "DESCRIPCION";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(588, 44);
+            this.lblPrecio.Location = new System.Drawing.Point(578, 41);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(46, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(56, 13);
             this.lblPrecio.TabIndex = 18;
-            this.lblPrecio.Text = "Precio $";
+            this.lblPrecio.Text = "PRECIO $";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(533, 79);
+            this.lblCategoria.Location = new System.Drawing.Point(527, 79);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(54, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(69, 13);
             this.lblCategoria.TabIndex = 19;
-            this.lblCategoria.Text = "Categoría";
+            this.lblCategoria.Text = "CATEGORIA";
             // 
             // OrdenesForm
             // 

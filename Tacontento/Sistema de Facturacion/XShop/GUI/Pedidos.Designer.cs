@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedidos));
             this.dtgPedido = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.cID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedido)).BeginInit();
@@ -73,11 +74,38 @@
             this.dtgPedido.Location = new System.Drawing.Point(0, 0);
             this.dtgPedido.MultiSelect = false;
             this.dtgPedido.Name = "dtgPedido";
-            this.dtgPedido.ReadOnly = true;
             this.dtgPedido.RowHeadersVisible = false;
             this.dtgPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPedido.Size = new System.Drawing.Size(699, 261);
             this.dtgPedido.TabIndex = 0;
+            this.dtgPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellContentClick);
+            this.dtgPedido.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellEndEdit);
+            this.dtgPedido.SelectionChanged += new System.EventHandler(this.dtgPedido_SelectionChanged);
+            // 
+            // cID
+            // 
+            this.cID.HeaderText = "ID ORDEN";
+            this.cID.Name = "cID";
+            // 
+            // cOrden
+            // 
+            this.cOrden.HeaderText = "ORDEN";
+            this.cOrden.Name = "cOrden";
+            // 
+            // cPrecio
+            // 
+            this.cPrecio.HeaderText = "PRECIO";
+            this.cPrecio.Name = "cPrecio";
+            // 
+            // cCantidad
+            // 
+            this.cCantidad.HeaderText = "CANTIDAD";
+            this.cCantidad.Name = "cCantidad";
+            // 
+            // cSubtotal
+            // 
+            this.cSubtotal.HeaderText = "SUBTOTAL";
+            this.cSubtotal.Name = "cSubtotal";
             // 
             // panel1
             // 
@@ -87,12 +115,12 @@
             this.panel1.Size = new System.Drawing.Size(699, 261);
             this.panel1.TabIndex = 1;
             // 
-            // textBox1
+            // txbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(469, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 2;
+            this.txbSearch.Location = new System.Drawing.Point(469, 87);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(159, 20);
+            this.txbSearch.TabIndex = 2;
             // 
             // label1
             // 
@@ -136,14 +164,15 @@
             this.textBox3.Size = new System.Drawing.Size(161, 20);
             this.textBox3.TabIndex = 7;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Location = new System.Drawing.Point(648, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(648, 85);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label3
             // 
@@ -153,36 +182,6 @@
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "TIPO DE PAGO";
-            // 
-            // cID
-            // 
-            this.cID.HeaderText = "ID ORDEN";
-            this.cID.Name = "cID";
-            this.cID.ReadOnly = true;
-            // 
-            // cOrden
-            // 
-            this.cOrden.HeaderText = "ORDEN";
-            this.cOrden.Name = "cOrden";
-            this.cOrden.ReadOnly = true;
-            // 
-            // cPrecio
-            // 
-            this.cPrecio.HeaderText = "PRECIO";
-            this.cPrecio.Name = "cPrecio";
-            this.cPrecio.ReadOnly = true;
-            // 
-            // cCantidad
-            // 
-            this.cCantidad.HeaderText = "CANTIDAD";
-            this.cCantidad.Name = "cCantidad";
-            this.cCantidad.ReadOnly = true;
-            // 
-            // cSubtotal
-            // 
-            this.cSubtotal.HeaderText = "SUBTOTAL";
-            this.cSubtotal.Name = "cSubtotal";
-            this.cSubtotal.ReadOnly = true;
             // 
             // label4
             // 
@@ -195,15 +194,15 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "TOTAL:";
             // 
-            // label5
+            // lblTotal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(651, 409);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 24);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "$0.00";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(651, 409);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(55, 24);
+            this.lblTotal.TabIndex = 11;
+            this.lblTotal.Text = "$0.00";
             // 
             // button2
             // 
@@ -230,19 +229,22 @@
             this.ClientSize = new System.Drawing.Size(748, 579);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbSearch);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pedidos";
-            this.Text = "Pedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PEDIDOS";
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedido)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -254,13 +256,13 @@
 
         private System.Windows.Forms.DataGridView dtgPedido;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn cID;
         private System.Windows.Forms.DataGridViewTextBoxColumn cOrden;
@@ -268,7 +270,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn cSubtotal;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

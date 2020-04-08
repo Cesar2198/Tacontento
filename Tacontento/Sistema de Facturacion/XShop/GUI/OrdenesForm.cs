@@ -53,18 +53,9 @@ namespace XShop.GUI
 
         private void Configurar()
         {
-            //Creamos las columnas
-            _DATOS.Columns.Add("cId");
-            _DATOS.Columns.Add("cNombre");
-            _DATOS.Columns.Add("cPrecio");
-            _DATOS.Columns.Add("cDescripcion");
-            _DATOS.Columns.Add("cClasificacion");
 
             //No generar las columnas automaticamente
             dtgDatos.AutoGenerateColumns = false;
-
-            /// Agregamos los datos a la DataGridView
-            dtgDatos.DataSource = _DATOS;
         }
 
         public void setComboBox()
@@ -101,11 +92,11 @@ namespace XShop.GUI
 
                 }
 
-                this.lblRegistros.Text = dtgDatos.Rows.Count + " Registros para este formulario";
+                this.lblRegistros.Text = dtgDatos.Rows.Count + " REGISTROS";
             }
             else
             {
-                this.lblRegistros.Text = "0 Registros para este formulario";
+                this.lblRegistros.Text = "0 REGISTROS";
             }
         }
 
@@ -155,12 +146,12 @@ namespace XShop.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error...");
+                    MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Rellene todos los Campos.");
+                MessageBox.Show("Rellene todos los Campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             CargarRegistros();
         }
@@ -172,11 +163,6 @@ namespace XShop.GUI
 
         private void dtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
-
-
         }
 
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -234,7 +220,7 @@ namespace XShop.GUI
                     }
                     catch (Exception eh)
                     {
-                        MessageBox.Show("Ocurrio un error... " + eh.Message);
+                        MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         throw;
                     }
 
@@ -247,7 +233,7 @@ namespace XShop.GUI
             }
             else
             {
-                MessageBox.Show("Rellene todos los Campos.");
+                MessageBox.Show("Rellene todos los Campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
 
             CargarRegistros();
@@ -280,7 +266,7 @@ namespace XShop.GUI
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrio un error...");
+                        MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         throw;
                     }
 
@@ -293,7 +279,7 @@ namespace XShop.GUI
             }
             else
             {
-                MessageBox.Show("Rellene todos los campos.");
+                MessageBox.Show("Rellene todos los Campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             CargarRegistros();
         }
@@ -306,11 +292,12 @@ namespace XShop.GUI
         private void txbPrecio_KeyPress(object sender, KeyPressEventArgs v)
         {
             String Cadena = txbPrecio.Text;
-            var filtro = new string[10] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-            /*
+            /*string[] CadenaArray = new string[] {Cadena};
+            String[] filtro = new String[] { "0 1 2 3 4 5 6 7 8 9" };
+            
             if (Strings.Len(Cadena) > 0)
             {
-                filtro += ".";
+                string.Join(",", filtro);
             }
 
             foreach (var caracter in filtro)
@@ -338,9 +325,11 @@ namespace XShop.GUI
             {
                 v.Handled = false;
             }
+            if (Char.IsNumber(v.KeyChar))
+            {
+                v.Handled = false;
+            }
 
-           
-            
         }
     }
 }
