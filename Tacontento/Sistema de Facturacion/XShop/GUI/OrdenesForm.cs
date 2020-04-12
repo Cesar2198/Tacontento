@@ -220,7 +220,7 @@ namespace XShop.GUI
                     }
                     catch (Exception eh)
                     {
-                        MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ocurrió un Error!" + eh, "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         throw;
                     }
 
@@ -330,6 +330,17 @@ namespace XShop.GUI
                 v.Handled = false;
             }
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            List<TextBox> List = new List<TextBox>();
+            List.Add(this.txbNombre);
+            List.Add(this.txbPrecio);
+            List.Add(this.txbDescripcion);
+            List.Add(this.txbId);
+
+            CLS.Utility.ClearTextbox(List);
         }
     }
 }

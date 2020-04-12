@@ -183,9 +183,9 @@ namespace XShop.GUI
             this.userRolLabel.ForeColor = System.Drawing.Color.Snow;
             this.userRolLabel.Location = new System.Drawing.Point(103, 40);
             this.userRolLabel.Name = "userRolLabel";
-            this.userRolLabel.Size = new System.Drawing.Size(52, 14);
+            this.userRolLabel.Size = new System.Drawing.Size(24, 14);
             this.userRolLabel.TabIndex = 3;
-            this.userRolLabel.Text = "Gerente";
+            this.userRolLabel.Text = "Rol";
             // 
             // pictureBox2
             // 
@@ -204,9 +204,9 @@ namespace XShop.GUI
             this.usernameLabel.ForeColor = System.Drawing.Color.Snow;
             this.usernameLabel.Location = new System.Drawing.Point(72, 17);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(131, 16);
+            this.usernameLabel.Size = new System.Drawing.Size(110, 16);
             this.usernameLabel.TabIndex = 1;
-            this.usernameLabel.Text = "Alexander Chinque";
+            this.usernameLabel.Text = "Nombre Usuario";
             this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // pictureBox1

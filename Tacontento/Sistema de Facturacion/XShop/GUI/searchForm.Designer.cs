@@ -59,6 +59,7 @@
             this.dtgOrdenes.Location = new System.Drawing.Point(0, 0);
             this.dtgOrdenes.MultiSelect = false;
             this.dtgOrdenes.Name = "dtgOrdenes";
+            this.dtgOrdenes.ReadOnly = true;
             this.dtgOrdenes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtgOrdenes.RowHeadersVisible = false;
             this.dtgOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -69,16 +70,19 @@
             // 
             this.cID.HeaderText = "ID";
             this.cID.Name = "cID";
+            this.cID.ReadOnly = true;
             // 
             // cOrden
             // 
             this.cOrden.HeaderText = "ORDEN";
             this.cOrden.Name = "cOrden";
+            this.cOrden.ReadOnly = true;
             // 
             // cPrecio
             // 
             this.cPrecio.HeaderText = "PRECIO";
             this.cPrecio.Name = "cPrecio";
+            this.cPrecio.ReadOnly = true;
             // 
             // panel1
             // 

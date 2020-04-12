@@ -48,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(536, 108);
+            this.btnEditar.Location = new System.Drawing.Point(567, 108);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 11;
@@ -108,7 +109,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(430, 108);
+            this.btnAgregar.Location = new System.Drawing.Point(486, 108);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -243,12 +244,23 @@
             this.lblCategoria.TabIndex = 19;
             this.lblCategoria.Text = "CATEGORIA";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(732, 108);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(20, 23);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "C";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // OrdenesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(764, 618);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.label1);
@@ -297,5 +309,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Button btnClear;
     }
 }

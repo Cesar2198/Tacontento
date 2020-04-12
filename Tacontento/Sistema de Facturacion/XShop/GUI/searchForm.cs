@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades.Entidades.DetallesPedido;
 using Entidades.Entidades.Ordenes;
 
 namespace XShop.GUI
@@ -17,9 +18,11 @@ namespace XShop.GUI
         private string key;
         private List<Ordenes> list;
         public Boolean valido = false;
-        public searchForm(Pedidos f, string name)
+        private List<DetallePedidos> myList;
+        public searchForm(Pedidos f, List<DetallePedidos> lst, string name)
         {
             this.pedidoForm = f;
+            this.myList = lst;
             this.key = name;
             InitializeComponent();
             Configurar();
@@ -63,9 +66,28 @@ namespace XShop.GUI
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            int id = (int) dtgOrdenes.SelectedRows[0].Cells[0].Value;
+            int id = (int)dtgOrdenes.SelectedRows[0].Cells[0].Value;
+            Boolean valido = false;
+            for (int i = 0; i < this.myList.Count; i++)
+            {
+                if (this.myList[i].IdOrden == id)
+                {
+                    valido = true;
+                    break;
+                }
+            }
             
-            this.pedidoForm.AgregarOrdenes(id);
+
+            if (valido)
+            {
+                MessageBox.Show("Ya se encuentra agregada esta orden.");
+
+            }
+            else
+            {
+                this.pedidoForm.AgregarOrdenes(id);
+            }
+         
             this.Close();
         }
     }

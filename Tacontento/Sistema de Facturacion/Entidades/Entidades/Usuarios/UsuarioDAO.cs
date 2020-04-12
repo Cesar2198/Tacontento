@@ -62,7 +62,7 @@ namespace Entidades.Entidades.Usuarios
                 if ((Operacion.Consultar(query)) != null)
                 {
                     dato = Operacion.Consultar(query);
-                    user.rol = (int)dato.Rows[0]["idUsuario"];
+                    user.idUsuario = (int)dato.Rows[0]["idUsuario"];
                     user.usuario = dato.Rows[0]["usuario"].ToString();
                     user.password = dato.Rows[0]["password"].ToString();
                     user.telefono = dato.Rows[0]["telefono"].ToString();

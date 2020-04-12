@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades.Entidades.DetallesPedido
 {
-    public class DetallePedidos
+    public class DetallePedidos 
     {
         int id;
         int idPedido;

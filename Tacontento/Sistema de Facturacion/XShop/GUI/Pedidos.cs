@@ -9,18 +9,41 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades.Entidades.DetallesPedido;
 using Entidades.Entidades.Ordenes;
+using Entidades.Entidades.Pedidos;
 
 namespace XShop.GUI
 {
     public partial class Pedidos : Form
     {
-        private List<DetallePedidos> list;
+        class ComboItem
+        {
+            public int Key { get; set; }
+            public string Value { get; set; }
+            public ComboItem(int key, string value)
+            {
+                Key = key; Value = value;
+            }
+            public override string ToString()
+            {
+                return Value;
+            }
+        }
+
+        public List<DetallePedidos> list;
         public Pedidos()
         {
             InitializeComponent();
             ConfigurarTabla();
+            setComboBox();
+            this.txbEmpleado.Text = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().usuario;
             list = new List<DetallePedidos>();
 
+        }
+
+        public void setComboBox()
+        {
+                this.cmbPago.Items.Add(new ComboItem(1, "Efectivo"));  
+                this.cmbPago.Items.Add(new ComboItem(2, "Tarjeta"));
         }
 
         public void ConfigurarTabla()
@@ -32,6 +55,16 @@ namespace XShop.GUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboItem item = this.cmbPago.SelectedItem as ComboItem;
+            decimal desc = 0.10m;
+            if (item.Key == 2)
+            {
+                this.lblTotal.Text = "$" + (Totalizar() + Totalizar() * desc).ToString();
+            }
+            else
+            {
+                this.lblTotal.Text = "$" + (Totalizar()).ToString();
+            }
 
         }
 
@@ -71,7 +104,7 @@ namespace XShop.GUI
         {
             List<TextBox> list = new List<TextBox>();
             list.Add(this.txbSearch);
-            searchForm s = new searchForm(this, this.txbSearch.Text);
+            searchForm s = new searchForm(this,this.list, this.txbSearch.Text);
             if (CLS.Utility.textBoxIsEmpty(list))
             {
                 if (s.valido)
@@ -129,6 +162,64 @@ namespace XShop.GUI
                 this.lblTotal.Text = "$ " + Totalizar().ToString();
             }
             
+        }
+
+        private void txbSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                List<TextBox> list = new List<TextBox>();
+                list.Add(this.txbSearch);
+                searchForm s = new searchForm(this, this.list, this.txbSearch.Text);
+                if (CLS.Utility.textBoxIsEmpty(list))
+                {
+                    if (s.valido)
+                    {
+                        CLS.Utility.ClearTextbox(list);
+                        s.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se Encontró ninguna orden en los Registros.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Rellene este Campo.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }   
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            ComboItem item = this.cmbPago.SelectedItem as ComboItem;
+            Entidades.Entidades.Pedidos.Pedidos pe = new Entidades.Entidades.Pedidos.Pedidos();
+            pe.nombreCliente = this.txbCliente.Text;
+            pe.idUsuario = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().idUsuario;
+            pe.estado = 1;
+            pe.total = Totalizar();
+            pe.tipoPago = item.Key;
+            pe.listaDetalles = list;
+            
+
+            PedidosDAO p = new PedidosDAO();
+            if (p.InsertarPedido(pe)!=null)
+            {
+                MessageBox.Show("Se inserto una nueva orden pendiente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo insertar");
+            }
+
+            
+        
         }
     }
 }
