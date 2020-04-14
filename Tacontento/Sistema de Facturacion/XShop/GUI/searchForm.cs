@@ -90,5 +90,36 @@ namespace XShop.GUI
          
             this.Close();
         }
+
+        private void dtgOrdenes_KeyDown(object sender, KeyEventArgs e)
+        {
+            ///Para admitir la tecla Enter cuando se seleccione una opcion
+            if (e.KeyCode == Keys.Enter)
+            {
+                int id = (int)dtgOrdenes.SelectedRows[0].Cells[0].Value;
+                Boolean valido = false;
+                for (int i = 0; i < this.myList.Count; i++)
+                {
+                    if (this.myList[i].IdOrden == id)
+                    {
+                        valido = true;
+                        break;
+                    }
+                }
+
+
+                if (valido)
+                {
+                    MessageBox.Show("Ya se encuentra agregada esta orden.");
+
+                }
+                else
+                {
+                    this.pedidoForm.AgregarOrdenes(id);
+                }
+
+                this.Close();
+            }
+        }
     }
 }

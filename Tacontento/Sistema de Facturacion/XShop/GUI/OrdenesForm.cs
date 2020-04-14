@@ -18,7 +18,6 @@ namespace XShop.GUI
     public partial class OrdenesForm : Form
 
     {
-        DataTable _DATOS = new DataTable();
         class ComboItem
         {
             public int Key { get; set; }
@@ -34,28 +33,12 @@ namespace XShop.GUI
         }
 
 
-
-
-        public void setStyle()
-        {
-            dtgDatos.BorderStyle = BorderStyle.None;
-            dtgDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dtgDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dtgDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(34, 32, 33);
-            dtgDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(34, 32, 33);
-            dtgDatos.BackgroundColor = Color.Black;
-
-            dtgDatos.EnableHeadersVisualStyles = false;
-            dtgDatos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtgDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dtgDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-        }
-
         private void Configurar()
         {
-
+         
             //No generar las columnas automaticamente
             dtgDatos.AutoGenerateColumns = false;
+
         }
 
         public void setComboBox()
@@ -84,19 +67,17 @@ namespace XShop.GUI
 
                 for (int i = 0; i < list.Count; i++)
                 {
-                    DataRow NuevaFila = _DATOS.NewRow();
+                    
                     Ordenes Orden = new Ordenes();
                     Orden = list[i];
                     dtgDatos.Rows.Add(Orden.idOrden, Orden.nombre, Orden.precio, Orden.descripcion, CLS.Utility.DevolverClasificacion(Orden.idClasificacion));
-
-
                 }
 
-                this.lblRegistros.Text = dtgDatos.Rows.Count + " REGISTROS";
+                this.lblRegistros.Text = dtgDatos.Rows.Count + " Registros Encontrados";
             }
             else
             {
-                this.lblRegistros.Text = "0 REGISTROS";
+                this.lblRegistros.Text = "0 Registros Encontrados";
             }
         }
 
@@ -106,15 +87,10 @@ namespace XShop.GUI
         {
 
             InitializeComponent();
-            //setStyle();
             txbId.Visible = false;
             setComboBox();
-            ///Configurar();
+            Configurar();
             CargarRegistros();
-
-
-
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -342,5 +318,21 @@ namespace XShop.GUI
 
             CLS.Utility.ClearTextbox(List);
         }
+
+        private void OrdenesForm_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+            ///Se crea una vista y esta se filtra y se iguala con un String que lleva un predeterminado formato
+           /// _DATOS.DefaultView.RowFilter = string.Format("cNombre like '%{0}%'", txbFiltro.Text);
+            ///Refrescamos cada vez que se hace una busqueda
+            ///dtgDatos.Refresh();
+
+        }
+       
+        private void txbFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        } 
     }
 }

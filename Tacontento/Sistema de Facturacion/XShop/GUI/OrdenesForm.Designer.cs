@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenesForm));
             this.cmbIdClasificacion = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txbDescripcion = new System.Windows.Forms.TextBox();
@@ -42,15 +43,22 @@
             this.cPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cClasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblRegistros = new System.Windows.Forms.Label();
             this.txbId = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.txbFiltro = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbIdClasificacion
@@ -185,19 +193,9 @@
             this.cClasificacion.Name = "cClasificacion";
             this.cClasificacion.ReadOnly = true;
             // 
-            // lblRegistros
-            // 
-            this.lblRegistros.AutoSize = true;
-            this.lblRegistros.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblRegistros.Location = new System.Drawing.Point(10, 596);
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(79, 13);
-            this.lblRegistros.TabIndex = 14;
-            this.lblRegistros.Text = "0 REGISTROS";
-            // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(11, 12);
+            this.txbId.Location = new System.Drawing.Point(11, 111);
             this.txbId.Name = "txbId";
             this.txbId.ReadOnly = true;
             this.txbId.Size = new System.Drawing.Size(24, 20);
@@ -254,19 +252,73 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblRegistros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 596);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(764, 22);
+            this.statusStrip1.TabIndex = 21;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(133, 17);
+            this.lblRegistros.Text = "0 Registros Encontrados";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txbFiltro,
+            this.toolStripLabel1,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(764, 31);
+            this.toolStrip1.TabIndex = 22;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(53, 28);
+            this.toolStripLabel1.Text = "Filtrar";
+            // 
+            // txbFiltro
+            // 
+            this.txbFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbFiltro.Name = "txbFiltro";
+            this.txbFiltro.Size = new System.Drawing.Size(175, 31);
+            this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(110, 28);
+            this.toolStripLabel2.Text = "Manejo de Ordenes";
+            // 
             // OrdenesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(764, 618);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txbId);
-            this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
@@ -280,8 +332,13 @@
             this.Name = "OrdenesForm";
             this.Text = "OrdenesForm";
             this.Load += new System.EventHandler(this.OrdenesForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OrdenesForm_KeyUp);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,12 +360,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cClasificacion;
-        private System.Windows.Forms.Label lblRegistros;
         private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripTextBox txbFiltro;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

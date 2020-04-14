@@ -65,6 +65,7 @@
             this.dtgOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgOrdenes.Size = new System.Drawing.Size(547, 230);
             this.dtgOrdenes.TabIndex = 0;
+            this.dtgOrdenes.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgOrdenes_KeyDown);
             // 
             // cID
             // 

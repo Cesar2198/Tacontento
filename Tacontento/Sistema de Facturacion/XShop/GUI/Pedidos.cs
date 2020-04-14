@@ -57,14 +57,22 @@ namespace XShop.GUI
         {
             ComboItem item = this.cmbPago.SelectedItem as ComboItem;
             decimal desc = 0.10m;
-            if (item.Key == 2)
+            if(list.Count != 0)
             {
-                this.lblTotal.Text = "$" + (Totalizar() + Totalizar() * desc).ToString();
+                if (item.Key == 2)
+                {
+                    this.lblTotal.Text = "$" + decimal.Round(Totalizar() + Totalizar() * desc, 2).ToString();
+                }
+                else
+                {
+                    this.lblTotal.Text = "$" + (Totalizar()).ToString();
+                }
             }
             else
             {
-                this.lblTotal.Text = "$" + (Totalizar()).ToString();
+                this.lblTotal.Text = "$0.00" ;
             }
+           
 
         }
 
@@ -82,6 +90,7 @@ namespace XShop.GUI
                 DetallePedidos o = list[i];
                 dtgPedido.Rows.Add(o.IdOrden, CLS.Utility.getOrdenById(o.IdOrden).nombre, o.Precio, o.Cantidad, (o.Precio * o.Cantidad));
             }
+            this.lblCantidadOrdenes.Text = list.Count.ToString() + " Orden(es) Registradas";
         }
 
         public void AgregarOrdenes(int id)
@@ -96,7 +105,7 @@ namespace XShop.GUI
             dp.Precio = o.precio;
             dp.Cantidad = 1;
             list.Add(dp);
-            this.lblTotal.Text = "$ " + Totalizar().ToString();
+            this.lblTotal.Text = "$ " + decimal.Round(Totalizar(), 2).ToString();
             CargarTable();
         }
 
@@ -159,7 +168,7 @@ namespace XShop.GUI
                     dtgPedido.Rows[e.RowIndex].Cells[3].Value = 1;
                     MessageBox.Show("No se puede dejar vacio.");
                 }
-                this.lblTotal.Text = "$ " + Totalizar().ToString();
+                this.lblTotal.Text = "$ " + decimal.Round(Totalizar(), 2).ToString();
             }
             
         }
@@ -197,28 +206,40 @@ namespace XShop.GUI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ComboItem item = this.cmbPago.SelectedItem as ComboItem;
-            Entidades.Entidades.Pedidos.Pedidos pe = new Entidades.Entidades.Pedidos.Pedidos();
-            pe.nombreCliente = this.txbCliente.Text;
-            pe.idUsuario = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().idUsuario;
-            pe.estado = 1;
-            pe.total = Totalizar();
-            pe.tipoPago = item.Key;
-            pe.listaDetalles = list;
-            
+            List<TextBox> Lista = new List<TextBox>();
+            Lista.Add(this.txbCliente);
 
-            PedidosDAO p = new PedidosDAO();
-            if (p.InsertarPedido(pe)!=null)
+
+            
+            if(list.Count != 0 && CLS.Utility.textBoxIsEmpty(Lista) && this.cmbPago.Text != string.Empty)
             {
-                MessageBox.Show("Se inserto una nueva orden pendiente");
-                this.Close();
+               
+
+                ComboItem item = this.cmbPago.SelectedItem as ComboItem;
+                Entidades.Entidades.Pedidos.Pedidos pe = new Entidades.Entidades.Pedidos.Pedidos();
+                pe.nombreCliente = this.txbCliente.Text;
+                pe.idUsuario = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().idUsuario;
+                pe.estado = 1;
+                pe.total = decimal.Round(Totalizar(),2);
+                pe.tipoPago = item.Key;
+                pe.listaDetalles = list;
+
+
+                PedidosDAO p = new PedidosDAO();
+                if (p.InsertarPedido(pe) != null)
+                {
+                    MessageBox.Show("Se inserto una nueva orden pendiente", "información.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo insertar");
+                }
             }
             else
             {
-                MessageBox.Show("No se pudo insertar");
-            }
-
-            
+                MessageBox.Show("Se deben insertar ordenes! o Rellenar todos los campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
         
         }
     }

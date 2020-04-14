@@ -48,8 +48,11 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblCantidadOrdenes = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedido)).BeginInit();
             this.panel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgPedido
@@ -226,11 +229,28 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblCantidadOrdenes});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 557);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(748, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblCantidadOrdenes
+            // 
+            this.lblCantidadOrdenes.Name = "lblCantidadOrdenes";
+            this.lblCantidadOrdenes.Size = new System.Drawing.Size(123, 17);
+            this.lblCantidadOrdenes.Text = "0 Ordenes Registradas";
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 579);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.lblTotal);
@@ -251,6 +271,8 @@
             this.Text = "PEDIDOS";
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedido)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +299,7 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnTerminar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblCantidadOrdenes;
     }
 }
