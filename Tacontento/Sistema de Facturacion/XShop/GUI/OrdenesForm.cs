@@ -18,6 +18,8 @@ namespace XShop.GUI
     public partial class OrdenesForm : Form
 
     {
+
+        BindingSource _DATOS = new BindingSource();
         class ComboItem
         {
             public int Key { get; set; }
@@ -32,13 +34,42 @@ namespace XShop.GUI
             }
         }
 
-
-        private void Configurar()
+        private void CargarRegistros()
         {
-         
-            //No generar las columnas automaticamente
-            dtgDatos.AutoGenerateColumns = false;
 
+            try
+            {
+                _DATOS.DataSource = CacheManager.CLS.Cache.TODOS_LAS_ORDENES();
+                FiltrarLocalmente();
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+        private void FiltrarLocalmente()
+        {
+            try
+            {
+                if (this.txbFiltro.TextLength > 0)
+                {
+                    _DATOS.Filter = "nombre LIKE '%" + this.txbFiltro.Text + "%' ";
+                }
+                else
+                {
+                    _DATOS.RemoveFilter();
+                }
+                dtgDatos.AutoGenerateColumns = false;
+                dtgDatos.DataSource = _DATOS;
+                this.lblRegistros.Text = dtgDatos.Rows.Count.ToString() + " Registros Encontrados";
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         public void setComboBox()
@@ -53,35 +84,6 @@ namespace XShop.GUI
             }
         }
 
-        public void CargarRegistros()
-        {
-
-            OrdenDAO orderDao = new OrdenDAO();
-            List<Ordenes> list = orderDao.TodasLasOrdenes();
-
-            if (list != null)
-            {
-
-                dtgDatos.Rows.Clear();
-                dtgDatos.Refresh();
-
-                for (int i = 0; i < list.Count; i++)
-                {
-                    
-                    Ordenes Orden = new Ordenes();
-                    Orden = list[i];
-                    dtgDatos.Rows.Add(Orden.idOrden, Orden.nombre, Orden.precio, Orden.descripcion, CLS.Utility.DevolverClasificacion(Orden.idClasificacion));
-                }
-
-                this.lblRegistros.Text = dtgDatos.Rows.Count + " Registros Encontrados";
-            }
-            else
-            {
-                this.lblRegistros.Text = "0 Registros Encontrados";
-            }
-        }
-
-
 
         public OrdenesForm()
         {
@@ -89,7 +91,6 @@ namespace XShop.GUI
             InitializeComponent();
             txbId.Visible = false;
             setComboBox();
-            Configurar();
             CargarRegistros();
         }
 
@@ -157,7 +158,7 @@ namespace XShop.GUI
                 txbDescripcion.Text = Descripcion;
                 txbPrecio.Text = precio;
                 txbId.Text = Id;///Con esto buscas el valor de un combobox y lo ubicas, asi.
-                this.cmbIdClasificacion.SelectedIndex = this.cmbIdClasificacion.FindStringExact(Clasificacion);
+                this.cmbIdClasificacion.SelectedIndex = this.cmbIdClasificacion.FindStringExact(CLS.Utility.DevolverClasificacion(int.Parse(Clasificacion)));
             }
 
         }
@@ -332,7 +333,7 @@ namespace XShop.GUI
        
         private void txbFiltro_TextChanged(object sender, EventArgs e)
         {
-
+            FiltrarLocalmente();
         } 
     }
 }

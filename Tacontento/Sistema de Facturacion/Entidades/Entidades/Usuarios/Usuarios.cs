@@ -16,8 +16,9 @@ namespace Entidades.Entidades.Usuarios
         public string usuario { get; set; }
         public string password { get; set; }
         public string telefono { get; set; }
-        public string  foto{ get; set; }
         public int rol { get; set; }
+
+        public int estado { get; set; }
 
     }
 }

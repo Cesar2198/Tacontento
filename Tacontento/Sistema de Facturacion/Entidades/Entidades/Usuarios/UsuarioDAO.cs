@@ -16,6 +16,7 @@ namespace Entidades.Entidades.Usuarios
         /// </summary>
         //Nuestra conexion a la base de datos junto con las operaciones y consultas
         DBOperacion Operacion = new DBOperacion();
+        Usuarios user = new Usuarios();
 
        public UsuarioDAO()
         {
@@ -25,8 +26,8 @@ namespace Entidades.Entidades.Usuarios
         public Usuarios CrearUsuario(Usuarios user)
         {
             Usuarios usuario = new Usuarios();
-            string Consulta = @"insert into usuarios(usuario,password,telefono,foto,idRol) 
-            values('"+user.usuario+"','"+user.password+"','"+user.telefono+"','"+user.foto+"',"+user.rol+");";
+            string Consulta = @"insert into usuarios(usuario,password,telefono,idRol,estado) 
+            values('"+user.usuario+"','"+user.password+"','"+user.telefono+"',"+user.rol+","+user.estado+");";
 
             try
             {   /// Se comprueba qque se inserto o no
@@ -65,9 +66,9 @@ namespace Entidades.Entidades.Usuarios
                     user.idUsuario = (int)dato.Rows[0]["idUsuario"];
                     user.usuario = dato.Rows[0]["usuario"].ToString();
                     user.password = dato.Rows[0]["password"].ToString();
-                    user.telefono = dato.Rows[0]["telefono"].ToString();
-                    user.foto = dato.Rows[0]["foto"].ToString();
+                    user.telefono = dato.Rows[0]["telefono"].ToString();    
                     user.rol = (int)dato.Rows[0]["idRol"];
+                    user.estado = (int)dato.Rows[0]["estado"];
 
                 }
                 else
@@ -84,5 +85,55 @@ namespace Entidades.Entidades.Usuarios
             return user;
         }
 
-    }
+        public Usuarios Modificar(Usuarios user)
+        {
+
+            String Consulta = @"update usuarios SET usuario= '" + user.usuario + "' , password = '" + user.password + "', telefono = '" + user.telefono + "', estado = "+user.estado+"," +
+                            " idRol = " + user.rol + " " +
+                            "where idUsuario = " + user.idUsuario + ";";
+
+            try
+            {
+                if (Operacion.Actualizar(Consulta) > 0)
+                {
+                    this.user = user;
+                }
+                else
+                {
+                    this.user = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.user;
+        }
+
+        public Usuarios Eliminar(Usuarios f)
+        {
+            string Consulta = "update usuarios set estado = 2 where idUsuario= " + f.idUsuario + ";";
+
+            try
+            {
+                if (Operacion.Eliminar(Consulta) > 0)
+                {
+                    this.user = f;
+                }
+                else
+                {
+                    this.user = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.user;
+        }
+
 }
+}
+

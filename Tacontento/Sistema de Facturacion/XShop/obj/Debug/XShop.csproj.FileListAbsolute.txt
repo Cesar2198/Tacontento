@@ -124,3 +124,6 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\D
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.Pedidos.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.searchForm.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.dashboardForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.UsuariosForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\Cache.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\Cache.pdb

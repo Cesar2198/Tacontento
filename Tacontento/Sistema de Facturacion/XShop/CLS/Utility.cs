@@ -1,4 +1,5 @@
 ﻿using Entidades.Entidades.Ordenes;
+using Entidades.Entidades.Roles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,16 @@ namespace XShop.CLS
                         rol = "Administrador";
                         break;
                     }
+                case 2:
+                    {
+                        rol = "Mesero";
+                        break;
+                    }
+                case 3:
+                    {
+                        rol = "Cocinero";
+                        break;
+                    }
             }
 
 
@@ -41,6 +52,20 @@ namespace XShop.CLS
 
             return dato;
         }
+        public static string DevolverRol(int id)
+        {
+            String dato;
+
+            Rol rol = new Rol();
+
+            RolesDAO dao = new RolesDAO();
+
+            rol = dao.ObtenerRolById(id);
+
+            dato = rol.RolName;
+
+            return dato;
+        }
 
         public static Ordenes getOrdenById(int id)
         {
@@ -49,7 +74,16 @@ namespace XShop.CLS
             return o != null ? o : new Ordenes();
         }
 
-       
+        public static string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
+
+
 
 
 

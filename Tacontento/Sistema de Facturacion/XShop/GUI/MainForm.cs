@@ -26,9 +26,6 @@ namespace XShop.GUI
             InitializeComponent();
             this.usernameLabel.Text = this.user.usuario;
             this.userRolLabel.Text = CLS.Utility.getRol(this.user.rol);
-            
-            
-            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -89,7 +86,7 @@ namespace XShop.GUI
 
         private void label2_Click(object sender, EventArgs e)
         {
-            openWindowFromPanel(new UsuarioForm());
+            openWindowFromPanel(new UsuariosForm());
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)

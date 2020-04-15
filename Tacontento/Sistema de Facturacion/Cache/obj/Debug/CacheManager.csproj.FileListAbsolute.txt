@@ -1,0 +1,15 @@
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\Cache.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\Cache.pdb
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\DataManager.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\Entidades.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\SessionManager.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\MySql.Data.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\DataManager.pdb
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\Entidades.pdb
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\SessionManager.pdb
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\bin\Debug\MySql.Data.xml
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\CacheManager.csprojAssemblyReference.cache
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\CacheManager.csproj.CoreCompileInputs.cache
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\CacheManager.csproj.CopyComplete
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\Cache.dll
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\Cache.pdb

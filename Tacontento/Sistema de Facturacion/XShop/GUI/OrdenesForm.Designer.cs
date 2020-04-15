@@ -38,11 +38,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
-            this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cClasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txbId = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,9 +47,14 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txbFiltro = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClasificacionOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -145,11 +145,11 @@
             this.dtgDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cId,
-            this.cNombre,
-            this.cPrecio,
-            this.cDescripcion,
-            this.cClasificacion});
+            this.idOrden,
+            this.nombre,
+            this.precio,
+            this.descripcion,
+            this.idClasificacionOrden});
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
             this.dtgDatos.MultiSelect = false;
@@ -162,36 +162,6 @@
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
             this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
             this.dtgDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_RowEnter);
-            // 
-            // cId
-            // 
-            this.cId.HeaderText = "Id";
-            this.cId.Name = "cId";
-            this.cId.ReadOnly = true;
-            // 
-            // cNombre
-            // 
-            this.cNombre.HeaderText = "Nombre";
-            this.cNombre.Name = "cNombre";
-            this.cNombre.ReadOnly = true;
-            // 
-            // cPrecio
-            // 
-            this.cPrecio.HeaderText = "Precio";
-            this.cPrecio.Name = "cPrecio";
-            this.cPrecio.ReadOnly = true;
-            // 
-            // cDescripcion
-            // 
-            this.cDescripcion.HeaderText = "Descripcion";
-            this.cDescripcion.Name = "cDescripcion";
-            this.cDescripcion.ReadOnly = true;
-            // 
-            // cClasificacion
-            // 
-            this.cClasificacion.HeaderText = "Clasificacion";
-            this.cClasificacion.Name = "cClasificacion";
-            this.cClasificacion.ReadOnly = true;
             // 
             // txbId
             // 
@@ -282,6 +252,14 @@
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // txbFiltro
+            // 
+            this.txbFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbFiltro.Name = "txbFiltro";
+            this.txbFiltro.Size = new System.Drawing.Size(175, 31);
+            this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
+            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -290,20 +268,46 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(53, 28);
             this.toolStripLabel1.Text = "Filtrar";
             // 
-            // txbFiltro
-            // 
-            this.txbFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txbFiltro.Name = "txbFiltro";
-            this.txbFiltro.Size = new System.Drawing.Size(175, 31);
-            this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
-            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(110, 28);
             this.toolStripLabel2.Text = "Manejo de Ordenes";
+            // 
+            // idOrden
+            // 
+            this.idOrden.DataPropertyName = "idOrden";
+            this.idOrden.HeaderText = "Id";
+            this.idOrden.Name = "idOrden";
+            this.idOrden.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "precio";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // idClasificacionOrden
+            // 
+            this.idClasificacionOrden.DataPropertyName = "idClasificacionOrden";
+            this.idClasificacionOrden.HeaderText = "Clasificacion";
+            this.idClasificacionOrden.Name = "idClasificacionOrden";
+            this.idClasificacionOrden.ReadOnly = true;
             // 
             // OrdenesForm
             // 
@@ -355,11 +359,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgDatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cClasificacion;
         private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label1;
@@ -372,5 +371,10 @@
         private System.Windows.Forms.ToolStripTextBox txbFiltro;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClasificacionOrden;
     }
 }
