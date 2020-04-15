@@ -38,6 +38,11 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
+            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idClasificacionOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txbId = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,11 +55,6 @@
             this.txbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.idOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClasificacionOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -64,7 +64,7 @@
             // cmbIdClasificacion
             // 
             this.cmbIdClasificacion.FormattingEnabled = true;
-            this.cmbIdClasificacion.Location = new System.Drawing.Point(602, 71);
+            this.cmbIdClasificacion.Location = new System.Drawing.Point(631, 71);
             this.cmbIdClasificacion.Name = "cmbIdClasificacion";
             this.cmbIdClasificacion.Size = new System.Drawing.Size(121, 21);
             this.cmbIdClasificacion.TabIndex = 10;
@@ -91,7 +91,7 @@
             // txbPrecio
             // 
             this.txbPrecio.AcceptsTab = true;
-            this.txbPrecio.Location = new System.Drawing.Point(640, 37);
+            this.txbPrecio.Location = new System.Drawing.Point(669, 38);
             this.txbPrecio.Name = "txbPrecio";
             this.txbPrecio.Size = new System.Drawing.Size(83, 20);
             this.txbPrecio.TabIndex = 7;
@@ -163,6 +163,41 @@
             this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
             this.dtgDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_RowEnter);
             // 
+            // idOrden
+            // 
+            this.idOrden.DataPropertyName = "idOrden";
+            this.idOrden.HeaderText = "Id";
+            this.idOrden.Name = "idOrden";
+            this.idOrden.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "precio";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // idClasificacionOrden
+            // 
+            this.idClasificacionOrden.DataPropertyName = "idClasificacionOrden";
+            this.idClasificacionOrden.HeaderText = "Clasificacion";
+            this.idClasificacionOrden.Name = "idClasificacionOrden";
+            this.idClasificacionOrden.ReadOnly = true;
+            // 
             // txbId
             // 
             this.txbId.Location = new System.Drawing.Point(11, 111);
@@ -196,7 +231,7 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(578, 41);
+            this.lblPrecio.Location = new System.Drawing.Point(607, 41);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(56, 13);
             this.lblPrecio.TabIndex = 18;
@@ -206,7 +241,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(527, 79);
+            this.lblCategoria.Location = new System.Drawing.Point(556, 74);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(69, 13);
             this.lblCategoria.TabIndex = 19;
@@ -273,41 +308,6 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(110, 28);
             this.toolStripLabel2.Text = "Manejo de Ordenes";
-            // 
-            // idOrden
-            // 
-            this.idOrden.DataPropertyName = "idOrden";
-            this.idOrden.HeaderText = "Id";
-            this.idOrden.Name = "idOrden";
-            this.idOrden.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.DataPropertyName = "precio";
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // idClasificacionOrden
-            // 
-            this.idClasificacionOrden.DataPropertyName = "idClasificacionOrden";
-            this.idClasificacionOrden.HeaderText = "Clasificacion";
-            this.idClasificacionOrden.Name = "idClasificacionOrden";
-            this.idClasificacionOrden.ReadOnly = true;
             // 
             // OrdenesForm
             // 

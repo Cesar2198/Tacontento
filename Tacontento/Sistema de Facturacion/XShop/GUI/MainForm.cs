@@ -132,7 +132,15 @@ namespace XShop.GUI
 
         private void btnLocal_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(this.pnSubMenuLocal);
+            if (SessionManager.CLS.Sesion.Instance.Datos.getUsuario().rol !=1)
+            {
+                MessageBox.Show("Solo el Administrador puede Acceder a Estas Opciones.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ShowSubMenu(this.pnSubMenuLocal);
+            }
+           
         }
 
         private void btnAgregarUsuarios_Click(object sender, EventArgs e)
@@ -149,11 +157,22 @@ namespace XShop.GUI
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
             openWindowFromPanel(new dashboardForm());
+            hideSubMenu();
         }
 
         private void btnOrdenes_Click(object sender, EventArgs e)
         {
-            openWindowFromPanel(new OrdenesForm());
+
+            if (SessionManager.CLS.Sesion.Instance.Datos.getUsuario().rol != 1)
+            {
+                MessageBox.Show("Solo el Administrador puede Acceder a Esta Opcion.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                openWindowFromPanel(new OrdenesForm());
+                hideSubMenu();
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -164,7 +183,6 @@ namespace XShop.GUI
             }
             else
             {
-
             }
                 
         }
