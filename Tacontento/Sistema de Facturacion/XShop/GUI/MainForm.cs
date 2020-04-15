@@ -17,6 +17,48 @@ namespace XShop.GUI
     {
         private Sesion sesion;
         private Usuarios user;
+        private void openWindowFromPanel(object form)
+        {
+            if (this.panelContainer.Controls.Count > 0)
+            {
+                this.panelContainer.Controls.RemoveAt(0);
+            }
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panelContainer.Controls.Add(f);
+            this.panelContainer.Tag = f;
+            f.Show();
+        }
+
+        private void Customize()
+        {
+            ///aca esconderemos los submenus
+            this.pnSubMenuLocal.Visible = false;
+        }
+
+        private void hideSubMenu()
+        {
+            ///para esconder los submenus
+            if(this.pnSubMenuLocal.Visible == true)
+            {
+                this.pnSubMenuLocal.Visible = false;
+            }
+        }
+
+        private void ShowSubMenu(Panel mypanel)
+        {
+            if(mypanel.Visible == false)
+            {
+                hideSubMenu();
+                mypanel.Visible = true;
+            }
+            else
+            {
+                mypanel.Visible = false;
+            }
+        }
+
         public MainForm()
 
         {
@@ -24,6 +66,7 @@ namespace XShop.GUI
             this.user = new Usuarios();
             this.user = sesion.Datos.getUsuario();
             InitializeComponent();
+            Customize();
             this.usernameLabel.Text = this.user.usuario;
             this.userRolLabel.Text = CLS.Utility.getRol(this.user.rol);
         }
@@ -62,7 +105,7 @@ namespace XShop.GUI
 
         private void label1_Click(object sender, EventArgs e)
         {
-            openWindowFromPanel(new OrdenesForm());
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -70,23 +113,11 @@ namespace XShop.GUI
 
         }
 
-        private void openWindowFromPanel(object form)
-        {
-            if (this.panelContainer.Controls.Count>0)
-            {
-                this.panelContainer.Controls.RemoveAt(0);
-            }
-            Form f = form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.panelContainer.Controls.Add(f);
-            this.panelContainer.Tag = f;
-            f.Show();
-        }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
-            openWindowFromPanel(new UsuariosForm());
+           
         }
 
         private void panelContainer_Paint(object sender, PaintEventArgs e)
@@ -96,7 +127,46 @@ namespace XShop.GUI
 
         private void labelMenu_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnLocal_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(this.pnSubMenuLocal);
+        }
+
+        private void btnAgregarUsuarios_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new UsuariosForm());
+            hideSubMenu();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnPrincipal_Click(object sender, EventArgs e)
+        {
             openWindowFromPanel(new dashboardForm());
+        }
+
+        private void btnOrdenes_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new OrdenesForm());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {///para Salir
+            if (MessageBox.Show("Desea Salir Realmente?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
+                
         }
     }
 }

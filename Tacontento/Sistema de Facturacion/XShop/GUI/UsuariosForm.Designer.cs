@@ -64,14 +64,14 @@
             // cmbRol
             // 
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(631, 71);
+            this.cmbRol.Location = new System.Drawing.Point(631, 74);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(121, 21);
             this.cmbRol.TabIndex = 10;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(648, 108);
+            this.btnEliminar.Location = new System.Drawing.Point(651, 111);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 9;
@@ -83,7 +83,7 @@
             // txbTelefono
             // 
             this.txbTelefono.AcceptsTab = true;
-            this.txbTelefono.Location = new System.Drawing.Point(561, 40);
+            this.txbTelefono.Location = new System.Drawing.Point(561, 39);
             this.txbTelefono.Name = "txbTelefono";
             this.txbTelefono.Size = new System.Drawing.Size(191, 20);
             this.txbTelefono.TabIndex = 7;
@@ -99,7 +99,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(567, 108);
+            this.btnEditar.Location = new System.Drawing.Point(570, 111);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 11;
@@ -110,7 +110,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(486, 108);
+            this.btnAgregar.Location = new System.Drawing.Point(489, 111);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -122,9 +122,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgDatos);
-            this.panel1.Location = new System.Drawing.Point(13, 137);
+            this.panel1.Location = new System.Drawing.Point(11, 137);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(739, 456);
+            this.panel1.Size = new System.Drawing.Size(741, 456);
             this.panel1.TabIndex = 13;
             // 
             // dtgDatos
@@ -151,7 +151,7 @@
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(739, 456);
+            this.dtgDatos.Size = new System.Drawing.Size(741, 456);
             this.dtgDatos.TabIndex = 2;
             this.dtgDatos.TabStop = false;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
@@ -227,7 +227,7 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(483, 43);
+            this.lblPrecio.Location = new System.Drawing.Point(486, 42);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(64, 13);
             this.lblPrecio.TabIndex = 18;
@@ -237,7 +237,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(587, 74);
+            this.lblCategoria.Location = new System.Drawing.Point(596, 79);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(29, 13);
             this.lblCategoria.TabIndex = 19;
@@ -245,7 +245,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(732, 108);
+            this.btnClear.Location = new System.Drawing.Point(732, 111);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(20, 23);
             this.btnClear.TabIndex = 20;

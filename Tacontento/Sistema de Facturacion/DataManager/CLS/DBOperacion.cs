@@ -50,6 +50,10 @@ namespace DataManager.CLS
                 //Indicamos que da un error
                 FilasAfectadas = -1;
             }
+            finally
+            {
+                Desconectar();
+            }
 
             return FilasAfectadas;
         }
@@ -70,6 +74,10 @@ namespace DataManager.CLS
                 }
             }catch{
                 Resultado = new DataTable();
+            }
+            finally
+            {
+                Desconectar();
             }
             return Resultado;
         }
