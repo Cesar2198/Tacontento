@@ -19,3 +19,14 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Entidades\o
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.dll
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\Entidades.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\Entidades.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\DataManager.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\MySql.Data.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\DataManager.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\bin\Debug\MySql.Data.xml
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Entidades\obj\Debug\Entidades.pdb

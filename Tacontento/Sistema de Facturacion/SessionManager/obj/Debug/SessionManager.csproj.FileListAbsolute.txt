@@ -23,3 +23,16 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\SessionMana
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.dll
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\SessionManager.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\SessionManager.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\Entidades.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\DataManager.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\MySql.Data.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\Entidades.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\DataManager.pdb
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\bin\Debug\MySql.Data.xml
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.csproj.CopyComplete
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.dll
+C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\SessionManager\obj\Debug\SessionManager.pdb

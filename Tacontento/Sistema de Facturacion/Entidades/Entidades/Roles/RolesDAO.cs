@@ -58,11 +58,11 @@ namespace Entidades.Entidades.Roles
             return list;
         }
 
-        public Rol ObtenerRolById(int id)
+        public Rol ObtenerRolById(int _id)
         {
             DataTable Elemento = new DataTable();
 
-            String Consulta = @"select idRol, nombre, descripcion from roles where idRol = "+id+";";
+            String Consulta = @"select idRol, nombre, descripcion from roles where idRol = "+_id+";";
 
             try
             {
@@ -94,5 +94,58 @@ namespace Entidades.Entidades.Roles
 
             return R;
         }
+
+
+        public Rol InsertarRol(Rol _rol)
+        {
+            string Consulta = @"insert into roles(nombre, descripcion, estado) 
+            values('" + _rol.RolName + "','" + _rol.Descripcion + "'," + _rol.estado + ");";
+
+            try
+            {   /// Se comprueba qque se inserto o no
+                if ((Db.Insertar(Consulta)) > 0)
+                {
+                    R = _rol;
+                }
+                else
+                {
+                    R = null;
+                }
+
+            }
+            catch (Exception ex)
+            {   /// Si hubo un error de conexion a la base de datos que me devuelva siempre nulo
+                Console.WriteLine(ex);
+                R = null;
+                throw;
+            }
+
+            return R;
+        }
+
+        public Rol Modificar(Rol _rol)
+        {
+            String Consulta = @"update roles SET nombre= '"+_rol.RolName+"', descripcion = '"+_rol.Descripcion+"',estado = "+_rol.estado+" where idRol = "+_rol.idRol+";";
+
+            try
+            {
+                if (Db.Actualizar(Consulta) > 0)
+                {
+                    this.R = _rol;
+                }
+                else
+                {
+                    this.R = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.R;
+        }
+
+
     }
 }

@@ -186,5 +186,11 @@ namespace XShop.GUI
             }
                 
         }
+
+        private void btnAgregarRoles_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new RolesForm());
+            hideSubMenu();
+        }
     }
 }

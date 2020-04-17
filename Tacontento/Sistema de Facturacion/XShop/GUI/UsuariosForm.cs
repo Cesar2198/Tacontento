@@ -60,7 +60,6 @@ namespace XShop.GUI
 
         private void CargarRegistros()
         {
-
             try
             {
                 _DATOS.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
@@ -68,7 +67,6 @@ namespace XShop.GUI
             }
             catch (Exception)
             {
-
 
             }
         }
@@ -306,6 +304,7 @@ namespace XShop.GUI
             List.Add(this.txbTelefono);
 
             CLS.Utility.ClearTextbox(List);
+            txbFiltro.Text = string.Empty;
         }
 
         private void OrdenesForm_KeyUp(object sender, KeyEventArgs e)

@@ -11,5 +11,6 @@ namespace Entidades.Entidades.Roles
         public int idRol { get; set; }
         public string RolName { get; set; }
         public string Descripcion { get; set; }
+        public int estado { get; set; }
     }
 }
