@@ -161,3 +161,4 @@ C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug
 C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.exe
 C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.RolesForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.RolesForm.resources

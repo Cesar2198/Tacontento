@@ -17,6 +17,7 @@ foreign key(idClasificacion) references Clasificaciones(idClasificacion)
 create table Roles(
 idRol int not null primary key auto_increment,
 nombre varchar(100) not null,
+estado int not null,
 descripcion varchar(150)
 )engine = innodb;
 
@@ -33,8 +34,8 @@ idUsuario int not null primary key auto_increment,
 usuario varchar(100) not null,
 password varchar(100) not null,
 telefono varchar(8) not null,
-foto blob not null,
 idRol int not null,
+estado int not null,
 foreign key(idRol) references Roles(idRol)
 )engine=innodb;
 

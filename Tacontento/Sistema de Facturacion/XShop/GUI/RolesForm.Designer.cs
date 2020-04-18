@@ -38,6 +38,9 @@
             this.txbId = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
+            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -45,9 +48,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.txbNombre = new System.Windows.Forms.TextBox();
-            this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
@@ -56,10 +56,10 @@
             // 
             // txbDescripcion
             // 
-            this.txbDescripcion.Location = new System.Drawing.Point(115, 97);
-            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDescripcion.Location = new System.Drawing.Point(95, 76);
+            this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(295, 22);
+            this.txbDescripcion.Size = new System.Drawing.Size(222, 45);
             this.txbDescripcion.TabIndex = 39;
             // 
             // toolStrip1
@@ -72,7 +72,7 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1019, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(764, 31);
             this.toolStrip1.TabIndex = 38;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,9 +80,8 @@
             // 
             this.txbFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbFiltro.Name = "txbFiltro";
-            this.txbFiltro.Size = new System.Drawing.Size(233, 38);
+            this.txbFiltro.Size = new System.Drawing.Size(175, 31);
             this.txbFiltro.Click += new System.EventHandler(this.txbFiltro_Click);
             this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
             // 
@@ -91,44 +90,41 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(67, 35);
+            this.toolStripLabel1.Size = new System.Drawing.Size(57, 28);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(140, 35);
+            this.toolStripLabel2.Size = new System.Drawing.Size(114, 28);
             this.toolStripLabel2.Text = "Manejo de Roles";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDescripcion.Location = new System.Drawing.Point(12, 97);
-            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcion.Location = new System.Drawing.Point(9, 79);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(100, 17);
+            this.lblDescripcion.Size = new System.Drawing.Size(80, 13);
             this.lblDescripcion.TabIndex = 33;
             this.lblDescripcion.Text = "DESCRIPCION";
             // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(15, 139);
-            this.txbId.Margin = new System.Windows.Forms.Padding(4);
+            this.txbId.Location = new System.Drawing.Point(728, 37);
             this.txbId.Name = "txbId";
             this.txbId.ReadOnly = true;
-            this.txbId.Size = new System.Drawing.Size(31, 22);
+            this.txbId.Size = new System.Drawing.Size(24, 20);
             this.txbId.TabIndex = 31;
             this.txbId.Visible = false;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgDatos);
-            this.panel1.Location = new System.Drawing.Point(15, 169);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(11, 137);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 561);
+            this.panel1.Size = new System.Drawing.Size(741, 456);
             this.panel1.TabIndex = 30;
             // 
             // dtgDatos
@@ -148,92 +144,16 @@
             this.descripcion});
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDatos.MultiSelect = false;
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(988, 561);
+            this.dtgDatos.Size = new System.Drawing.Size(741, 456);
             this.dtgDatos.TabIndex = 2;
             this.dtgDatos.TabStop = false;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(717, 97);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
-            this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.TabStop = false;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(825, 97);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 28);
-            this.btnEditar.TabIndex = 28;
-            this.btnEditar.TabStop = false;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.AutoSize = false;
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 743);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1019, 27);
-            this.statusStrip1.TabIndex = 37;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblRegistros
-            // 
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(168, 21);
-            this.lblRegistros.Text = "0 Registros Encontrados";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(11, 46);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 17);
-            this.lblNombre.TabIndex = 32;
-            this.lblNombre.Text = "NOMBRE";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(953, 97);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(27, 28);
-            this.btnClear.TabIndex = 36;
-            this.btnClear.TabStop = false;
-            this.btnClear.Text = "C";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // txbNombre
-            // 
-            this.txbNombre.AcceptsTab = true;
-            this.txbNombre.Location = new System.Drawing.Point(104, 42);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(305, 22);
-            this.txbNombre.TabIndex = 24;
             // 
             // idRol
             // 
@@ -259,12 +179,81 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(515, 108);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 29;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(596, 108);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 28;
+            this.btnEditar.TabStop = false;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblRegistros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 604);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(764, 22);
+            this.statusStrip1.TabIndex = 37;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(133, 17);
+            this.lblRegistros.Text = "0 Registros Encontrados";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNombre.Location = new System.Drawing.Point(8, 37);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(54, 13);
+            this.lblNombre.TabIndex = 32;
+            this.lblNombre.Text = "NOMBRE";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(677, 108);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 36;
+            this.btnClear.TabStop = false;
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // txbNombre
+            // 
+            this.txbNombre.AcceptsTab = true;
+            this.txbNombre.Location = new System.Drawing.Point(95, 34);
+            this.txbNombre.Name = "txbNombre";
+            this.txbNombre.Size = new System.Drawing.Size(222, 20);
+            this.txbNombre.TabIndex = 24;
+            // 
             // RolesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1019, 770);
+            this.ClientSize = new System.Drawing.Size(764, 626);
             this.Controls.Add(this.txbDescripcion);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblDescripcion);
@@ -278,6 +267,7 @@
             this.Controls.Add(this.txbNombre);
             this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RolesForm";
             this.Text = "RolesForm";
             this.toolStrip1.ResumeLayout(false);

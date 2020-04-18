@@ -52,7 +52,14 @@ namespace XShop.GUI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Desea Salir Realmente?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+
+            }
         }
 
         private void txbUsuario_KeyDown(object sender, KeyEventArgs e)
