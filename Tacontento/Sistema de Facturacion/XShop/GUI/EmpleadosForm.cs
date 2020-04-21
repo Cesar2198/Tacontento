@@ -19,7 +19,7 @@ using Entidades.Entidades.Empleados;
 
 namespace XShop.GUI
 {
-    public partial class UsuariosForm : Form
+    public partial class EmpleadosForm : Form
 
     {
 
@@ -42,28 +42,19 @@ namespace XShop.GUI
 
         private void SetCombobox()
         {
-            RolesDAO dao = new RolesDAO();
-
-            for (int i = 0; i < dao.getRol().Count; i++)
-            {
-                int id = dao.getRol()[i].idRol;
-                string nombre = dao.getRol()[i].RolName;
-
-                this.cmbRol.Items.Add(new ComboItem(id, nombre));
-            }
-            
+  
+            this.cmbGenero.Items.Add(new ComboItem(1, "MASCULINO"));
+            this.cmbGenero.Items.Add(new ComboItem(2, "FEMENINO"));
         }
 
 
-      
 
-        
 
         private void CargarRegistros()
         {
             try
             {
-                _DATOS.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
+                _DATOS.DataSource = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
                 FiltrarLocalmente();
             }
             catch (Exception)
@@ -78,7 +69,7 @@ namespace XShop.GUI
             {
                 if (this.txbFiltro.TextLength > 0)
                 {
-                    _DATOS.Filter = "usuario LIKE '%" + this.txbFiltro.Text + "%' ";
+                    _DATOS.Filter = "Nombres LIKE '%" + this.txbFiltro.Text + "%' ";
                 }
                 else
                 {
@@ -95,34 +86,9 @@ namespace XShop.GUI
             }
         }
 
-        private Boolean Verificar(int id)
-        {
-            EmpleadosDAO dao = new EmpleadosDAO();
-            Empleados em = new Empleados();
-            em = dao.ObtenerEmpleadoByID(id);
-            Boolean Bandera = false;
-
-            if (em != null)
-            {
-                Bandera = true;
-            }
-            else
-            {
-                Bandera = false;
-            }
-
-            return Bandera;
-        }
 
 
-
-
-
-
-
-
-
-        public UsuariosForm()
+        public EmpleadosForm()
         {
 
             InitializeComponent();
@@ -134,40 +100,39 @@ namespace XShop.GUI
         {
             List<TextBox> Lista = new List<TextBox>();
             Lista.Add(this.txbId);
-            Lista.Add(this.txbUsuario);
-            Lista.Add(this.txbPassword);
-            Lista.Add(this.txbidEmpleado);
+            Lista.Add(this.txbNombres);
+            Lista.Add(this.txbApellido);
+            Lista.Add(this.txbDUI);
+            Lista.Add(this.txbNIT);
+            Lista.Add(this.txbDireccion);
+           
 
             ////CLS.Utility.textBoxIsEmpty(this.txbDescripcion);
-            if (CLS.Utility.textBoxIsEmpty(Lista) && this.cmbRol.Text != String.Empty)
+            if (CLS.Utility.textBoxIsEmpty(Lista) && this.cmbGenero.Text != String.Empty && dtPicker.Text != String.Empty)
             {
-                Usuarios f = new Usuarios();
+                
+                Empleados empleado = new Empleados();
+                ComboItem item = this.cmbGenero.SelectedItem as ComboItem;
 
-                f.usuario = this.txbUsuario.Text;
-                f.password = this.txbPassword.Text;
-                f.idEmpleado = int.Parse(this.txbidEmpleado.Text);
-                f.estado = 1;
-                ComboItem item = this.cmbRol.SelectedItem as ComboItem;
-                f.rol = item.Key;
-                if (Verificar(f.idEmpleado) == true)
+                empleado.Nombres = this.txbNombres.Text;
+                empleado.Apellidos = this.txbApellido.Text;
+                empleado.DUI = this.txbDUI.Text;
+                empleado.NIT = this.txbNIT.Text;
+                empleado.Direccion = this.txbDireccion.Text;
+                empleado.FechaNacimiento = dtPicker.Text;
+                empleado.Genero = item.Key;
+                EmpleadosDAO dao = new EmpleadosDAO();
+
+
+                if (dao.CrearEmpleado(empleado) != null)
                 {
-                    UsuarioDAO dao = new UsuarioDAO();
-
-
-                    if (dao.CrearUsuario(f) != null)
-                    {
-
-                        CLS.Utility.ClearTextbox(Lista);
-                        CargarRegistros();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
+                    CLS.Utility.ClearTextbox(Lista);
+                    CargarRegistros();
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro un Empleado Registrado con Este ID", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -195,16 +160,23 @@ namespace XShop.GUI
                 ///Esto, cuando se selecciona una fila rellena los textbox y el combobox
                 ///son strings ya que el textbox solo eso detecta 
                 String Id = dtgDatos.SelectedRows[0].Cells[0].Value + string.Empty;
-                string Nombre = dtgDatos.SelectedRows[0].Cells[1].Value + string.Empty;
-                string Password = dtgDatos.SelectedRows[0].Cells[2].Value + string.Empty;
-                String Rol = dtgDatos.SelectedRows[0].Cells[3].Value + string.Empty;
-                String idEmpleado = dtgDatos.SelectedRows[0].Cells[4].Value + string.Empty;
+                string Nombres = dtgDatos.SelectedRows[0].Cells[1].Value + string.Empty;
+                string Apellidos = dtgDatos.SelectedRows[0].Cells[2].Value + string.Empty;
+                String DUI = dtgDatos.SelectedRows[0].Cells[3].Value + string.Empty;
+                String NIT = dtgDatos.SelectedRows[0].Cells[4].Value + string.Empty;
+                String Direccion = dtgDatos.SelectedRows[0].Cells[5].Value + string.Empty;
+                String Genero = dtgDatos.SelectedRows[0].Cells[6].Value + string.Empty;
+                String Fecha = dtgDatos.SelectedRows[0].Cells[7].Value + string.Empty;
 
-                txbUsuario.Text = Nombre;
-                txbPassword.Text= Password;
-                txbidEmpleado.Text = idEmpleado;
-                txbId.Text = Id;///Con esto buscas el valor de un combobox y lo ubicas, asi.
-                this.cmbRol.SelectedIndex = this.cmbRol.FindStringExact(CLS.Utility.DevolverRol(int.Parse(Rol)));
+                txbNombres.Text = Nombres;
+                txbApellido.Text= Apellidos;
+                txbDUI.Text = DUI;
+                txbNIT.Text = NIT;
+                txbDireccion.Text = Direccion;
+                dtPicker.Text = Fecha;
+                txbId.Text = Id;
+                this.cmbGenero.SelectedIndex = this.cmbGenero.FindStringExact(Genero);
+
             }
 
         }
@@ -213,49 +185,48 @@ namespace XShop.GUI
         {
             List<TextBox> Lista = new List<TextBox>();
             Lista.Add(this.txbId);
-            Lista.Add(this.txbUsuario);
-            Lista.Add(this.txbPassword);
-            Lista.Add(this.txbidEmpleado);
+            Lista.Add(this.txbNombres);
+            Lista.Add(this.txbApellido);
+            Lista.Add(this.txbDUI);
+            Lista.Add(this.txbNIT);
+            Lista.Add(this.txbDireccion);
 
-            if (CLS.Utility.textBoxIsEmpty(Lista) && this.cmbRol.Text != String.Empty)
+            if (CLS.Utility.textBoxIsEmpty(Lista) && this.cmbGenero.Text != String.Empty)
             {
                 if (MessageBox.Show("Desea Editar el registro seleccionado?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    
+                    Empleados empleado = new Empleados();
+                    ComboItem item = this.cmbGenero.SelectedItem as ComboItem;
+                    empleado.idEmpleado = int.Parse(this.txbId.Text);
+                    empleado.Nombres = this.txbNombres.Text;
+                    empleado.Apellidos = this.txbApellido.Text;
+                    empleado.DUI = this.txbDUI.Text;
+                    empleado.NIT = this.txbNIT.Text;
+                    empleado.Direccion = this.txbDireccion.Text;
+                    empleado.FechaNacimiento = dtPicker.Text;
+                    empleado.Genero = item.Key;
 
-                    Usuarios f = new Usuarios();
-                    f.idUsuario =int.Parse(this.txbId.Text);
-                    f.usuario = this.txbUsuario.Text;
-                    f.password = this.txbPassword.Text;
-                    f.idEmpleado = int.Parse(this.txbidEmpleado.Text);
-                    var x = (ComboItem)this.cmbRol.Items[this.cmbRol.SelectedIndex] as ComboItem;
-                    f.rol = x.Key;
-                    f.estado = 1;
-                    if (Verificar(f.idEmpleado) == true)
+                    EmpleadosDAO dao = new EmpleadosDAO();
+                    try
                     {
-                        UsuarioDAO dao = new UsuarioDAO();
-                        try
+                        if (dao.Modificar(empleado) != null)
                         {
-                            if (dao.Modificar(f) != null)
-                            {
-                                CLS.Utility.ClearTextbox(Lista);
-                                CargarRegistros();
-                            }
-                        }
-                        catch (Exception eh)
-                        {
-                            MessageBox.Show("Ocurrió un Error!" + eh, "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            throw;
+                            CLS.Utility.ClearTextbox(Lista);
+                            CargarRegistros();
                         }
                     }
-                    else
+                    catch (Exception eh)
                     {
-                        MessageBox.Show("No se encontro un Empleado Registrado con Este ID", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MessageBox.Show("Ocurrió un Error!" + eh, "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        throw;
                     }
+
                 }
                 else
                 {
                     CLS.Utility.ClearTextbox(Lista);
-                    this.cmbRol.Text = "";
+                    this.cmbGenero.Text = "";
                 }
             }
             else
@@ -271,19 +242,21 @@ namespace XShop.GUI
         {
             List<TextBox> Lista = new List<TextBox>();
             Lista.Add(this.txbId);
-            Lista.Add(this.txbUsuario);
-            Lista.Add(this.txbPassword);
-            Lista.Add(this.txbidEmpleado);
+            Lista.Add(this.txbNombres);
+            Lista.Add(this.txbApellido);
+            Lista.Add(this.txbDUI);
+            Lista.Add(this.txbNIT);
+            Lista.Add(this.txbDireccion);
 
-            if (CLS.Utility.textBoxIsEmpty(Lista) && this.cmbRol.Text != String.Empty)
+            if (CLS.Utility.textBoxIsEmpty(Lista) && this.cmbGenero.Text != String.Empty && dtPicker.Text != String.Empty)
             {
 
                 if (MessageBox.Show("Desea eliminar el registro seleccionado?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Usuarios f = new Usuarios();
-                    f.idUsuario = int.Parse(this.txbId.Text);
+                    Empleados f = new Empleados();
+                    f.idEmpleado = int.Parse(this.txbId.Text);
 
-                    UsuarioDAO dao = new UsuarioDAO();
+                    EmpleadosDAO dao = new EmpleadosDAO();
                     try
                     {
                         if (dao.Eliminar(f) != null)
@@ -295,7 +268,7 @@ namespace XShop.GUI
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Ocurrió un Error!", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ocurrió un Error! Verifique sus Datos.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         throw;
                     }
 
@@ -303,7 +276,7 @@ namespace XShop.GUI
                 else
                 {
                     CLS.Utility.ClearTextbox(Lista);
-                    this.cmbRol.Text = "";
+                    this.cmbGenero.Text = "";
                 }
             }
             else
@@ -326,13 +299,15 @@ namespace XShop.GUI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            List<TextBox> List = new List<TextBox>();
-            List.Add(this.txbId);
-            List.Add(this.txbUsuario);
-            List.Add(this.txbPassword);
-            List.Add(this.txbidEmpleado);
+            List<TextBox> Lista = new List<TextBox>();
+            Lista.Add(this.txbId);
+            Lista.Add(this.txbNombres);
+            Lista.Add(this.txbApellido);
+            Lista.Add(this.txbDUI);
+            Lista.Add(this.txbNIT);
+            Lista.Add(this.txbDireccion);
 
-            CLS.Utility.ClearTextbox(List);
+            CLS.Utility.ClearTextbox(Lista);
             txbFiltro.Text = string.Empty;
         }
 

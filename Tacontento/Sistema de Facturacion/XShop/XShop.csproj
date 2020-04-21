@@ -85,6 +85,12 @@
     <Compile Include="GUI\RolesForm.Designer.cs">
       <DependentUpon>RolesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EmpleadosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmpleadosForm.Designer.cs">
+      <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesForm.resx">
       <DependentUpon>RolesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmpleadosForm.resx">
+      <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>

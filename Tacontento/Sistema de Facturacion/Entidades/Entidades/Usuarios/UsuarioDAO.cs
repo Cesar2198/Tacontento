@@ -26,8 +26,8 @@ namespace Entidades.Entidades.Usuarios
         public Usuarios CrearUsuario(Usuarios user)
         {
             Usuarios usuario = new Usuarios();
-            string Consulta = @"insert into usuarios(usuario,password,telefono,idRol,estado) 
-            values('"+user.usuario+"','"+user.password+"','"+user.telefono+"',"+user.rol+","+user.estado+");";
+            string Consulta = @"insert into usuarios(usuario,password,idRol,estado,idEmpleado) 
+            values('"+user.usuario+"','"+user.password+"',"+user.rol+","+user.estado+","+user.idEmpleado+");";
 
             try
             {   /// Se comprueba qque se inserto o no
@@ -56,7 +56,7 @@ namespace Entidades.Entidades.Usuarios
             Usuarios user = new Usuarios();
             DataTable dato = new DataTable();
             String query = @"select * from usuarios where usuario = '" + username + "' and " +
-                "password = '" + pass + "'";
+                "password = '" + pass + "' and estado = 1";
 
             try
             {
@@ -65,10 +65,10 @@ namespace Entidades.Entidades.Usuarios
                     dato = Operacion.Consultar(query);
                     user.idUsuario = (int)dato.Rows[0]["idUsuario"];
                     user.usuario = dato.Rows[0]["usuario"].ToString();
-                    user.password = dato.Rows[0]["password"].ToString();
-                    user.telefono = dato.Rows[0]["telefono"].ToString();    
+                    user.password = dato.Rows[0]["password"].ToString();      
                     user.rol = (int)dato.Rows[0]["idRol"];
                     user.estado = (int)dato.Rows[0]["estado"];
+                    user.idEmpleado = (int)dato.Rows[0]["idEmpleado"];
 
                 }
                 else
@@ -88,7 +88,7 @@ namespace Entidades.Entidades.Usuarios
         public Usuarios Modificar(Usuarios user)
         {
 
-            String Consulta = @"update usuarios SET usuario= '" + user.usuario + "' , password = '" + user.password + "', telefono = '" + user.telefono + "', estado = "+user.estado+"," +
+            String Consulta = @"update usuarios SET usuario= '" + user.usuario + "' , password = '" + user.password + "', estado = "+user.estado+", idEmpleado = "+user.idEmpleado+"," +
                             " idRol = " + user.rol + " " +
                             "where idUsuario = " + user.idUsuario + ";";
 
@@ -133,7 +133,8 @@ namespace Entidades.Entidades.Usuarios
             }
             return this.user;
         }
+        
 
-}
+    }
 }
 

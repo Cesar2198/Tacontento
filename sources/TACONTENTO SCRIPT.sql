@@ -29,14 +29,27 @@ foreign key(idRol) references Roles(idRol),
 foreign key(idOpcion) references Opciones(idOpcion)
 )engine= innodb;
 
+create table Empleados(
+idEmpleado int not null primary key auto_increment,
+Nombres varchar(100) not null,
+Apellidos varchar(100) not null,
+DUI varchar(10) not null,
+NIT varchar(18) not null,
+Direccion varchar(75) not null,
+Genero enum('MASCULINO','FEMENINO') not null,
+Fecha_Nac date not null,
+estado int not null
+)engine = innodb;
+
 create table Usuarios(
 idUsuario int not null primary key auto_increment,
 usuario varchar(100) not null,
 password varchar(100) not null,
-telefono varchar(8) not null,
 idRol int not null,
 estado int not null,
-foreign key(idRol) references Roles(idRol)
+idEmpleado int not null,
+foreign key(idRol) references Roles(idRol),
+foreign key(idEmpleado) references Empleados(idEmpleado)
 )engine=innodb;
 
 create table ClasificacionesOrdenes(
