@@ -35,6 +35,7 @@ namespace XShop.GUI
         {
             ///aca esconderemos los submenus
             this.pnSubMenuLocal.Visible = false;
+            this.panelOrdenes.Visible = false;
         }
 
         private void hideSubMenu()
@@ -43,6 +44,11 @@ namespace XShop.GUI
             if(this.pnSubMenuLocal.Visible == true)
             {
                 this.pnSubMenuLocal.Visible = false;
+            }
+
+            if (this.panelOrdenes.Visible == true)
+            {
+                this.panelOrdenes.Visible = false;
             }
         }
 
@@ -132,14 +138,7 @@ namespace XShop.GUI
 
         private void btnLocal_Click(object sender, EventArgs e)
         {
-            if (SessionManager.CLS.Sesion.Instance.Datos.getUsuario().rol !=1)
-            {
-                MessageBox.Show("Solo el Administrador puede Acceder a Estas Opciones.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ShowSubMenu(this.pnSubMenuLocal);
-            }
+            
            
         }
 
@@ -169,8 +168,7 @@ namespace XShop.GUI
             }
             else
             {
-                openWindowFromPanel(new OrdenesForm());
-                hideSubMenu();
+                ShowSubMenu(this.panelOrdenes);
             }
            
         }
@@ -196,6 +194,29 @@ namespace XShop.GUI
         private void button1_Click_1(object sender, EventArgs e)
         {
             openWindowFromPanel(new EmpleadosForm());
+            hideSubMenu();
+        }
+
+        private void btnOrdenes_Click_1(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new OrdenesForm());
+            hideSubMenu();
+        }
+
+        private void btnLocal_Click_1(object sender, EventArgs e)
+        {
+            if (SessionManager.CLS.Sesion.Instance.Datos.getUsuario().rol != 1)
+            {
+                MessageBox.Show("Solo el Administrador puede Acceder a Estas Opciones.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ShowSubMenu(this.pnSubMenuLocal);
+            }
+        }
+
+        private void btnClasificaciones_Click(object sender, EventArgs e)
+        {
             hideSubMenu();
         }
     }

@@ -37,24 +37,30 @@ namespace XShop.GUI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLocal = new System.Windows.Forms.Button();
-            this.pnSubMenuLocal = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarRoles = new System.Windows.Forms.Button();
-            this.btnAgregarUsuarios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnOrdenes = new System.Windows.Forms.Button();
             this.btnPrincipal = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnAgregarUsuarios = new System.Windows.Forms.Button();
+            this.btnMenuOrdenes = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnOrdenes = new System.Windows.Forms.Button();
+            this.btnClasificaciones = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelOrdenes = new System.Windows.Forms.Panel();
+            this.btnLocal = new System.Windows.Forms.Button();
+            this.pnSubMenuLocal = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnSubMenuLocal.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelOrdenes.SuspendLayout();
+            this.pnSubMenuLocal.SuspendLayout();
             this.SuspendLayout();
             // 
             // userRolLabel
@@ -102,33 +108,6 @@ namespace XShop.GUI
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnLocal
-            // 
-            this.btnLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
-            this.btnLocal.FlatAppearance.BorderSize = 0;
-            this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnLocal.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLocal.Location = new System.Drawing.Point(0, 82);
-            this.btnLocal.Name = "btnLocal";
-            this.btnLocal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLocal.Size = new System.Drawing.Size(207, 35);
-            this.btnLocal.TabIndex = 5;
-            this.btnLocal.Text = "Mantenimiento de Local";
-            this.btnLocal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLocal.UseVisualStyleBackColor = false;
-            this.btnLocal.Click += new System.EventHandler(this.btnLocal_Click);
-            // 
-            // pnSubMenuLocal
-            // 
-            this.pnSubMenuLocal.Controls.Add(this.button1);
-            this.pnSubMenuLocal.Controls.Add(this.btnAgregarRoles);
-            this.pnSubMenuLocal.Controls.Add(this.btnAgregarUsuarios);
-            this.pnSubMenuLocal.Location = new System.Drawing.Point(0, 123);
-            this.pnSubMenuLocal.Name = "pnSubMenuLocal";
-            this.pnSubMenuLocal.Size = new System.Drawing.Size(204, 111);
-            this.pnSubMenuLocal.TabIndex = 0;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -137,10 +116,10 @@ namespace XShop.GUI
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.LightGray;
-            this.button1.Location = new System.Drawing.Point(0, 70);
+            this.button1.Location = new System.Drawing.Point(0, 35);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(204, 35);
+            this.button1.Size = new System.Drawing.Size(207, 34);
             this.button1.TabIndex = 8;
             this.button1.Text = "Control Empleados";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,35 +134,15 @@ namespace XShop.GUI
             this.btnAgregarRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRoles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAgregarRoles.ForeColor = System.Drawing.Color.LightGray;
-            this.btnAgregarRoles.Location = new System.Drawing.Point(0, 35);
+            this.btnAgregarRoles.Location = new System.Drawing.Point(0, 69);
             this.btnAgregarRoles.Name = "btnAgregarRoles";
             this.btnAgregarRoles.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregarRoles.Size = new System.Drawing.Size(204, 35);
+            this.btnAgregarRoles.Size = new System.Drawing.Size(207, 36);
             this.btnAgregarRoles.TabIndex = 7;
             this.btnAgregarRoles.Text = "Control Roles";
             this.btnAgregarRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarRoles.UseVisualStyleBackColor = false;
             this.btnAgregarRoles.Click += new System.EventHandler(this.btnAgregarRoles_Click);
-            // 
-            // btnAgregarUsuarios
-            // 
-            this.btnAgregarUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnAgregarUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnAgregarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarUsuarios.ForeColor = System.Drawing.Color.LightGray;
-            this.btnAgregarUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.btnAgregarUsuarios.Name = "btnAgregarUsuarios";
-            this.btnAgregarUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregarUsuarios.Size = new System.Drawing.Size(204, 35);
-            this.btnAgregarUsuarios.TabIndex = 6;
-            this.btnAgregarUsuarios.Text = "Control Usuarios";
-            this.btnAgregarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarUsuarios.UseVisualStyleBackColor = false;
-            this.btnAgregarUsuarios.Click += new System.EventHandler(this.btnAgregarUsuarios_Click);
             // 
             // panel3
             // 
@@ -196,54 +155,10 @@ namespace XShop.GUI
             this.panel3.Size = new System.Drawing.Size(210, 617);
             this.panel3.TabIndex = 1;
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnSalir);
-            this.panel5.Controls.Add(this.btnOrdenes);
-            this.panel5.Controls.Add(this.btnPrincipal);
-            this.panel5.Controls.Add(this.pnSubMenuLocal);
-            this.panel5.Controls.Add(this.btnLocal);
-            this.panel5.Location = new System.Drawing.Point(0, 83);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(207, 534);
-            this.panel5.TabIndex = 2;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSalir.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSalir.Location = new System.Drawing.Point(0, 499);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSalir.Size = new System.Drawing.Size(207, 35);
-            this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnOrdenes
-            // 
-            this.btnOrdenes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
-            this.btnOrdenes.FlatAppearance.BorderSize = 0;
-            this.btnOrdenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrdenes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnOrdenes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnOrdenes.Location = new System.Drawing.Point(0, 41);
-            this.btnOrdenes.Name = "btnOrdenes";
-            this.btnOrdenes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnOrdenes.Size = new System.Drawing.Size(207, 35);
-            this.btnOrdenes.TabIndex = 6;
-            this.btnOrdenes.Text = "Control Ordenes";
-            this.btnOrdenes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrdenes.UseVisualStyleBackColor = false;
-            this.btnOrdenes.Click += new System.EventHandler(this.btnOrdenes_Click);
-            // 
             // btnPrincipal
             // 
             this.btnPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPrincipal.FlatAppearance.BorderSize = 0;
             this.btnPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrincipal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
@@ -278,6 +193,161 @@ namespace XShop.GUI
             this.panelContainer.Size = new System.Drawing.Size(769, 618);
             this.panelContainer.TabIndex = 2;
             // 
+            // btnAgregarUsuarios
+            // 
+            this.btnAgregarUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnAgregarUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAgregarUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnAgregarUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarUsuarios.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAgregarUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.btnAgregarUsuarios.Name = "btnAgregarUsuarios";
+            this.btnAgregarUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAgregarUsuarios.Size = new System.Drawing.Size(207, 35);
+            this.btnAgregarUsuarios.TabIndex = 6;
+            this.btnAgregarUsuarios.Text = "Control Usuarios";
+            this.btnAgregarUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarUsuarios.UseVisualStyleBackColor = false;
+            this.btnAgregarUsuarios.Click += new System.EventHandler(this.btnAgregarUsuarios_Click);
+            // 
+            // btnMenuOrdenes
+            // 
+            this.btnMenuOrdenes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnMenuOrdenes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuOrdenes.FlatAppearance.BorderSize = 0;
+            this.btnMenuOrdenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuOrdenes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnMenuOrdenes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMenuOrdenes.Location = new System.Drawing.Point(0, 35);
+            this.btnMenuOrdenes.Name = "btnMenuOrdenes";
+            this.btnMenuOrdenes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMenuOrdenes.Size = new System.Drawing.Size(207, 35);
+            this.btnMenuOrdenes.TabIndex = 6;
+            this.btnMenuOrdenes.Text = "Mantenimiento Ordenes";
+            this.btnMenuOrdenes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuOrdenes.UseVisualStyleBackColor = false;
+            this.btnMenuOrdenes.Click += new System.EventHandler(this.btnOrdenes_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(0, 499);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSalir.Size = new System.Drawing.Size(207, 35);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnOrdenes
+            // 
+            this.btnOrdenes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnOrdenes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrdenes.FlatAppearance.BorderSize = 0;
+            this.btnOrdenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnOrdenes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOrdenes.Location = new System.Drawing.Point(0, 0);
+            this.btnOrdenes.Name = "btnOrdenes";
+            this.btnOrdenes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnOrdenes.Size = new System.Drawing.Size(207, 35);
+            this.btnOrdenes.TabIndex = 8;
+            this.btnOrdenes.Text = "Control Ordenes";
+            this.btnOrdenes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrdenes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrdenes.UseVisualStyleBackColor = false;
+            this.btnOrdenes.Click += new System.EventHandler(this.btnOrdenes_Click_1);
+            // 
+            // btnClasificaciones
+            // 
+            this.btnClasificaciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnClasificaciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClasificaciones.FlatAppearance.BorderSize = 0;
+            this.btnClasificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClasificaciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnClasificaciones.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClasificaciones.Location = new System.Drawing.Point(0, 35);
+            this.btnClasificaciones.Name = "btnClasificaciones";
+            this.btnClasificaciones.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnClasificaciones.Size = new System.Drawing.Size(207, 34);
+            this.btnClasificaciones.TabIndex = 9;
+            this.btnClasificaciones.Text = "Control Clasificaciones";
+            this.btnClasificaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClasificaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClasificaciones.UseVisualStyleBackColor = false;
+            this.btnClasificaciones.Click += new System.EventHandler(this.btnClasificaciones_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pnSubMenuLocal);
+            this.panel5.Controls.Add(this.btnLocal);
+            this.panel5.Controls.Add(this.panelOrdenes);
+            this.panel5.Controls.Add(this.btnMenuOrdenes);
+            this.panel5.Controls.Add(this.panel1);
+            this.panel5.Controls.Add(this.btnSalir);
+            this.panel5.Location = new System.Drawing.Point(0, 83);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(207, 534);
+            this.panel5.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnPrincipal);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(207, 35);
+            this.panel1.TabIndex = 1;
+            // 
+            // panelOrdenes
+            // 
+            this.panelOrdenes.Controls.Add(this.btnClasificaciones);
+            this.panelOrdenes.Controls.Add(this.btnOrdenes);
+            this.panelOrdenes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelOrdenes.Location = new System.Drawing.Point(0, 70);
+            this.panelOrdenes.Name = "panelOrdenes";
+            this.panelOrdenes.Size = new System.Drawing.Size(207, 75);
+            this.panelOrdenes.TabIndex = 6;
+            // 
+            // btnLocal
+            // 
+            this.btnLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnLocal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLocal.FlatAppearance.BorderSize = 0;
+            this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLocal.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLocal.Location = new System.Drawing.Point(0, 145);
+            this.btnLocal.Name = "btnLocal";
+            this.btnLocal.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLocal.Size = new System.Drawing.Size(207, 35);
+            this.btnLocal.TabIndex = 8;
+            this.btnLocal.Text = "Mantenimiento Local";
+            this.btnLocal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLocal.UseVisualStyleBackColor = false;
+            this.btnLocal.Click += new System.EventHandler(this.btnLocal_Click_1);
+            // 
+            // pnSubMenuLocal
+            // 
+            this.pnSubMenuLocal.Controls.Add(this.btnAgregarRoles);
+            this.pnSubMenuLocal.Controls.Add(this.button1);
+            this.pnSubMenuLocal.Controls.Add(this.btnAgregarUsuarios);
+            this.pnSubMenuLocal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSubMenuLocal.Location = new System.Drawing.Point(0, 180);
+            this.pnSubMenuLocal.Name = "pnSubMenuLocal";
+            this.pnSubMenuLocal.Size = new System.Drawing.Size(207, 108);
+            this.pnSubMenuLocal.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,11 +364,13 @@ namespace XShop.GUI
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnSubMenuLocal.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panelOrdenes.ResumeLayout(false);
+            this.pnSubMenuLocal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,17 +382,21 @@ namespace XShop.GUI
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label userRolLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Button btnLocal;
-        private Panel pnSubMenuLocal;
-        private Button btnAgregarUsuarios;
         private Button button1;
         private Button btnAgregarRoles;
         private Panel panel3;
-        private Panel panel5;
         private Panel panel4;
         private Panel panelContainer;
         private Button btnPrincipal;
+        private Button btnAgregarUsuarios;
+        private Panel panel5;
+        private Button btnMenuOrdenes;
+        private Button btnClasificaciones;
         private Button btnOrdenes;
+        private Panel panel1;
         private Button btnSalir;
+        private Panel panelOrdenes;
+        private Panel pnSubMenuLocal;
+        private Button btnLocal;
     }
 }

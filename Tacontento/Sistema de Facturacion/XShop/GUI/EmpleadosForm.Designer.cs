@@ -50,12 +50,6 @@
             this.txbApellido = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txbDUI = new System.Windows.Forms.TextBox();
-            this.txbNIT = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtPicker = new System.Windows.Forms.DateTimePicker();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +58,12 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Nac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txbDUI = new System.Windows.Forms.TextBox();
+            this.txbNIT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtPicker = new System.Windows.Forms.DateTimePicker();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,29 +73,33 @@
             // txbDireccion
             // 
             this.txbDireccion.AcceptsTab = true;
-            this.txbDireccion.Location = new System.Drawing.Point(558, 39);
+            this.txbDireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbDireccion.Location = new System.Drawing.Point(539, 40);
             this.txbDireccion.MaxLength = 75;
+            this.txbDireccion.Multiline = true;
             this.txbDireccion.Name = "txbDireccion";
-            this.txbDireccion.Size = new System.Drawing.Size(194, 20);
+            this.txbDireccion.Size = new System.Drawing.Size(205, 68);
             this.txbDireccion.TabIndex = 7;
             this.txbDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
             // txbNombres
             // 
             this.txbNombres.AcceptsTab = true;
-            this.txbNombres.Location = new System.Drawing.Point(78, 34);
+            this.txbNombres.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbNombres.Location = new System.Drawing.Point(89, 37);
             this.txbNombres.MaxLength = 100;
             this.txbNombres.Name = "txbNombres";
-            this.txbNombres.Size = new System.Drawing.Size(230, 20);
+            this.txbNombres.Size = new System.Drawing.Size(230, 23);
             this.txbNombres.TabIndex = 6;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(8, 37);
+            this.lblNombre.Location = new System.Drawing.Point(8, 40);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(61, 13);
+            this.lblNombre.Size = new System.Drawing.Size(71, 16);
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "NOMBRES";
             // 
@@ -103,26 +107,29 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(486, 39);
+            this.lblPrecio.Location = new System.Drawing.Point(449, 43);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(66, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(81, 16);
             this.lblPrecio.TabIndex = 18;
             this.lblPrecio.Text = "DIRECCION";
             // 
             // lblRegistros
             // 
+            this.lblRegistros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(133, 17);
+            this.lblRegistros.Size = new System.Drawing.Size(161, 17);
             this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // statusStrip1
             // 
             this.statusStrip1.AutoSize = false;
+            this.statusStrip1.BackColor = System.Drawing.Color.Gainsboro;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 596);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 581);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(764, 22);
             this.statusStrip1.TabIndex = 21;
@@ -130,23 +137,31 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(651, 129);
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(559, 214);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(86, 23);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TabStop = false;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(732, 129);
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(651, 214);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(20, 23);
+            this.btnClear.Size = new System.Drawing.Size(86, 23);
             this.btnClear.TabIndex = 20;
             this.btnClear.TabStop = false;
-            this.btnClear.Text = "C";
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -154,7 +169,7 @@
             // 
             this.txbFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbFiltro.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbFiltro.Name = "txbFiltro";
             this.txbFiltro.Size = new System.Drawing.Size(175, 31);
             this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
@@ -164,19 +179,21 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(57, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 28);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(144, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(174, 28);
             this.toolStripLabel2.Text = "Manejo de Empleados";
             // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txbFiltro,
@@ -190,37 +207,46 @@
             // 
             // cmbGenero
             // 
+            this.cmbGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Location = new System.Drawing.Point(631, 71);
+            this.cmbGenero.Location = new System.Drawing.Point(539, 126);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(121, 21);
+            this.cmbGenero.Size = new System.Drawing.Size(121, 25);
             this.cmbGenero.TabIndex = 10;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(570, 129);
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(467, 214);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(86, 23);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.TabStop = false;
             this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(489, 129);
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(375, 214);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(86, 23);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.TabStop = false;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(381, 82);
+            this.txbId.Location = new System.Drawing.Point(325, 39);
             this.txbId.Name = "txbId";
             this.txbId.ReadOnly = true;
             this.txbId.Size = new System.Drawing.Size(24, 20);
@@ -230,37 +256,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(8, 74);
+            this.label1.Location = new System.Drawing.Point(8, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "APELLIDOS";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(572, 74);
+            this.lblCategoria.Location = new System.Drawing.Point(468, 131);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(53, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(62, 16);
             this.lblCategoria.TabIndex = 19;
             this.lblCategoria.Text = "GENERO";
             // 
             // txbApellido
             // 
-            this.txbApellido.Location = new System.Drawing.Point(78, 71);
+            this.txbApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbApellido.Location = new System.Drawing.Point(89, 82);
             this.txbApellido.MaxLength = 100;
             this.txbApellido.Name = "txbApellido";
-            this.txbApellido.Size = new System.Drawing.Size(230, 20);
+            this.txbApellido.Size = new System.Drawing.Size(230, 23);
             this.txbApellido.TabIndex = 23;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgDatos);
-            this.panel1.Location = new System.Drawing.Point(11, 158);
+            this.panel1.Location = new System.Drawing.Point(11, 243);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 435);
+            this.panel1.Size = new System.Drawing.Size(741, 350);
             this.panel1.TabIndex = 13;
             // 
             // dtgDatos
@@ -291,67 +320,12 @@
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(741, 435);
+            this.dtgDatos.Size = new System.Drawing.Size(741, 350);
             this.dtgDatos.TabIndex = 2;
             this.dtgDatos.TabStop = false;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
             this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
             this.dtgDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_RowEnter);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(189, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "NIT";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(8, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "DUI";
-            // 
-            // txbDUI
-            // 
-            this.txbDUI.Location = new System.Drawing.Point(40, 108);
-            this.txbDUI.MaxLength = 10;
-            this.txbDUI.Name = "txbDUI";
-            this.txbDUI.Size = new System.Drawing.Size(143, 20);
-            this.txbDUI.TabIndex = 26;
-            // 
-            // txbNIT
-            // 
-            this.txbNIT.Location = new System.Drawing.Point(220, 108);
-            this.txbNIT.MaxLength = 18;
-            this.txbNIT.Name = "txbNIT";
-            this.txbNIT.Size = new System.Drawing.Size(185, 20);
-            this.txbNIT.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(422, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 13);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "FECHA DE NACIMIENTO";
-            // 
-            // dtPicker
-            // 
-            this.dtPicker.CustomFormat = "yyyy-MM-dd";
-            this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPicker.Location = new System.Drawing.Point(558, 105);
-            this.dtPicker.Name = "dtPicker";
-            this.dtPicker.Size = new System.Drawing.Size(194, 20);
-            this.dtPicker.TabIndex = 30;
             // 
             // idEmpleado
             // 
@@ -409,12 +383,73 @@
             this.Fecha_Nac.Name = "Fecha_Nac";
             this.Fecha_Nac.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(8, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 16);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "NIT";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(8, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "DUI";
+            // 
+            // txbDUI
+            // 
+            this.txbDUI.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbDUI.Location = new System.Drawing.Point(43, 128);
+            this.txbDUI.MaxLength = 10;
+            this.txbDUI.Name = "txbDUI";
+            this.txbDUI.Size = new System.Drawing.Size(143, 23);
+            this.txbDUI.TabIndex = 26;
+            // 
+            // txbNIT
+            // 
+            this.txbNIT.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbNIT.Location = new System.Drawing.Point(43, 177);
+            this.txbNIT.MaxLength = 18;
+            this.txbNIT.Name = "txbNIT";
+            this.txbNIT.Size = new System.Drawing.Size(185, 23);
+            this.txbNIT.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(372, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(158, 16);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "FECHA DE NACIMIENTO";
+            // 
+            // dtPicker
+            // 
+            this.dtPicker.CustomFormat = "yyyy-MM-dd";
+            this.dtPicker.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPicker.Location = new System.Drawing.Point(536, 170);
+            this.dtPicker.Name = "dtPicker";
+            this.dtPicker.Size = new System.Drawing.Size(160, 23);
+            this.dtPicker.TabIndex = 30;
+            // 
             // EmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(764, 618);
+            this.ClientSize = new System.Drawing.Size(764, 603);
             this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbNIT);

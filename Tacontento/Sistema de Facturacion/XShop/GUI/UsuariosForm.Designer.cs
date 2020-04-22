@@ -64,27 +64,30 @@
             // txbidEmpleado
             // 
             this.txbidEmpleado.AcceptsTab = true;
+            this.txbidEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbidEmpleado.Location = new System.Drawing.Point(668, 39);
             this.txbidEmpleado.Name = "txbidEmpleado";
-            this.txbidEmpleado.Size = new System.Drawing.Size(84, 20);
+            this.txbidEmpleado.Size = new System.Drawing.Size(84, 23);
             this.txbidEmpleado.TabIndex = 7;
             this.txbidEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
             // txbUsuario
             // 
             this.txbUsuario.AcceptsTab = true;
-            this.txbUsuario.Location = new System.Drawing.Point(78, 34);
+            this.txbUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbUsuario.Location = new System.Drawing.Point(94, 36);
             this.txbUsuario.Name = "txbUsuario";
-            this.txbUsuario.Size = new System.Drawing.Size(230, 20);
+            this.txbUsuario.Size = new System.Drawing.Size(230, 23);
             this.txbUsuario.TabIndex = 6;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblNombre.Location = new System.Drawing.Point(8, 37);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(56, 13);
+            this.lblNombre.Size = new System.Drawing.Size(64, 16);
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "USUARIO";
             // 
@@ -92,22 +95,25 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(582, 42);
+            this.lblPrecio.Location = new System.Drawing.Point(568, 43);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(80, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(94, 16);
             this.lblPrecio.TabIndex = 18;
             this.lblPrecio.Text = "ID EMPLEADO";
             // 
             // lblRegistros
             // 
+            this.lblRegistros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(133, 17);
+            this.lblRegistros.Size = new System.Drawing.Size(161, 17);
             this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // statusStrip1
             // 
             this.statusStrip1.AutoSize = false;
+            this.statusStrip1.BackColor = System.Drawing.Color.Gainsboro;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistros});
@@ -119,23 +125,31 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(651, 111);
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(576, 111);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(86, 23);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TabStop = false;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(732, 111);
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(666, 111);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(20, 23);
+            this.btnClear.Size = new System.Drawing.Size(86, 23);
             this.btnClear.TabIndex = 20;
             this.btnClear.TabStop = false;
-            this.btnClear.Text = "C";
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -143,7 +157,7 @@
             // 
             this.txbFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txbFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txbFiltro.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbFiltro.Name = "txbFiltro";
             this.txbFiltro.Size = new System.Drawing.Size(175, 31);
             this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
@@ -153,19 +167,21 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(57, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 28);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(131, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(156, 28);
             this.toolStripLabel2.Text = "Manejo de Usuarios";
             // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txbFiltro,
@@ -179,31 +195,40 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(631, 74);
+            this.cmbRol.Location = new System.Drawing.Point(612, 74);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(121, 21);
+            this.cmbRol.Size = new System.Drawing.Size(140, 25);
             this.cmbRol.TabIndex = 10;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(570, 111);
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(484, 111);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(86, 23);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.TabStop = false;
             this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(489, 111);
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(392, 111);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(86, 23);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.TabStop = false;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -219,28 +244,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(9, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "PASSWORD";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(596, 79);
+            this.lblCategoria.Location = new System.Drawing.Point(573, 77);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(29, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(33, 16);
             this.lblCategoria.TabIndex = 19;
             this.lblCategoria.Text = "ROL";
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(86, 79);
+            this.txbPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txbPassword.Location = new System.Drawing.Point(94, 79);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(222, 20);
+            this.txbPassword.Size = new System.Drawing.Size(230, 23);
             this.txbPassword.TabIndex = 23;
             // 
             // panel1

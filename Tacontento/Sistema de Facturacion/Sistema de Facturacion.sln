@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionManager", "SessionMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{40E96F24-9FC7-43B4-8931-46165C60A282}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XShop", "XShop\XShop.csproj", "{508FFB5E-5C28-422C-811D-ACBFEEE79458}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tacontento", "XShop\Tacontento.csproj", "{508FFB5E-5C28-422C-811D-ACBFEEE79458}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheManager", "Cache\CacheManager.csproj", "{0F20CCB0-B54E-4355-8482-0320E30C3A95}"
 EndProject
