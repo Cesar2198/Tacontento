@@ -79,6 +79,12 @@
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ClasificacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClasificacionForm.Designer.cs">
+      <DependentUpon>ClasificacionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RolesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClasificacionForm.resx">
+      <DependentUpon>ClasificacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RolesForm.resx">
       <DependentUpon>RolesForm.cs</DependentUpon>

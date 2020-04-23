@@ -113,6 +113,31 @@ namespace CacheManager.CLS
 
             return Resultado;
         }
+        public static DataTable TODAS_LAS_CLASIFCACIONES()
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT idClasificacionOrden, clasificacionOrden
+                FROM clasificacionesordenes
+                where estado = 1
+                order by idClasificacionOrden ;";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
 
 
     }

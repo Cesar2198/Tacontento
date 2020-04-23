@@ -93,7 +93,7 @@ namespace Entidades.Entidades.Ordenes
         public List<ClasificacionOrdenes> getClasificacionesOrdenes()
         {
             DataTable Elemento = new DataTable();
-            String Consulta = @"select * from clasificacionesordenes";
+            String Consulta = @"select * from clasificacionesordenes where estado = 1";
             List<ClasificacionOrdenes> list = new List<ClasificacionOrdenes>();
 
             try

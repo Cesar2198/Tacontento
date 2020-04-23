@@ -17,8 +17,8 @@ foreign key(idClasificacion) references Clasificaciones(idClasificacion)
 create table Roles(
 idRol int not null primary key auto_increment,
 nombre varchar(100) not null,
-estado int not null,
-descripcion varchar(150)
+descripcion varchar(150),
+estado int not null
 )engine = innodb;
 
 create table Permisos(
@@ -54,7 +54,8 @@ foreign key(idEmpleado) references Empleados(idEmpleado)
 
 create table ClasificacionesOrdenes(
 idClasificacionOrden int not null primary key auto_increment,
-clasificacionOrden varchar(50) not null
+clasificacionOrden varchar(50) not null,
+estado int not null
 )engine=innodb;
 
 create table Ordenes(

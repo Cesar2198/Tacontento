@@ -217,6 +217,7 @@ namespace XShop.GUI
 
         private void btnClasificaciones_Click(object sender, EventArgs e)
         {
+            openWindowFromPanel(new ClasificacionForm());
             hideSubMenu();
         }
     }
