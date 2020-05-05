@@ -16,6 +16,7 @@ using Entidades.Entidades.Usuarios;
 using Microsoft.VisualBasic;
 using System.Security.Cryptography;
 using Entidades.Entidades.Empleados;
+using Cache.GUI;
 
 namespace XShop.GUI
 {
@@ -55,11 +56,7 @@ namespace XShop.GUI
         }
 
 
-      
-
-        
-
-        private void CargarRegistros()
+       public void CargarRegistros()
         {
             try
             {
@@ -124,7 +121,6 @@ namespace XShop.GUI
 
         public UsuariosForm()
         {
-
             InitializeComponent();
             SetCombobox();
             CargarRegistros();
@@ -345,6 +341,12 @@ namespace XShop.GUI
         private void txbFiltro_TextChanged(object sender, EventArgs e)
         {
             FiltrarLocalmente();
-        } 
+        }
+
+        private void btnPapeleraEmpleados_Click(object sender, EventArgs e)
+        {
+            PapeleraUsuarios f = new PapeleraUsuarios();
+            f.ShowDialog();
+        }
     }
 }

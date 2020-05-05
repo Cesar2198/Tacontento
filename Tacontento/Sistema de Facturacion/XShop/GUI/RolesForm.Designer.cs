@@ -58,6 +58,7 @@
             // 
             this.txbDescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbDescripcion.Location = new System.Drawing.Point(110, 78);
+            this.txbDescripcion.MaxLength = 150;
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(222, 45);
@@ -265,6 +266,7 @@
             this.txbNombre.AcceptsTab = true;
             this.txbNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbNombre.Location = new System.Drawing.Point(110, 36);
+            this.txbNombre.MaxLength = 100;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(222, 23);
             this.txbNombre.TabIndex = 24;

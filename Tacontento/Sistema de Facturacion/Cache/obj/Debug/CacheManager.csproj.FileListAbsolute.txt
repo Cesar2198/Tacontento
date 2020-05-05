@@ -28,3 +28,5 @@ C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug
 C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\CacheManager.csproj.CopyComplete
 C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\Cache.dll
 C:\Users\PC\Desktop\Tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\Cache.pdb
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\CacheManager.csproj.GenerateResource.cache
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Cache\obj\Debug\Cache.Properties.Resources.resources

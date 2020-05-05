@@ -133,7 +133,30 @@ namespace Entidades.Entidades.Usuarios
             }
             return this.user;
         }
-        
+        public Usuarios RecuperarUsuario(Usuarios user)
+        {
+
+            String Consulta = @"UPDATE usuarios set estado = 1 where idUsuario = "+user.idUsuario+";";
+
+            try
+            {
+                if (Operacion.Actualizar(Consulta) > 0)
+                {
+                    this.user = user;
+                }
+                else
+                {
+                    this.user = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.user;
+        }
+
 
     }
 }

@@ -89,6 +89,7 @@
             this.txbDescripcion.AcceptsTab = true;
             this.txbDescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbDescripcion.Location = new System.Drawing.Point(110, 79);
+            this.txbDescripcion.MaxLength = 100;
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(257, 36);
@@ -109,6 +110,7 @@
             this.txbNombre.AcceptsTab = true;
             this.txbNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbNombre.Location = new System.Drawing.Point(78, 34);
+            this.txbNombre.MaxLength = 100;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(230, 23);
             this.txbNombre.TabIndex = 6;
@@ -334,8 +336,9 @@
             // 
             // toolStripLabel2
             // 
+            this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(137, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(153, 28);
             this.toolStripLabel2.Text = "Manejo de Ordenes";
             // 
             // OrdenesForm

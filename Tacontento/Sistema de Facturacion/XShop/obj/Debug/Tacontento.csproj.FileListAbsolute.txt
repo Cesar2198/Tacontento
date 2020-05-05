@@ -32,3 +32,4 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\D
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\Tacontento.csprojAssemblyReference.cache
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.ClasificacionForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\Cache.GUI.PapeleraUsuarios.resources

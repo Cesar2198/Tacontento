@@ -59,7 +59,7 @@ namespace Entidades.Entidades.Ordenes
              from ordenes a,
              clasificacionesordenes b
              where a.idClasificacionOrden = b.idClasificacionOrden 
-             and a.idOrden = " + id + " and Estado = 1;";
+             and a.idOrden = " + id + " and a.Estado = 1;";
 
             try
             {

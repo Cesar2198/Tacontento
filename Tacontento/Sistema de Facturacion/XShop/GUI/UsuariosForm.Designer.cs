@@ -55,6 +55,8 @@
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnPapeleraEmpleados = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,6 +78,7 @@
             this.txbUsuario.AcceptsTab = true;
             this.txbUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbUsuario.Location = new System.Drawing.Point(94, 36);
+            this.txbUsuario.MaxLength = 100;
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(230, 23);
             this.txbUsuario.TabIndex = 6;
@@ -186,7 +189,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txbFiltro,
             this.toolStripLabel1,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.toolStripSeparator1,
+            this.btnPapeleraEmpleados});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(764, 31);
@@ -267,6 +272,7 @@
             // 
             this.txbPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbPassword.Location = new System.Drawing.Point(94, 79);
+            this.txbPassword.MaxLength = 100;
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(230, 23);
             this.txbPassword.TabIndex = 23;
@@ -350,6 +356,20 @@
             this.idEmpleado.Name = "idEmpleado";
             this.idEmpleado.ReadOnly = true;
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btnPapeleraEmpleados
+            // 
+            this.btnPapeleraEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnPapeleraEmpleados.Image")));
+            this.btnPapeleraEmpleados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPapeleraEmpleados.Name = "btnPapeleraEmpleados";
+            this.btnPapeleraEmpleados.Size = new System.Drawing.Size(170, 28);
+            this.btnPapeleraEmpleados.Text = "Papelera de Usuarios";
+            this.btnPapeleraEmpleados.Click += new System.EventHandler(this.btnPapeleraEmpleados_Click);
+            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,11 +430,13 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnPapeleraEmpleados;
+        public System.Windows.Forms.DataGridView dtgDatos;
     }
 }

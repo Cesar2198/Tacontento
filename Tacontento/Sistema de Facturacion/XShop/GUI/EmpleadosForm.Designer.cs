@@ -74,11 +74,11 @@
             // 
             this.txbDireccion.AcceptsTab = true;
             this.txbDireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbDireccion.Location = new System.Drawing.Point(536, 40);
+            this.txbDireccion.Location = new System.Drawing.Point(482, 40);
             this.txbDireccion.MaxLength = 75;
             this.txbDireccion.Multiline = true;
             this.txbDireccion.Name = "txbDireccion";
-            this.txbDireccion.Size = new System.Drawing.Size(213, 78);
+            this.txbDireccion.Size = new System.Drawing.Size(258, 47);
             this.txbDireccion.TabIndex = 7;
             this.txbDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
@@ -109,7 +109,7 @@
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(449, 43);
+            this.lblPrecio.Location = new System.Drawing.Point(387, 40);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(81, 16);
             this.lblPrecio.TabIndex = 18;
@@ -140,7 +140,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(574, 207);
+            this.btnEliminar.Location = new System.Drawing.Point(574, 187);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 23);
             this.btnEliminar.TabIndex = 9;
@@ -155,7 +155,7 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(663, 207);
+            this.btnClear.Location = new System.Drawing.Point(666, 187);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 23);
             this.btnClear.TabIndex = 20;
@@ -209,7 +209,7 @@
             // 
             this.cmbGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Location = new System.Drawing.Point(536, 151);
+            this.cmbGenero.Location = new System.Drawing.Point(89, 207);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(154, 25);
             this.cmbGenero.TabIndex = 10;
@@ -219,7 +219,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(482, 207);
+            this.btnEditar.Location = new System.Drawing.Point(482, 187);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(86, 23);
             this.btnEditar.TabIndex = 11;
@@ -234,7 +234,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(390, 207);
+            this.btnAgregar.Location = new System.Drawing.Point(390, 187);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 23);
             this.btnAgregar.TabIndex = 12;
@@ -269,7 +269,7 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(458, 154);
+            this.lblCategoria.Location = new System.Drawing.Point(12, 210);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(62, 16);
             this.lblCategoria.TabIndex = 19;
@@ -399,7 +399,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(8, 131);
+            this.label3.Location = new System.Drawing.Point(12, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 16);
             this.label3.TabIndex = 25;
@@ -408,7 +408,7 @@
             // txbDUI
             // 
             this.txbDUI.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbDUI.Location = new System.Drawing.Point(43, 128);
+            this.txbDUI.Location = new System.Drawing.Point(89, 128);
             this.txbDUI.MaxLength = 10;
             this.txbDUI.Name = "txbDUI";
             this.txbDUI.Size = new System.Drawing.Size(143, 23);
@@ -417,7 +417,7 @@
             // txbNIT
             // 
             this.txbNIT.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbNIT.Location = new System.Drawing.Point(43, 170);
+            this.txbNIT.Location = new System.Drawing.Point(89, 166);
             this.txbNIT.MaxLength = 18;
             this.txbNIT.Name = "txbNIT";
             this.txbNIT.Size = new System.Drawing.Size(218, 23);
@@ -428,7 +428,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(12, 214);
+            this.label4.Location = new System.Drawing.Point(387, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(158, 16);
             this.label4.TabIndex = 29;
@@ -439,7 +439,7 @@
             this.dtPicker.CustomFormat = "yyyy-MM-dd";
             this.dtPicker.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPicker.Location = new System.Drawing.Point(176, 212);
+            this.dtPicker.Location = new System.Drawing.Point(580, 119);
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.Size = new System.Drawing.Size(160, 23);
             this.dtPicker.TabIndex = 30;
