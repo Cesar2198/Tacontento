@@ -112,13 +112,6 @@ namespace XShop.GUI
         }
 
 
-
-
-
-
-
-
-
         public UsuariosForm()
         {
             InitializeComponent();

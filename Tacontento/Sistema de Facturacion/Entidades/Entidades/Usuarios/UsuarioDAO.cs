@@ -133,6 +133,7 @@ namespace Entidades.Entidades.Usuarios
             }
             return this.user;
         }
+
         public Usuarios RecuperarUsuario(Usuarios user)
         {
 

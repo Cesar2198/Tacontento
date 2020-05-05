@@ -10,8 +10,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CacheManager.CLS;
 using Entidades.Entidades.Ordenes;
 using Microsoft.VisualBasic;
+using XShop.GUI_AUXILIAR;
 
 namespace XShop.GUI
 {
@@ -34,7 +36,7 @@ namespace XShop.GUI
             }
         }
 
-        private void CargarRegistros()
+        public void CargarRegistros()
         {
 
             try
@@ -334,6 +336,15 @@ namespace XShop.GUI
         private void txbFiltro_TextChanged(object sender, EventArgs e)
         {
             FiltrarLocalmente();
-        } 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {}
+
+        private void btnPapeleraOrden_Click(object sender, EventArgs e)
+        {
+            PapeleraOrden f = new PapeleraOrden();
+            f.ShowDialog();
+        }
     }
 }

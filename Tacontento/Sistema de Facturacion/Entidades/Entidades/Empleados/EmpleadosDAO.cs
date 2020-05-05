@@ -112,5 +112,35 @@ namespace Entidades.Entidades.Empleados
             }
             return this.empleado;
         }
+
+        public Empleados RecuperarEmpleados(Empleados _empleado)
+        {
+
+            String Consulta = @"UPDATE empleados set estado = 0 where idEmpleado = " + _empleado.idEmpleado + ";";
+
+            try
+            {
+                if (Operacion.Actualizar(Consulta) > 0)
+                {
+                    this.empleado = _empleado;
+                }
+                else
+                {
+                    this.empleado = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.empleado;
+        }
+
+
+
+
+
+
     }
 }

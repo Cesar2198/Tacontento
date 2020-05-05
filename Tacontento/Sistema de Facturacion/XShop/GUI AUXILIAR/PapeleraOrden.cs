@@ -1,4 +1,4 @@
-﻿using Entidades.Entidades.Usuarios;
+﻿using Entidades.Entidades.Ordenes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,21 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XShop.GUI;
 
-namespace Cache.GUI
+namespace XShop.GUI_AUXILIAR
 {
-    public partial class PapeleraUsuarios : Form
+    public partial class PapeleraOrden : Form
     {
         BindingSource _DATOS = new BindingSource();
         /// <summary>
         /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
         /// </summary>
-        UsuariosForm obj = (UsuariosForm)Application.OpenForms["UsuariosForm"];
+        OrdenesForm obj = (OrdenesForm)Application.OpenForms["OrdenesForm"];
 
         private void CargarRegistros()
         {
             try
             {
-                _DATOS.DataSource = CacheManager.CLS.Papelera.TODOS_LOS_USUARIOS_ELIMINADOS();
+                _DATOS.DataSource = CacheManager.CLS.Papelera.TODOS_LAS_ORDENES_ELIMINADOS();
                 FiltrarLocalmente();
             }
             catch (Exception)
@@ -38,7 +38,7 @@ namespace Cache.GUI
             {
                 if (this.txbFiltro.TextLength > 0)
                 {
-                    _DATOS.Filter = "usuario LIKE '%" + this.txbFiltro.Text + "%' ";
+                    _DATOS.Filter = "nombre LIKE '%" + this.txbFiltro.Text + "%' ";
                 }
                 else
                 {
@@ -61,15 +61,15 @@ namespace Cache.GUI
             {
                 if (dtgDatos.Rows.Count != 0)
                 {
-                    int idUsuario;
-                    idUsuario = int.Parse(dtgDatos.CurrentRow.Cells["idUsuario"].Value.ToString());
-                    Usuarios user = new Usuarios();
-                    user.idUsuario = idUsuario;
+                    int idOrden;
+                    idOrden = int.Parse(dtgDatos.CurrentRow.Cells["idOrden"].Value.ToString());
+                    Ordenes orden = new Ordenes();
+                    orden.idOrden = idOrden;
 
-                    UsuarioDAO dao = new UsuarioDAO();
-                    if (dao.RecuperarUsuario(user) != null)
+                    OrdenDAO dao = new OrdenDAO();
+                    if (dao.RecuperarOrdenes(orden) != null)
                     {
-                        MessageBox.Show("Usuario Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Orden Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         valido = true;
                     }
                 }
@@ -77,7 +77,7 @@ namespace Cache.GUI
                 {
                     MessageBox.Show("Ha ocurrido un Error...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                    
+
             }
             catch (Exception ex)
             {
@@ -87,9 +87,9 @@ namespace Cache.GUI
             }
             return valido;
         }
- 
 
-        public PapeleraUsuarios()
+
+        public PapeleraOrden()
         {
             InitializeComponent();
             CargarRegistros();
@@ -108,8 +108,7 @@ namespace Cache.GUI
                 obj.CargarRegistros();
                 obj.dtgDatos.Update();
                 obj.dtgDatos.Refresh();
-            }       
+            }
         }
-
     }
 }

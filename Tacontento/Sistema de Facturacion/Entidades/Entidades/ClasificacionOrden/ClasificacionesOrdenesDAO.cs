@@ -89,5 +89,34 @@ namespace Entidades.Entidades.ClasificacionOrden
             }
             return this.claO;
         }
+
+
+
+        public ClasificacionesOrdenes RecuperarClasificacion(ClasificacionesOrdenes C)
+        {
+
+            String Consulta = @"UPDATE clasificacionesordenes set estado = 1 where idClasificacionOrden = " + C.IdClasificacionOrden + ";";
+
+            try
+            {
+                if (Db.Actualizar(Consulta) > 0)
+                {
+                    this.claO = C;
+                }
+                else
+                {
+                    this.claO = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.claO;
+        }
+
+
+
     }
 }

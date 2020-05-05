@@ -16,6 +16,7 @@ using Entidades.Entidades.Usuarios;
 using Microsoft.VisualBasic;
 using System.Security.Cryptography;
 using Entidades.Entidades.Empleados;
+using XShop.GUI_AUXILIAR;
 
 namespace XShop.GUI
 {
@@ -50,7 +51,7 @@ namespace XShop.GUI
 
 
 
-        private void CargarRegistros()
+        public void CargarRegistros()
         {
             try
             {
@@ -320,6 +321,12 @@ namespace XShop.GUI
         private void txbFiltro_TextChanged(object sender, EventArgs e)
         {
             FiltrarLocalmente();
-        } 
+        }
+
+        private void btnPapeleraEmpleados_Click(object sender, EventArgs e)
+        {
+            PapeleraEmpleados f = new PapeleraEmpleados();
+            f.ShowDialog();
+        }
     }
 }

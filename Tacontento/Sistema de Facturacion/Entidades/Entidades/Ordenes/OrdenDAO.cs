@@ -272,7 +272,30 @@ namespace Entidades.Entidades.Ordenes
             return list != null ? list : new List<Ordenes>();
         }
 
-        
+
+
+        public Ordenes RecuperarOrdenes(Ordenes _orden)
+        {
+            String Consulta = @"UPDATE ordenes set estado = 1 where idOrden = "+ _orden.idOrden +";";
+
+            try
+            {
+                if (Db.Actualizar(Consulta) > 0)
+                {
+                    this.Orden = _orden;
+                }
+                else
+                {
+                    this.Orden = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return this.Orden;
+        }
 
 
 

@@ -55,6 +55,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI AUXILIAR\PapeleraClasificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI AUXILIAR\PapeleraClasificaciones.Designer.cs">
+      <DependentUpon>PapeleraClasificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI AUXILIAR\PapeleraEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI AUXILIAR\PapeleraEmpleados.Designer.cs">
+      <DependentUpon>PapeleraEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI AUXILIAR\PapeleraOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI AUXILIAR\PapeleraOrden.Designer.cs">
+      <DependentUpon>PapeleraOrden.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI AUXILIAR\PapeleraUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +161,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI AUXILIAR\PapeleraClasificaciones.resx">
+      <DependentUpon>PapeleraClasificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI AUXILIAR\PapeleraEmpleados.resx">
+      <DependentUpon>PapeleraEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI AUXILIAR\PapeleraOrden.resx">
+      <DependentUpon>PapeleraOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI AUXILIAR\PapeleraUsuarios.resx">
       <DependentUpon>PapeleraUsuarios.cs</DependentUpon>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades.Entidades.ClasificacionOrden;
 using Entidades.Entidades.Roles;
+using XShop.GUI_AUXILIAR;
 
 namespace XShop.GUI
 {
@@ -16,7 +17,7 @@ namespace XShop.GUI
     {
         BindingSource _DATOS = new BindingSource();
 
-        private void CargarRegistros()
+        public void CargarRegistros()
         {
             try
             {
@@ -216,6 +217,12 @@ namespace XShop.GUI
                 MessageBox.Show("Rellene todos los Campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             CargarRegistros();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            PapeleraClasificaciones f = new PapeleraClasificaciones();
+            f.ShowDialog();
         }
     }
 }

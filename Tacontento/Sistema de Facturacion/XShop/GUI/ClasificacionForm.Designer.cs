@@ -33,6 +33,8 @@
             this.txbFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.txbId = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
@@ -61,10 +63,12 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txbFiltro,
             this.toolStripLabel1,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.toolStripSeparator1,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(764, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1019, 38);
             this.toolStrip1.TabIndex = 38;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -74,7 +78,7 @@
             this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbFiltro.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbFiltro.Name = "txbFiltro";
-            this.txbFiltro.Size = new System.Drawing.Size(175, 31);
+            this.txbFiltro.Size = new System.Drawing.Size(233, 38);
             this.txbFiltro.Click += new System.EventHandler(this.txbFiltro_Click);
             this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
             // 
@@ -83,31 +87,47 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(65, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(70, 35);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(268, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(332, 35);
             this.toolStripLabel2.Text = "Manejo de Clasificacion de Ordenes";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(238, 35);
+            this.toolStripButton1.Text = "Papelera Clasificaciones";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(41, 77);
+            this.txbId.Location = new System.Drawing.Point(55, 95);
+            this.txbId.Margin = new System.Windows.Forms.Padding(4);
             this.txbId.Name = "txbId";
             this.txbId.ReadOnly = true;
-            this.txbId.Size = new System.Drawing.Size(24, 20);
+            this.txbId.Size = new System.Drawing.Size(31, 22);
             this.txbId.TabIndex = 31;
             this.txbId.Visible = false;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgDatos);
-            this.panel1.Location = new System.Drawing.Point(11, 137);
+            this.panel1.Location = new System.Drawing.Point(15, 169);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 456);
+            this.panel1.Size = new System.Drawing.Size(988, 561);
             this.panel1.TabIndex = 30;
             // 
             // dtgDatos
@@ -126,13 +146,14 @@
             this.clasificacionOrden});
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
+            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDatos.MultiSelect = false;
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(741, 456);
+            this.dtgDatos.Size = new System.Drawing.Size(988, 561);
             this.dtgDatos.TabIndex = 2;
             this.dtgDatos.TabStop = false;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
@@ -141,6 +162,7 @@
             // 
             this.idClasificacionOrden.DataPropertyName = "idClasificacionOrden";
             this.idClasificacionOrden.HeaderText = "ID Clasificacion";
+            this.idClasificacionOrden.MinimumWidth = 6;
             this.idClasificacionOrden.Name = "idClasificacionOrden";
             this.idClasificacionOrden.ReadOnly = true;
             // 
@@ -148,6 +170,7 @@
             // 
             this.clasificacionOrden.DataPropertyName = "clasificacionOrden";
             this.clasificacionOrden.HeaderText = "Nombre de Clasificación";
+            this.clasificacionOrden.MinimumWidth = 6;
             this.clasificacionOrden.Name = "clasificacionOrden";
             this.clasificacionOrden.ReadOnly = true;
             // 
@@ -156,9 +179,10 @@
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(390, 108);
+            this.btnAgregar.Location = new System.Drawing.Point(520, 133);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(86, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(115, 28);
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.TabStop = false;
             this.btnAgregar.Text = "Agregar";
@@ -171,9 +195,10 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(482, 108);
+            this.btnEditar.Location = new System.Drawing.Point(643, 133);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(86, 23);
+            this.btnEditar.Size = new System.Drawing.Size(115, 28);
             this.btnEditar.TabIndex = 28;
             this.btnEditar.TabStop = false;
             this.btnEditar.Text = "Editar";
@@ -188,9 +213,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 604);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 743);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(764, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1019, 27);
             this.statusStrip1.TabIndex = 37;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -198,7 +224,7 @@
             // 
             this.lblRegistros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(161, 17);
+            this.lblRegistros.Size = new System.Drawing.Size(202, 21);
             this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // lblNombre
@@ -206,9 +232,10 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(8, 37);
+            this.lblNombre.Location = new System.Drawing.Point(11, 46);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 16);
+            this.lblNombre.Size = new System.Drawing.Size(85, 19);
             this.lblNombre.TabIndex = 32;
             this.lblNombre.Text = "NOMBRE ";
             // 
@@ -217,9 +244,10 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(666, 108);
+            this.btnClear.Location = new System.Drawing.Point(888, 133);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(86, 23);
+            this.btnClear.Size = new System.Drawing.Size(115, 28);
             this.btnClear.TabIndex = 36;
             this.btnClear.TabStop = false;
             this.btnClear.Text = "Limpiar";
@@ -231,10 +259,11 @@
             // 
             this.txbNombre.AcceptsTab = true;
             this.txbNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbNombre.Location = new System.Drawing.Point(110, 36);
+            this.txbNombre.Location = new System.Drawing.Point(147, 44);
+            this.txbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(222, 23);
+            this.txbNombre.Size = new System.Drawing.Size(295, 27);
             this.txbNombre.TabIndex = 24;
             // 
             // btnEliminar
@@ -242,9 +271,10 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(574, 108);
+            this.btnEliminar.Location = new System.Drawing.Point(765, 133);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(115, 28);
             this.btnEliminar.TabIndex = 39;
             this.btnEliminar.TabStop = false;
             this.btnEliminar.Text = "Eliminar";
@@ -254,10 +284,10 @@
             // 
             // ClasificacionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(764, 626);
+            this.ClientSize = new System.Drawing.Size(1019, 770);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txbId);
@@ -270,7 +300,7 @@
             this.Controls.Add(this.txbNombre);
             this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ClasificacionForm";
             this.Text = "RolesForm";
             this.toolStrip1.ResumeLayout(false);
@@ -291,7 +321,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -302,5 +331,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idClasificacionOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn clasificacionOrden;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        public System.Windows.Forms.DataGridView dtgDatos;
     }
 }
