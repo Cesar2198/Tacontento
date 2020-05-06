@@ -106,8 +106,6 @@ namespace Cache.GUI
             {
                 CargarRegistros();
                 obj.CargarRegistros();
-                obj.dtgDatos.Update();
-                obj.dtgDatos.Refresh();
             }       
         }
 

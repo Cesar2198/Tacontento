@@ -106,8 +106,6 @@ namespace XShop.GUI_AUXILIAR
             {
                 CargarRegistros();
                 obj.CargarRegistros();
-                obj.dtgDatos.Update();
-                obj.dtgDatos.Refresh();
             }
         }
     }

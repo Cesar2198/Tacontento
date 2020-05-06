@@ -155,16 +155,21 @@ namespace XShop.GUI
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
-            openWindowFromPanel(new dashboardForm());
-            hideSubMenu();
+            int opcion = 1;
+            if (CacheManager.CLS.Cache.VerificarPermiso(opcion))
+            {
+                openWindowFromPanel(new dashboardForm());
+                hideSubMenu();
+            }
+          
         }
 
         private void btnOrdenes_Click(object sender, EventArgs e)
         {
-
-            if (SessionManager.CLS.Sesion.Instance.Datos.getUsuario().rol != 1)
+            int opcion = 2;
+            if (CacheManager.CLS.Cache.VerificarPermiso(opcion)==false)
             {
-                MessageBox.Show("Solo el Administrador puede Acceder a Esta Opcion.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
             else
             {
@@ -205,9 +210,10 @@ namespace XShop.GUI
 
         private void btnLocal_Click_1(object sender, EventArgs e)
         {
-            if (SessionManager.CLS.Sesion.Instance.Datos.getUsuario().rol != 1)
+            int opcion = 3;
+            if (CacheManager.CLS.Cache.VerificarPermiso(opcion)==false)
             {
-                MessageBox.Show("Solo el Administrador puede Acceder a Estas Opciones.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
             else
             {

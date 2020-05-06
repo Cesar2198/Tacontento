@@ -85,6 +85,9 @@ namespace XShop.GUI
 
                         sesion.Datos.setUsuario(userActual);
                         _AUTORIZAR = true;
+                        ///Obtenemos todos los permisos luego de setear al usuario
+                        ///Obteniendo asi el id del rol
+                        CacheManager.CLS.Cache.ObtenerPermisos();
                         Close();
                     }
                     else
@@ -94,7 +97,7 @@ namespace XShop.GUI
                 }
                 else
                 {
-                    MessageBox.Show("El usuario no se encuentra registrado");
+                    MessageBox.Show("El usuario no se encuentra registrado.","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
         }
@@ -118,6 +121,9 @@ namespace XShop.GUI
                     
                     sesion.Datos.setUsuario(userActual);
                     _AUTORIZAR = true;
+                    ///Obtenemos todos los permisos luego de setear al usuario
+                    ///Obteniendo asi el id del rol
+                    CacheManager.CLS.Cache.ObtenerPermisos();
                     Close();
                 }
                 else
@@ -127,7 +133,7 @@ namespace XShop.GUI
             }
             else
             {
-                MessageBox.Show("El usuario no se encuentra registrado");
+                MessageBox.Show("El usuario no se encuentra registrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }

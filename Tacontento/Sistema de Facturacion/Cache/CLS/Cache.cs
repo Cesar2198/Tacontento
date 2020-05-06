@@ -1,14 +1,17 @@
-﻿using System;
+﻿using Entidades.Entidades.Usuarios;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CacheManager.CLS
 {
     public static class Cache
     {
+       static DataTable _PERMISOS = new DataTable();
         public static DataTable TODOS_LOS_USUARIOS()
         {
             DataTable Resultado = new DataTable();
@@ -137,6 +140,81 @@ namespace CacheManager.CLS
             }
 
             return Resultado;
+        }
+
+        ///Metodo para ver los permisos de un rol
+        public static DataTable PERMISOS_DE_UN_ROL(string pdIdRol)
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"select
+                            a.IDPermiso,
+                            a.IDOpcion,
+                            b.Opcion,
+                            a.IDRol
+                            from 
+                            permisos a,
+                            opciones b
+                            where IDRol = " + pdIdRol + " and a.IDOpcion = b.IDOpcion;";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
+
+        public static void ObtenerPermisos()
+        {
+            try
+            {
+                ///Vemos si los permisos son los adecuados para el rol del usuario
+                Usuarios user = new Usuarios();
+               user =  SessionManager.CLS.Sesion.Instance.Datos.getUsuario();
+                _PERMISOS = PERMISOS_DE_UN_ROL(user.rol.ToString());
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public static Boolean VerificarPermiso(int pidOpcion)
+        {
+            Boolean Bandera = false;
+            string idOpcionLocal;
+            try
+            {
+                foreach (DataRow Fila in _PERMISOS.Rows)
+                {
+                    idOpcionLocal = Fila["IDOpcion"].ToString();
+                    if (idOpcionLocal.Equals(pidOpcion.ToString()))
+                    {
+                        Bandera = true;
+                        break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Bandera = false;
+            }
+
+            if (Bandera == false)
+            {
+                MessageBox.Show("No cuenta con los Permisos Necesarios.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Bandera;
         }
 
 

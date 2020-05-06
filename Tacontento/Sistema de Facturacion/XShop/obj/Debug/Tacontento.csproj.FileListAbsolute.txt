@@ -71,3 +71,6 @@ C:\Users\PC\Desktop\TACONTENTO\Tacontento\Sistema de Facturacion\XShop\obj\Debug
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraEmpleados.resources
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraClasificaciones.resources
 C:\Users\PC\Desktop\TACONTENTO\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraOrden.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraClasificaciones.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraEmpleados.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraOrden.resources

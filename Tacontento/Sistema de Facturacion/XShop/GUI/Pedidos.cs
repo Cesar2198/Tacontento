@@ -105,7 +105,7 @@ namespace XShop.GUI
             dp.Precio = o.precio;
             dp.Cantidad = 1;
             list.Add(dp);
-            this.lblTotal.Text = "$ " + decimal.Round(Totalizar(), 2).ToString();
+            this.lblTotal.Text = "$" + decimal.Round(Totalizar(), 2).ToString();
             CargarTable();
         }
 
@@ -168,7 +168,7 @@ namespace XShop.GUI
                     dtgPedido.Rows[e.RowIndex].Cells[3].Value = 1;
                     MessageBox.Show("No se puede dejar vacio.");
                 }
-                this.lblTotal.Text = "$ " + decimal.Round(Totalizar(), 2).ToString();
+                this.lblTotal.Text = "$" + decimal.Round(Totalizar(), 2).ToString();
             }
             
         }
