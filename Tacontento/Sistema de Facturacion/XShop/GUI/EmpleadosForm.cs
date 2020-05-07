@@ -327,6 +327,17 @@ namespace XShop.GUI
         {
             PapeleraEmpleados f = new PapeleraEmpleados();
             f.ShowDialog();
+
+            if (f.AccionRealizada())
+            {
+                MessageBox.Show("Empleado Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarRegistros();
+            }
+            else
+            {
+                MessageBox.Show("Accion Cancelada...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CargarRegistros();
+            }
         }
     }
 }

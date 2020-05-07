@@ -18,7 +18,6 @@ namespace Cache.GUI
         /// <summary>
         /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
         /// </summary>
-        UsuariosForm obj = (UsuariosForm)Application.OpenForms["UsuariosForm"];
 
         private void CargarRegistros()
         {
@@ -69,13 +68,13 @@ namespace Cache.GUI
                     UsuarioDAO dao = new UsuarioDAO();
                     if (dao.RecuperarUsuario(user) != null)
                     {
-                        MessageBox.Show("Usuario Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                         valido = true;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un Error...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    valido = false;
                 }
                     
             }
@@ -104,8 +103,7 @@ namespace Cache.GUI
         {
             if (AccionRealizada())
             {
-                CargarRegistros();
-                obj.CargarRegistros();
+                this.Close();
             }       
         }
 

@@ -221,8 +221,17 @@ namespace XShop.GUI
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            PapeleraClasificaciones f = new PapeleraClasificaciones();
+            PapeleraClasificaciones f = new PapeleraClasificaciones(PapeleraClasificaciones.ACCION.RESTAURAR);
             f.ShowDialog();
+
+            if (f.valido)
+            {
+                CargarRegistros();
+            }
+            else
+            {
+                CargarRegistros();
+            }
         }
     }
 }

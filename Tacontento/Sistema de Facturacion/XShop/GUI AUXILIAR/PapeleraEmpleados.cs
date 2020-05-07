@@ -18,7 +18,6 @@ namespace XShop.GUI_AUXILIAR
         /// <summary>
         /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
         /// </summary>
-        EmpleadosForm obj = (EmpleadosForm)Application.OpenForms["EmpleadosForm"];
 
         private void CargarRegistros()
         {
@@ -69,13 +68,14 @@ namespace XShop.GUI_AUXILIAR
                     EmpleadosDAO dao = new EmpleadosDAO();
                     if (dao.RecuperarEmpleados(empleado) != null)
                     {
-                        MessageBox.Show("Empleado Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                         valido = true;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un Error...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    valido = false;
+                   
                 }
             }
             catch (Exception ex)
@@ -103,8 +103,7 @@ namespace XShop.GUI_AUXILIAR
         {
             if (AccionRealizada())
             {
-                CargarRegistros();
-                obj.CargarRegistros();
+                this.Close();
             }
         }
     }

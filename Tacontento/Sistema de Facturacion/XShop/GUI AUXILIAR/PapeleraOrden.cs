@@ -18,7 +18,6 @@ namespace XShop.GUI_AUXILIAR
         /// <summary>
         /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
         /// </summary>
-        OrdenesForm obj = (OrdenesForm)Application.OpenForms["OrdenesForm"];
 
         private void CargarRegistros()
         {
@@ -69,13 +68,14 @@ namespace XShop.GUI_AUXILIAR
                     OrdenDAO dao = new OrdenDAO();
                     if (dao.RecuperarOrdenes(orden) != null)
                     {
-                        MessageBox.Show("Orden Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                         valido = true;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un Error...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    valido = false;
+                   
                 }
 
             }
@@ -104,8 +104,7 @@ namespace XShop.GUI_AUXILIAR
         {
             if (AccionRealizada())
             {
-                CargarRegistros();
-                obj.CargarRegistros();
+                this.Close();
             }
         }
     }

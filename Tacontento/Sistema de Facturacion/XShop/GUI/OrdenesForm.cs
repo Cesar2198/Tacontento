@@ -345,6 +345,16 @@ namespace XShop.GUI
         {
             PapeleraOrden f = new PapeleraOrden();
             f.ShowDialog();
+
+            if (f.AccionRealizada())
+            {
+                MessageBox.Show("Orden Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarRegistros();
+            }
+            else
+            {
+                MessageBox.Show("Accion Cancelada...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

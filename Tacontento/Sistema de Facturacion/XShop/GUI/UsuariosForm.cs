@@ -340,6 +340,17 @@ namespace XShop.GUI
         {
             PapeleraUsuarios f = new PapeleraUsuarios();
             f.ShowDialog();
+
+            if (f.AccionRealizada())
+            {
+                MessageBox.Show("Usuario Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarRegistros();
+            }
+            else
+            {
+                MessageBox.Show("Accion Cancelada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CargarRegistros();
+            }
         }
     }
 }
