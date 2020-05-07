@@ -15,9 +15,9 @@ namespace Cache.GUI
     public partial class PapeleraUsuarios : Form
     {
         BindingSource _DATOS = new BindingSource();
-        /// <summary>
-        /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
-        /// </summary>
+        public Boolean valido = false;
+        public enum ACCION { RESTAURAR };
+        ACCION _Eleccion = ACCION.RESTAURAR;
 
         private void CargarRegistros()
         {
@@ -53,45 +53,37 @@ namespace Cache.GUI
             }
         }
 
-        public Boolean AccionRealizada()
+        public void AccionRealizada()
         {
-            Boolean valido = false;
+
             try
             {
-                if (dtgDatos.Rows.Count != 0)
+                int idUsuario;
+                idUsuario = int.Parse(dtgDatos.CurrentRow.Cells["idUsuario"].Value.ToString());
+                Usuarios user = new Usuarios();
+                user.idUsuario = idUsuario;
+                UsuarioDAO dao = new UsuarioDAO();
+                if (dao.RecuperarUsuario(user) != null)
                 {
-                    int idUsuario;
-                    idUsuario = int.Parse(dtgDatos.CurrentRow.Cells["idUsuario"].Value.ToString());
-                    Usuarios user = new Usuarios();
-                    user.idUsuario = idUsuario;
+                    MessageBox.Show("Usuario Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                    UsuarioDAO dao = new UsuarioDAO();
-                    if (dao.RecuperarUsuario(user) != null)
-                    {
-                       
-                        valido = true;
-                    }
-                }
-                else
-                {
-                    valido = false;
-                }
-                    
+
             }
             catch (Exception ex)
             {
-                valido = false;
                 MessageBox.Show("Ha ocurrido un Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-            return valido;
-        }
- 
 
-        public PapeleraUsuarios()
+        }
+
+
+        public PapeleraUsuarios(ACCION pAccion)
         {
             InitializeComponent();
             CargarRegistros();
+            _Eleccion = pAccion;
         }
 
         private void txbFiltro_TextChanged(object sender, EventArgs e)
@@ -101,11 +93,29 @@ namespace Cache.GUI
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            if (AccionRealizada())
+            if (dtgDatos.Rows.Count != 0 && dtgDatos.CurrentCell != null)
             {
-                this.Close();
-            }       
+                if (_Eleccion == ACCION.RESTAURAR)
+                {
+                    AccionRealizada();
+                    valido = true;
+                    this.Close();
+                }
+                else
+                {
+                    valido = true;
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se Ha podido Restaurar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        private void PapeleraUsuarios_Load(object sender, EventArgs e)
+        {
+            dtgDatos.CurrentCell = null;
+        }
     }
 }

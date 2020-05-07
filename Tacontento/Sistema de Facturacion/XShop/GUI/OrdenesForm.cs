@@ -343,17 +343,16 @@ namespace XShop.GUI
 
         private void btnPapeleraOrden_Click(object sender, EventArgs e)
         {
-            PapeleraOrden f = new PapeleraOrden();
+            PapeleraOrden f = new PapeleraOrden(PapeleraOrden.ACCION.RESTAURAR);
             f.ShowDialog();
 
-            if (f.AccionRealizada())
+            if (f.valido)
             {
-                MessageBox.Show("Orden Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarRegistros();
             }
             else
             {
-                MessageBox.Show("Accion Cancelada...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CargarRegistros();
             }
         }
     }

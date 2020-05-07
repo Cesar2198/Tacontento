@@ -95,6 +95,43 @@ namespace Entidades.Entidades.Roles
             return R;
         }
 
+        public Rol ObtenerRolByName(String _id)
+        {
+            DataTable Elemento = new DataTable();
+
+            String Consulta = @"select idRol, nombre, descripcion from roles where nombre = '" + _id + "';";
+
+            try
+            {
+                if (Db.Consultar(Consulta) != null)
+                {
+                    Elemento = Db.Consultar(Consulta);
+
+                    for (int i = 0; i < Elemento.Rows.Count; i++)
+                    {
+
+
+                        R.idRol = int.Parse(Elemento.Rows[0]["idRol"].ToString());
+                        R.RolName = Elemento.Rows[0]["nombre"].ToString();
+                        R.Descripcion = Elemento.Rows[0]["nombre"].ToString();
+
+
+                    }
+                }
+                else
+                {
+                    R = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+
+            return R;
+        }
+
 
         public Rol InsertarRol(Rol _rol)
         {

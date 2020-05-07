@@ -53,6 +53,10 @@
     <Compile Include="Entidades\Ordenes\Ordenes.cs" />
     <Compile Include="Entidades\Pedidos\Pedidos.cs" />
     <Compile Include="Entidades\Pedidos\PedidosDAO.cs" />
+    <Compile Include="Entidades\Opciones\Opcion.cs" />
+    <Compile Include="Entidades\Opciones\OpcionDAO.cs" />
+    <Compile Include="Entidades\Permiso\Permisos.cs" />
+    <Compile Include="Entidades\Permiso\PermisosDAO.cs" />
     <Compile Include="Entidades\Roles\Rol.cs" />
     <Compile Include="Entidades\Roles\RolesDAO.cs" />
     <Compile Include="Entidades\Usuarios\UsuarioDAO.cs" />

@@ -338,17 +338,16 @@ namespace XShop.GUI
 
         private void btnPapeleraEmpleados_Click(object sender, EventArgs e)
         {
-            PapeleraUsuarios f = new PapeleraUsuarios();
+            PapeleraUsuarios f = new PapeleraUsuarios(PapeleraUsuarios.ACCION.RESTAURAR);
             f.ShowDialog();
 
-            if (f.AccionRealizada())
+
+            if (f.valido)
             {
-                MessageBox.Show("Usuario Restaurado!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarRegistros();
             }
             else
             {
-                MessageBox.Show("Accion Cancelada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 CargarRegistros();
             }
         }

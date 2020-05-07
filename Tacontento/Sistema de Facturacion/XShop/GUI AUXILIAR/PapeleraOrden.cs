@@ -15,9 +15,9 @@ namespace XShop.GUI_AUXILIAR
     public partial class PapeleraOrden : Form
     {
         BindingSource _DATOS = new BindingSource();
-        /// <summary>
-        /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
-        /// </summary>
+        public Boolean valido = false;
+        public enum ACCION { RESTAURAR };
+        ACCION _Eleccion = ACCION.RESTAURAR;
 
         private void CargarRegistros()
         {
@@ -53,13 +53,12 @@ namespace XShop.GUI_AUXILIAR
             }
         }
 
-        public Boolean AccionRealizada()
+        public void AccionRealizada()
         {
-            Boolean valido = false;
+
             try
             {
-                if (dtgDatos.Rows.Count != 0)
-                {
+                
                     int idOrden;
                     idOrden = int.Parse(dtgDatos.CurrentRow.Cells["idOrden"].Value.ToString());
                     Ordenes orden = new Ordenes();
@@ -68,31 +67,24 @@ namespace XShop.GUI_AUXILIAR
                     OrdenDAO dao = new OrdenDAO();
                     if (dao.RecuperarOrdenes(orden) != null)
                     {
-                       
-                        valido = true;
-                    }
-                }
-                else
-                {
-                    valido = false;
-                   
+                    MessageBox.Show("Orden Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception ex)
             {
-                valido = false;
+               
                 MessageBox.Show("Ha ocurrido un Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-            return valido;
         }
 
 
-        public PapeleraOrden()
+        public PapeleraOrden(ACCION pAccion)
         {
             InitializeComponent();
             CargarRegistros();
+            _Eleccion = pAccion;
         }
 
         private void txbFiltro_TextChanged(object sender, EventArgs e)
@@ -102,10 +94,29 @@ namespace XShop.GUI_AUXILIAR
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            if (AccionRealizada())
+            if (dtgDatos.Rows.Count != 0 && dtgDatos.CurrentCell != null)
             {
-                this.Close();
+                if (_Eleccion == ACCION.RESTAURAR)
+                {
+                    AccionRealizada();
+                    valido = true;
+                    this.Close();
+                }
+                else
+                {
+                    valido = true;
+                    this.Close();
+                }
             }
+            else
+            {
+                MessageBox.Show("No se Ha podido Restaurar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PapeleraOrden_Load(object sender, EventArgs e)
+        {
+            dtgDatos.CurrentCell = null;
         }
     }
 }

@@ -19,9 +19,7 @@ namespace XShop.GUI_AUXILIAR
         public Boolean valido = false;
         public enum ACCION { RESTAURAR };
         ACCION _Eleccion = ACCION.RESTAURAR;
-        /// <summary>
-        /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
-        /// </summary>
+
 
         private void CargarRegistros()
         {
