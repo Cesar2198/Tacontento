@@ -72,6 +72,36 @@ namespace Entidades.Entidades.Pedidos
             return this.pedido;
         }
 
+        public Pedidos getPedidosById(int id)
+        {
+            Pedidos p = new Pedidos();
+            DataTable Elemento = new DataTable();
+            String Consulta = "select * from pedidos where idPedido = " + id;
+            try
+            {
+                if (Db.Consultar(Consulta) != null)
+                {
+                    Elemento = Db.Consultar(Consulta);
+
+                        p.id = (int)Elemento.Rows[0]["idPedido"];
+                        p.nombreCliente = Elemento.Rows[0]["nombreCliente"].ToString();
+                        p.total = decimal.Parse(Elemento.Rows[0]["total"].ToString());
+                        p.fecha = DateTime.Parse(Elemento.Rows[0]["fecha"].ToString());
+                        p.tipoPago = (int)Elemento.Rows[0]["tipoPago"];
+                        p.estado = (int)Elemento.Rows[0]["estado"];
+                        p.idUsuario = (int)Elemento.Rows[0]["idUsuario"];
+                        p.listaDetalles = this.GetDetallePedidos(p.id);
+
+                    
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return p != null ? p : null;
+        }
+
         public Pedidos InsertarPedido(Pedidos pedido)
         {
 
@@ -102,6 +132,68 @@ namespace Entidades.Entidades.Pedidos
                 throw;
             }
             return this.pedido;
+        }
+
+
+        public List<Pedidos> findAll()
+        {
+            List<Pedidos> list = new List<Pedidos>();
+            DataTable Elemento = new DataTable();
+            String Consulta = "select * from pedidos where estado = 1";
+            try
+            {
+                if (Db.Consultar(Consulta) != null)
+                {
+                    Elemento = Db.Consultar(Consulta);
+
+                    for (int i = 0; i < Elemento.Rows.Count; i++)
+                    {
+                        Pedidos p = new Pedidos();
+                        p.id = (int)Elemento.Rows[i]["idPedido"];
+                        p.nombreCliente = Elemento.Rows[i]["nombreCliente"].ToString();
+                        p.total = decimal.Parse(Elemento.Rows[i]["total"].ToString());
+                        p.fecha = DateTime.Parse(Elemento.Rows[i]["fecha"].ToString());
+                        p.tipoPago = (int)Elemento.Rows[i]["tipoPago"];
+                        p.estado = (int)Elemento.Rows[i]["estado"];
+                        p.idUsuario = (int)Elemento.Rows[i]["idUsuario"];
+                        p.listaDetalles = this.GetDetallePedidos(p.id);
+                        list.Add(p);
+                    }
+                    
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+
+
+            return list != null ? list : null;
+        }
+
+        public int updatePedido(Pedidos p)
+        {
+            string Consulta = @"update pedidos set nombreCliente = '" + p.nombreCliente + "' , total = "
+                                + p.total + ", tipoPago = " + p.tipoPago + " where idPedido = " + p.id;
+            int ok = 0;
+            try
+            {
+                if (Db.Actualizar(Consulta) > 0 )
+                {
+                    ok = 1;
+                }
+                if (this.updateDetallesPedidos(p) > 0)
+                {
+                    ok = 1;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return ok;
         }
     }
 

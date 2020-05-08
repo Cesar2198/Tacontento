@@ -30,13 +30,30 @@ namespace XShop.GUI
         }
 
         public List<DetallePedidos> list;
-        public Pedidos()
+        private Entidades.Entidades.Pedidos.Pedidos pedidos;
+        private dashboardForm df;
+        public Pedidos(Entidades.Entidades.Pedidos.Pedidos p, dashboardForm d)
         {
+            this.pedidos = p;
+            this.df = d;
             InitializeComponent();
             ConfigurarTabla();
             setComboBox();
             this.txbEmpleado.Text = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().usuario;
-            list = new List<DetallePedidos>();
+            if (this.pedidos!=null)
+            {
+                PedidosDAO pdo = new PedidosDAO();
+                list = pdo.GetDetallePedidos(this.pedidos.id);
+                this.txbCliente.Text = this.pedidos.nombreCliente;
+                this.lblTotal.Text = this.pedidos.total.ToString();
+                this.cmbPago.SelectedIndex =  this.pedidos.tipoPago==1?0:1;
+                CargarTable();
+            }
+            else
+            {
+                list = new List<DetallePedidos>();
+            }
+            
 
         }
 
@@ -206,40 +223,87 @@ namespace XShop.GUI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            List<TextBox> Lista = new List<TextBox>();
-            Lista.Add(this.txbCliente);
-
-
-            
-            if(list.Count != 0 && CLS.Utility.textBoxIsEmpty(Lista) && this.cmbPago.Text != string.Empty)
+            if (this.pedidos!=null)
             {
-               
-
+                Entidades.Entidades.Pedidos.Pedidos pp = new Entidades.Entidades.Pedidos.Pedidos();
                 ComboItem item = this.cmbPago.SelectedItem as ComboItem;
-                Entidades.Entidades.Pedidos.Pedidos pe = new Entidades.Entidades.Pedidos.Pedidos();
-                pe.nombreCliente = this.txbCliente.Text;
-                pe.idUsuario = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().idUsuario;
-                pe.estado = 1;
-                pe.total = decimal.Round(Totalizar(),2);
-                pe.tipoPago = item.Key;
-                pe.listaDetalles = list;
+                PedidosDAO pdo = new PedidosDAO();
+                pp.nombreCliente = txbCliente.Text;
+                pp.tipoPago = item.Key;
+                pp.total = Totalizar();
+                pp.id = this.pedidos.id;
+                pp.listaDetalles = this.pedidos.listaDetalles;
+
+                List<DetallePedidos> listanueva = new List<DetallePedidos>();
+                ///List<DetallePedidos> listeliminada = new List<DetallePedidos>();
+
+                ///Comprobar si hay nuevas ordenes
+
+                int lenght1 = list.Count;
+                int lenght2 = pdo.GetDetallePedidos(pp.id).Count;
+                List<DetallePedidos> l = pdo.GetDetallePedidos(pp.id);
+                if (lenght1 > lenght2)
+                {
 
 
-                PedidosDAO p = new PedidosDAO();
-                if (p.InsertarPedido(pe) != null)
-                {
-                    MessageBox.Show("Se inserto una nueva orden pendiente", "información.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    for (int i = (lenght1-1); i  >= (lenght2);i--) 
+                    {   
+                        listanueva.Add(list[i]);
+                    }
+
                 }
-                else
-                {
-                    MessageBox.Show("No se pudo insertar");
-                }
+
+                
+                pp.listaDetalles = list;
+                
+
+                
+                pdo.updatePedido(pp);
+                pdo.InsertarDetalles(listanueva, pp);
+                this.df.DisplayDatos();
+                Close();
+
+                
+
             }
             else
             {
-                MessageBox.Show("Se deben insertar ordenes! o Rellenar todos los campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+                List<TextBox> Lista = new List<TextBox>();
+                Lista.Add(this.txbCliente);
+
+
+
+                if (list.Count != 0 && CLS.Utility.textBoxIsEmpty(Lista) && this.cmbPago.Text != string.Empty)
+                {
+
+
+                    ComboItem item = this.cmbPago.SelectedItem as ComboItem;
+                    Entidades.Entidades.Pedidos.Pedidos pe = new Entidades.Entidades.Pedidos.Pedidos();
+                    pe.nombreCliente = this.txbCliente.Text;
+                    pe.idUsuario = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().idUsuario;
+                    pe.estado = 1;
+                    pe.total = decimal.Round(Totalizar(), 2);
+                    pe.tipoPago = item.Key;
+                    pe.listaDetalles = list;
+
+
+                    PedidosDAO p = new PedidosDAO();
+                    if (p.InsertarPedido(pe) != null)
+                    {
+                        MessageBox.Show("Se inserto una nueva orden pendiente", "información.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo insertar");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Se deben insertar ordenes! o Rellenar todos los campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
         
         }
     }

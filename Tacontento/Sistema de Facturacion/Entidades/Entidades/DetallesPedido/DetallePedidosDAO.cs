@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,5 +48,63 @@ namespace Entidades.Entidades.DetallesPedido
             }
             return lista;
         }
+
+        public List<DetallePedidos> GetDetallePedidos(int id)
+        {
+            List<DetallePedidos> list = new List<DetallePedidos>();
+            DataTable Elemento = new DataTable();
+            String sql = "select * from detallespedidos where idPedido = " + id;
+            try
+            {
+                if (Db.Consultar(sql)!=null)
+                {
+                    Elemento = Db.Consultar(sql);
+
+                    for (int i = 0; i < Elemento.Rows.Count; i++)
+                    {
+                        DetallePedidos de = new DetallePedidos();
+                        de.IdPedido = (int)Elemento.Rows[i]["idPedido"];
+                        de.Id = (int)Elemento.Rows[i]["idDetallePedido"];
+                        de.IdOrden = (int)Elemento.Rows[i]["idOrden"];
+                        de.Precio = decimal.Parse(Elemento.Rows[i]["precio"].ToString());
+                        de.Cantidad = (int)(Elemento.Rows[i]["cantidad"]);
+                        list.Add(de);
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return list != null ? list : null;
+        }
+
+        public int updateDetallesPedidos(Pedidos.Pedidos p)
+        {
+
+            int ok = 1;
+            for (int i = 0; i < p.listaDetalles.Count;i++)
+            {
+                String Consulta = "update detallespedidos set cantidad = " + p.listaDetalles[i].Cantidad +
+                                " where idPedido = " + p.id + " and idOrden = " + p.listaDetalles[i].IdOrden;
+                try
+                {
+                    if (Db.Actualizar(Consulta) < 0)
+                    {
+                        ok = 0;
+                        break;
+                    }
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+            
+            return ok;
+        }
+
     }
 }
