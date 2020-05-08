@@ -343,8 +343,17 @@ namespace XShop.GUI
 
         private void btnPapeleraOrden_Click(object sender, EventArgs e)
         {
-            PapeleraOrden f = new PapeleraOrden();
+            PapeleraOrden f = new PapeleraOrden(PapeleraOrden.ACCION.RESTAURAR);
             f.ShowDialog();
+
+            if (f.valido)
+            {
+                CargarRegistros();
+            }
+            else
+            {
+                CargarRegistros();
+            }
         }
     }
 }

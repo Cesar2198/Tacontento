@@ -217,6 +217,37 @@ namespace CacheManager.CLS
             return Bandera;
         }
 
+        public static DataTable TODAS_LAS_OPCIONES()
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT 
+                            a.idPermiso,
+                            b.nombre as rol,
+                            c.opcion
+                            FROM 
+                            permisos a,
+                            roles b,
+                            opciones c
+                            where a.idRol = b.idRol and a.idOpcion = c.idOpcion;";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
+
 
     }
 }

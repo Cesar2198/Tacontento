@@ -14,11 +14,12 @@ namespace XShop.GUI_AUXILIAR
 {
     public partial class PapeleraClasificaciones : Form
     {
+        
         BindingSource _DATOS = new BindingSource();
-        /// <summary>
-        /// Abrimos el formulario en ejecucion para que haga los cambios instantaneamente
-        /// </summary>
-        ClasificacionForm obj = (ClasificacionForm)Application.OpenForms["ClasificacionForm"];
+        public Boolean valido = false;
+        public enum ACCION { RESTAURAR };
+        ACCION _Eleccion = ACCION.RESTAURAR;
+
 
         private void CargarRegistros()
         {
@@ -54,44 +55,35 @@ namespace XShop.GUI_AUXILIAR
             }
         }
 
-        public Boolean AccionRealizada()
+        public void AccionRealizada()
         {
-            Boolean valido = false;
+
             try
             {
-                if (dtgDatos.Rows.Count != 0)
+                int idClasificacion;
+                idClasificacion = int.Parse(dtgDatos.CurrentRow.Cells["idClasificacionOrden"].Value.ToString());
+                ClasificacionesOrdenes C = new ClasificacionesOrdenes();
+                C.IdClasificacionOrden = idClasificacion;
+                ClasificacionesOrdenesDAO dao = new ClasificacionesOrdenesDAO();
+                if (dao.RecuperarClasificacion(C) != null)
                 {
-                    int idClasificacion;
-                    idClasificacion = int.Parse(dtgDatos.CurrentRow.Cells["idClasificacionOrden"].Value.ToString());
-                    ClasificacionesOrdenes C = new ClasificacionesOrdenes();
-                    C.IdClasificacionOrden = idClasificacion;
-
-                    ClasificacionesOrdenesDAO dao = new ClasificacionesOrdenesDAO();
-                    if (dao.RecuperarClasificacion(C) != null)
-                    {
-                        MessageBox.Show("Clasificación Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        valido = true;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Ha ocurrido un Error...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Clasificación Restaurada!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception ex)
             {
-                valido = false;
                 MessageBox.Show("Ha ocurrido un Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-            return valido;
         }
 
-        public PapeleraClasificaciones()
+        public PapeleraClasificaciones(ACCION pAccion)
         {
             InitializeComponent();
             CargarRegistros();
+            _Eleccion = pAccion;
+
         }
 
         private void txbFiltro_TextChanged(object sender, EventArgs e)
@@ -101,11 +93,39 @@ namespace XShop.GUI_AUXILIAR
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            if (AccionRealizada())
+            if (dtgDatos.Rows.Count != 0 && dtgDatos.CurrentCell != null)
             {
-                CargarRegistros();
-                obj.CargarRegistros();
+                if (_Eleccion == ACCION.RESTAURAR)
+                {
+                    AccionRealizada();
+                    valido = true;
+                    this.Close();
+                }
+                else
+                {
+                    valido = true;
+                    this.Close();
+                }
             }
+            else
+            {
+                MessageBox.Show("No se Ha podido Restaurar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PapeleraClasificaciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void PapeleraClasificaciones_Load(object sender, EventArgs e)
+        {
+            dtgDatos.CurrentCell = null;
+        }
+
+        private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

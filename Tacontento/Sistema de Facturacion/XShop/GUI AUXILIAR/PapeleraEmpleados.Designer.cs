@@ -55,7 +55,7 @@
             this.txbFiltro});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(453, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(340, 25);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -63,7 +63,7 @@
             // 
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(67, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(57, 22);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // txbFiltro
@@ -71,17 +71,16 @@
             this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbFiltro.Name = "txbFiltro";
-            this.txbFiltro.Size = new System.Drawing.Size(199, 31);
+            this.txbFiltro.Size = new System.Drawing.Size(150, 25);
             this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(16, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 19);
+            this.label1.Size = new System.Drawing.Size(155, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Empleados Eliminados";
             // 
@@ -89,10 +88,9 @@
             // 
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRestaurar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnRestaurar.Location = new System.Drawing.Point(311, 32);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRestaurar.Location = new System.Drawing.Point(233, 26);
             this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(127, 28);
+            this.btnRestaurar.Size = new System.Drawing.Size(95, 23);
             this.btnRestaurar.TabIndex = 10;
             this.btnRestaurar.Text = "Restaurar";
             this.btnRestaurar.UseVisualStyleBackColor = true;
@@ -103,10 +101,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblContador});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 459);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 371);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(453, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(340, 22);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -114,16 +111,15 @@
             // 
             this.lblContador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblContador.Name = "lblContador";
-            this.lblContador.Size = new System.Drawing.Size(202, 19);
+            this.lblContador.Size = new System.Drawing.Size(161, 17);
             this.lblContador.Text = "0 Registros Encontrados";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgDatos);
-            this.panel1.Location = new System.Drawing.Point(0, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 375);
+            this.panel1.Size = new System.Drawing.Size(339, 305);
             this.panel1.TabIndex = 8;
             // 
             // dtgDatos
@@ -143,14 +139,13 @@
             this.DUI});
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDatos.MultiSelect = false;
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(452, 375);
+            this.dtgDatos.Size = new System.Drawing.Size(339, 305);
             this.dtgDatos.TabIndex = 3;
             this.dtgDatos.TabStop = false;
             // 
@@ -180,18 +175,20 @@
             // 
             // PapeleraEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 484);
+            this.ClientSize = new System.Drawing.Size(340, 393);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRestaurar);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PapeleraEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PapeleraEmpleados";
+            this.Load += new System.EventHandler(this.PapeleraEmpleados_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

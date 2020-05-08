@@ -1,4 +1,5 @@
 ﻿using Entidades.Entidades.Ordenes;
+using Entidades.Entidades.Permisos;
 using Entidades.Entidades.Roles;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,21 @@ namespace XShop.CLS
 
             return dato;
         }
+        public static string DevolverRolName(string id)
+        {
+            String dato;
+
+            Rol rol = new Rol();
+
+            RolesDAO dao = new RolesDAO();
+
+            rol = dao.ObtenerRolByName(id);
+
+            dato = rol.RolName;
+
+            return dato;
+        }
+
         public static string DevolverRol(int id)
         {
             String dato;
@@ -63,6 +79,20 @@ namespace XShop.CLS
             rol = dao.ObtenerRolById(id);
 
             dato = rol.RolName;
+
+            return dato;
+        }
+        public static string DevolverOpcion(string id)
+        {
+            String dato;
+
+            Opcion opcion = new Opcion();
+
+            OpcionDAO dao = new OpcionDAO();
+
+            opcion = dao.ObtenerOpcionByName(id);
+
+            dato = opcion.NombreOpcion;
 
             return dato;
         }

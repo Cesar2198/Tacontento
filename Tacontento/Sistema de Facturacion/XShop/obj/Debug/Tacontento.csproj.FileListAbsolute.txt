@@ -74,6 +74,7 @@ C:\Users\PC\Desktop\TACONTENTO\Tacontento\Sistema de Facturacion\XShop\obj\Debug
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraClasificaciones.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraEmpleados.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI_AUXILIAR.PapeleraOrden.resources
+<<<<<<< HEAD
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\XShop.exe.config
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\XShop.exe
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\bin\Debug\XShop.pdb
@@ -111,3 +112,6 @@ C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Deb
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\Tacontento.csproj.CopyComplete
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.exe
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
+=======
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.PermisosForm.resources
+>>>>>>> 7ea309752bd19deaa06b0382793103ec0f563b9f

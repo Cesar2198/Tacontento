@@ -226,5 +226,11 @@ namespace XShop.GUI
             openWindowFromPanel(new ClasificacionForm());
             hideSubMenu();
         }
+
+        private void btnPermisos_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new PermisosForm());
+            hideSubMenu();
+        }
     }
 }
