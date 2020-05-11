@@ -230,7 +230,7 @@ namespace XShop.GUI
                 PedidosDAO pdo = new PedidosDAO();
                 pp.nombreCliente = txbCliente.Text;
                 pp.tipoPago = item.Key;
-                pp.total = Totalizar();
+                pp.total = Decimal.Parse(lblTotal.Text.Remove(0,1));
                 pp.id = this.pedidos.id;
                 pp.listaDetalles = this.pedidos.listaDetalles;
 
@@ -291,6 +291,7 @@ namespace XShop.GUI
                     if (p.InsertarPedido(pe) != null)
                     {
                         MessageBox.Show("Se inserto una nueva orden pendiente", "información.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.df.DisplayDatos();
                         this.Close();
                     }
                     else

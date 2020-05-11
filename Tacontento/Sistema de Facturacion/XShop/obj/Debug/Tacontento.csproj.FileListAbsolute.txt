@@ -115,3 +115,5 @@ C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Deb
 =======
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.PermisosForm.resources
 >>>>>>> 7ea309752bd19deaa06b0382793103ec0f563b9f
+C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.PermisosForm.resources
+C:\Users\ALEX\Desktop\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.IncidenteForm.resources

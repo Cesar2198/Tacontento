@@ -85,6 +85,12 @@
     <Compile Include="GUI\dashboardForm.Designer.cs">
       <DependentUpon>dashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\IncidenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\IncidenteForm.Designer.cs">
+      <DependentUpon>IncidenteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\dashboardForm.resx">
       <DependentUpon>dashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IncidenteForm.resx">
+      <DependentUpon>IncidenteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

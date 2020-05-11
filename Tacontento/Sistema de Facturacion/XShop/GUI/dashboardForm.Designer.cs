@@ -35,14 +35,18 @@
             this.cCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCantidadOrdenes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cIncidente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTotalPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnIncidente = new System.Windows.Forms.Button();
+            this.btnFacturar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(50, 41);
+            this.btnNew.Location = new System.Drawing.Point(29, 41);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(114, 23);
+            this.btnNew.Size = new System.Drawing.Size(114, 35);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "Nuevo Pedido";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -50,9 +54,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(188, 41);
+            this.btnModificar.Location = new System.Drawing.Point(210, 41);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(129, 23);
+            this.btnModificar.Size = new System.Drawing.Size(129, 35);
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar Pedido";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -74,7 +78,9 @@
             this.cID,
             this.cCliente,
             this.cCantidadOrdenes,
-            this.cTotal});
+            this.cTotal,
+            this.cIncidente,
+            this.cTotalPagar});
             this.dtgPedidos.Location = new System.Drawing.Point(29, 150);
             this.dtgPedidos.MultiSelect = false;
             this.dtgPedidos.Name = "dtgPedidos";
@@ -103,11 +109,42 @@
             this.cTotal.HeaderText = "TOTAL";
             this.cTotal.Name = "cTotal";
             // 
+            // cIncidente
+            // 
+            this.cIncidente.HeaderText = "COBRO DE INCIDENTE";
+            this.cIncidente.Name = "cIncidente";
+            // 
+            // cTotalPagar
+            // 
+            this.cTotalPagar.HeaderText = "TOTAL A PAGAR";
+            this.cTotalPagar.Name = "cTotalPagar";
+            // 
+            // btnIncidente
+            // 
+            this.btnIncidente.Location = new System.Drawing.Point(403, 41);
+            this.btnIncidente.Name = "btnIncidente";
+            this.btnIncidente.Size = new System.Drawing.Size(133, 35);
+            this.btnIncidente.TabIndex = 3;
+            this.btnIncidente.Text = "Agregar Incidente";
+            this.btnIncidente.UseVisualStyleBackColor = true;
+            this.btnIncidente.Click += new System.EventHandler(this.btnIncidente_Click);
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.Location = new System.Drawing.Point(613, 41);
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(115, 35);
+            this.btnFacturar.TabIndex = 4;
+            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.UseVisualStyleBackColor = true;
+            // 
             // dashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 618);
+            this.Controls.Add(this.btnFacturar);
+            this.Controls.Add(this.btnIncidente);
             this.Controls.Add(this.dtgPedidos);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNew);
@@ -128,5 +165,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCantidadOrdenes;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cIncidente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTotalPagar;
+        private System.Windows.Forms.Button btnIncidente;
+        private System.Windows.Forms.Button btnFacturar;
     }
 }

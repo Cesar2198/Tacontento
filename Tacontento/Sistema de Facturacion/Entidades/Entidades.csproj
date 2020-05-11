@@ -48,6 +48,8 @@
     <Compile Include="Entidades\DetallesPedido\DetallePedidosDAO.cs" />
     <Compile Include="Entidades\Empleados\Empleados.cs" />
     <Compile Include="Entidades\Empleados\EmpleadosDAO.cs" />
+    <Compile Include="Entidades\Incidentes\Incidente.cs" />
+    <Compile Include="Entidades\Incidentes\IncidenteDao.cs" />
     <Compile Include="Entidades\Ordenes\ClasificacionOrdenes.cs" />
     <Compile Include="Entidades\Ordenes\OrdenDAO.cs" />
     <Compile Include="Entidades\Ordenes\Ordenes.cs" />
