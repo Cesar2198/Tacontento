@@ -135,22 +135,29 @@
   <metadata name="cTotalPagar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="cID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="cCliente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>238, 17</value>
   </metadata>
-  <metadata name="cCantidadOrdenes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cIncidente.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cTotalPagar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripLabel2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAALEAAACxAcYtSY0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAB7klEQVRIS2MYGaA5r9SjuaDEAcqlHDQXlIUAcVBzYYlLW0GpdXN+6dKW/NJlTXnFxlAl5AOQoa15
+        ZWlAA0PbiorUgK7Ph0oxtBaUVDfklElBuaSDhoYGtrbsSuGO/HK5ttxK0Za8snigTxpa88vKQbg5v6Sj
+        Ja/EH+QAmBgaLm7IauCBGocJ2nKLtdpyS+1b80uimvJLzJvzy/ywGOIKVY4BGrJKJVoKSgqgXPwAZBmI
+        fjtrT927WXvLCeE3s/ZUgtQDg7YCRBMEMIXvZu4mSgNMHUUWvHr+0fPN80/lMPz25Qd4cFHFAnyAIguA
+        qScdFsktBaWdLfnFNkD5dpgYUD6ZIgvAhoGSJggXlE5oKSiOBhraBRNrzitrocyC3DILoMEJMNxd0iCG
+        zG/KKjal1AeNoGIChJsLSrPbCssSgQanIMTKGii0oNgOHkRA3FBRoYDMB5VXFPsAFqGt+aUzmguKg1ry
+        SybDxfJKaimyAFiaFiJZ0NdcWOoGTE3dMDFggZhLtgXAoqIXWAy4EMJvZ+7pQtZHEMAUfpi9U/H17H3G
+        cDx3v8nrmXscwTSS+Ps5e+WR9REEIK835ObyQblw8HneNtF3s/ekfZh2WBAqBAegoh4UnFAuftBQWCgE
+        cg0i7AnjlrzSMmyOGsqAgQEAfaK3zoj99l0AAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

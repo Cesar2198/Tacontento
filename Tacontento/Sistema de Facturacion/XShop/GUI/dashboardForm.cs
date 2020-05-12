@@ -12,6 +12,8 @@ namespace XShop.GUI
 {
     public partial class dashboardForm : Form
     {
+        BindingSource pedidos = new BindingSource();
+
         Entidades.Entidades.Pedidos.PedidosDAO pedidosDao;
         Entidades.Entidades.Incidentes.IncidenteDao IncidentesDao;
         public dashboardForm()
@@ -24,10 +26,12 @@ namespace XShop.GUI
 
         public void DisplayDatos()
         {
+
             List<Entidades.Entidades.Pedidos.Pedidos> list = pedidosDao.findAll();
             dtgPedidos.Rows.Clear();
-            foreach(Entidades.Entidades.Pedidos.Pedidos p in list)
+            foreach (Entidades.Entidades.Pedidos.Pedidos p in list)
             {
+               
                 Entidades.Entidades.Incidentes.Incidente inc = new Entidades.Entidades.Incidentes.Incidente();
                 if (!IncidentesDao.getIncidenteByPedido(p.id).Equals(null))
                 {
@@ -37,14 +41,16 @@ namespace XShop.GUI
                 {
                     inc.Precio = Decimal.Parse("0.00");
                 }
-                
-                dtgPedidos.Rows.Add(p.id, p.nombreCliente, p.listaDetalles.Count, p.total, inc.Precio, p.total+inc.Precio);
-            }
+
+                dtgPedidos.Rows.Add(p.id, p.nombreCliente, p.listaDetalles.Count, p.total, inc.Precio, p.total + inc.Precio);
+
+            }  
+            this.lblConteo.Text = dtgPedidos.Rows.Count + " Registros Encontrados";
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            Pedidos p = new Pedidos(null,this);
+            Pedidos p = new Pedidos(null, this);
             p.ShowDialog();
         }
 
@@ -52,7 +58,7 @@ namespace XShop.GUI
         {
             int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
             Entidades.Entidades.Pedidos.PedidosDAO pd = new Entidades.Entidades.Pedidos.PedidosDAO();
-            XShop.GUI.Pedidos pdi = new XShop.GUI.Pedidos(pd.getPedidosById(idpedido),this);
+            XShop.GUI.Pedidos pdi = new XShop.GUI.Pedidos(pd.getPedidosById(idpedido), this);
             pdi.ShowDialog();
 
         }
@@ -69,7 +75,7 @@ namespace XShop.GUI
             {
                 MessageBox.Show("Ya tiene agregado un incidente");
             }
-            
+
         }
     }
 }

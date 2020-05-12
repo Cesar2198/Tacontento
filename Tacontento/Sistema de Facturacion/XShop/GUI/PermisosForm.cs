@@ -200,8 +200,6 @@ namespace XShop.GUI
                     {
                         MessageBox.Show("No se pueden Modificar Los Permisos del Administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CLS.Utility.ClearTextbox(Lista);
-                        this.cmbRol.Text = "";
-                        this.cmbOpciones.Text = "";
                     }
                     else
                     {
@@ -294,8 +292,6 @@ namespace XShop.GUI
                     {
                         MessageBox.Show("No se pueden Eliminar Los Permisos del Administrador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CLS.Utility.ClearTextbox(Lista);
-                        this.cmbRol.Text = "";
-                        this.cmbOpciones.Text = "";
                     }
                     else
                     {

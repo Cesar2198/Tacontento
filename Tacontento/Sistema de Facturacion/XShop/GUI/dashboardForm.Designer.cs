@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardForm));
             this.btnNew = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dtgPedidos = new System.Windows.Forms.DataGridView();
@@ -39,12 +40,18 @@
             this.cTotalPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnIncidente = new System.Windows.Forms.Button();
             this.btnFacturar = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblConteo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidos)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(29, 41);
+            this.btnNew.Location = new System.Drawing.Point(12, 41);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(114, 35);
             this.btnNew.TabIndex = 0;
@@ -70,7 +77,7 @@
             this.dtgPedidos.AllowUserToResizeColumns = false;
             this.dtgPedidos.AllowUserToResizeRows = false;
             this.dtgPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgPedidos.BackgroundColor = System.Drawing.Color.White;
+            this.dtgPedidos.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -81,12 +88,12 @@
             this.cTotal,
             this.cIncidente,
             this.cTotalPagar});
-            this.dtgPedidos.Location = new System.Drawing.Point(29, 150);
+            this.dtgPedidos.Location = new System.Drawing.Point(12, 150);
             this.dtgPedidos.MultiSelect = false;
             this.dtgPedidos.Name = "dtgPedidos";
             this.dtgPedidos.RowHeadersVisible = false;
             this.dtgPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgPedidos.Size = new System.Drawing.Size(699, 261);
+            this.dtgPedidos.Size = new System.Drawing.Size(740, 400);
             this.dtgPedidos.TabIndex = 2;
             // 
             // cID
@@ -121,7 +128,7 @@
             // 
             // btnIncidente
             // 
-            this.btnIncidente.Location = new System.Drawing.Point(403, 41);
+            this.btnIncidente.Location = new System.Drawing.Point(427, 41);
             this.btnIncidente.Name = "btnIncidente";
             this.btnIncidente.Size = new System.Drawing.Size(133, 35);
             this.btnIncidente.TabIndex = 3;
@@ -131,18 +138,58 @@
             // 
             // btnFacturar
             // 
-            this.btnFacturar.Location = new System.Drawing.Point(613, 41);
+            this.btnFacturar.Location = new System.Drawing.Point(637, 41);
             this.btnFacturar.Name = "btnFacturar";
             this.btnFacturar.Size = new System.Drawing.Size(115, 35);
             this.btnFacturar.TabIndex = 4;
             this.btnFacturar.Text = "Facturar";
             this.btnFacturar.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblConteo});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 585);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(764, 33);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblConteo
+            // 
+            this.lblConteo.Name = "lblConteo";
+            this.lblConteo.Size = new System.Drawing.Size(133, 28);
+            this.lblConteo.Text = "0 Registros Encontrados";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(764, 31);
+            this.toolStrip1.TabIndex = 23;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(153, 28);
+            this.toolStripLabel2.Text = "Manejo de Pedidos";
+            // 
             // dashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 618);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnFacturar);
             this.Controls.Add(this.btnIncidente);
             this.Controls.Add(this.dtgPedidos);
@@ -152,6 +199,10 @@
             this.Name = "dashboardForm";
             this.Text = "dashboardForm";
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidos)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -169,5 +220,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cTotalPagar;
         private System.Windows.Forms.Button btnIncidente;
         private System.Windows.Forms.Button btnFacturar;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblConteo;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

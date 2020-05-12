@@ -52,7 +52,6 @@ namespace XShop.GUI
                 {
                     MessageBox.Show("Hubo un problema");
                 }
-
             }else
             {
                 MessageBox.Show("LLene los campos");

@@ -11,11 +11,11 @@ using System.Runtime.InteropServices;
 
 using SessionManager.CLS;
 using Entidades.Entidades.Usuarios;
-
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace XShop.GUI
 {
-   
+
     public partial class LoginTaco : Form
 
     {
@@ -37,7 +37,7 @@ namespace XShop.GUI
             get { return _AUTORIZAR; }
         }
 
-        
+
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -72,15 +72,16 @@ namespace XShop.GUI
         {
             //Activamso el Evento KeyDown para realizar el cambio de color al TextBox
             txbContraseña.ForeColor = Color.FromArgb(209, 142, 61);
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                Sesion sesion = Sesion.Instance;
-                UsuarioDAO userDao = new UsuarioDAO();
-                if (userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text) != null)
+               
+                try
                 {
+                    Sesion sesion = Sesion.Instance;
+                    UsuarioDAO userDao = new UsuarioDAO();
                     Usuarios userActual = new Usuarios();
                     userActual = userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text);
-                    if (userActual.usuario == txbUsuario.Text && userActual.password == txbContraseña.Text)
+                    if (userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text) != null)
                     {
 
                         sesion.Datos.setUsuario(userActual);
@@ -88,16 +89,18 @@ namespace XShop.GUI
                         ///Obtenemos todos los permisos luego de setear al usuario
                         ///Obteniendo asi el id del rol
                         CacheManager.CLS.Cache.ObtenerPermisos();
+                        this.lblMensaje.Text = "Bienvenido " + userActual.usuario + "!";
                         Close();
                     }
                     else
                     {
-                        MessageBox.Show("Credenciales incorrectas");
+                        this.lblMensaje.Text = "Credenciales Incorrectas, Intente de Nuevo...";
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("El usuario no se encuentra registrado.","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+                    MessageBox.Show("Ocurrió un Error: " + ex.Message,"Informacion",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
         }
@@ -110,32 +113,34 @@ namespace XShop.GUI
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            Sesion sesion = Sesion.Instance;
-            UsuarioDAO userDao = new UsuarioDAO();
-            if (userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text) != null)
+            try
             {
+                Sesion sesion = Sesion.Instance;
+                UsuarioDAO userDao = new UsuarioDAO();
                 Usuarios userActual = new Usuarios();
                 userActual = userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text);
-                if (userActual.usuario == txbUsuario.Text && userActual.password == txbContraseña.Text)
+                if (userDao.ObtenerUsuarioByUserNameAndPassword(this.txbUsuario.Text, this.txbContraseña.Text) != null)
                 {
-                    
+
                     sesion.Datos.setUsuario(userActual);
                     _AUTORIZAR = true;
                     ///Obtenemos todos los permisos luego de setear al usuario
                     ///Obteniendo asi el id del rol
                     CacheManager.CLS.Cache.ObtenerPermisos();
+                    this.lblMensaje.Text = "Bienvenido " + userActual.usuario + "!";
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Credenciales incorrectas");
+                    this.lblMensaje.Text = "Credenciales Incorrectas, Intente de Nuevo...";
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("El usuario no se encuentra registrado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                MessageBox.Show("Ocurrió un Error: " + ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
     }
