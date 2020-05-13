@@ -34,9 +34,14 @@ namespace XShop.GUI
                 {
 
                     Entidades.Entidades.Incidentes.Incidente inc = new Entidades.Entidades.Incidentes.Incidente();
-                    if (!IncidentesDao.getIncidenteByPedido(p.id).Equals(null))
+                    if (!IncidentesDao.getIncidentesByPedido(p.id).Equals(null))
                     {
-                        inc = IncidentesDao.getIncidenteByPedido(p.id);
+                        Decimal total = 0;
+                        foreach(Entidades.Entidades.Incidentes.Incidente e in IncidentesDao.getIncidentesByPedido(p.id))
+                        {
+                            total += e.Precio;
+                        }
+                        inc.Precio = total;
                     }
                     else
                     {
@@ -88,15 +93,10 @@ namespace XShop.GUI
             }
             else
             {
-                if (Decimal.Parse(dtgPedidos.SelectedRows[0].Cells[4].Value.ToString()) == 0)
-                {
+                
                     IncidenteForm inf = new IncidenteForm(int.Parse(this.txbidPedido.Text), this);
                     inf.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Ya tiene agregado un incidente");
-                }
+                
             }
             
 

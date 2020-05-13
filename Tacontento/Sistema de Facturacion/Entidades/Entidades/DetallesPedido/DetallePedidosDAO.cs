@@ -106,5 +106,24 @@ namespace Entidades.Entidades.DetallesPedido
             return ok;
         }
 
+        public bool deleteDetalleFromPedido(int idpedido, int idorden)
+        {
+            bool ok = false;
+            string sql = "delete from detallespedidos where idpedido = " + idpedido + " and "
+                            + "idorden = " + idorden;
+            try
+            {
+                if (Db.Eliminar(sql) > 0)
+                {
+                    ok = true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Something went wrong: " + e.Message);
+            }
+            return ok;
+        }
+
     }
 }

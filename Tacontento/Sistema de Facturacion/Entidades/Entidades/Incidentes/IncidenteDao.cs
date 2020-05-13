@@ -16,9 +16,9 @@ namespace Entidades.Entidades.Incidentes
             Db = new DataManager.CLS.DBOperacion();
         }
 
-        public Incidente getIncidenteByPedido(int id)
+        public List<Incidente> getIncidentesByPedido(int id)
         {
-            Incidente incidente = new Incidente();
+            List<Incidente> list = new List<Incidente>();
             string sql = "select * from incidentes where idpedido = " + id;
             DataTable Elemento = new DataTable();
             try
@@ -26,17 +26,24 @@ namespace Entidades.Entidades.Incidentes
                 if (Db.Consultar(sql) != null)
                 {
                     Elemento = Db.Consultar(sql);
-                    incidente.IdIncidente = (int)Elemento.Rows[0]["idIncidente"];
-                    incidente.Descripcion = Elemento.Rows[0]["descripcion"].ToString();
-                    incidente.Precio = Decimal.Parse(Elemento.Rows[0]["precio"].ToString());
-                    incidente.Pedido = id;
+                    for (int i = 0; i < Elemento.Rows.Count; i++)
+                    {
+                        Incidente incidente = new Incidente();
+                        incidente.IdIncidente = (int)Elemento.Rows[i]["idIncidente"];
+                        incidente.Descripcion = Elemento.Rows[i]["descripcion"].ToString();
+                        incidente.Precio = Decimal.Parse(Elemento.Rows[i]["precio"].ToString());
+                        incidente.Pedido = id;
+                        list.Add(incidente);
+                    }
+                    
+                    
                 }
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e.Message);
             }
-            return incidente.Equals(null) ? null : incidente;
+            return list.Equals(null) ? null : list;
         }
 
         public Boolean insertarIncidente(Incidente inc)

@@ -78,7 +78,7 @@
             this.dtgPedidos.AllowUserToResizeColumns = false;
             this.dtgPedidos.AllowUserToResizeRows = false;
             this.dtgPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgPedidos.BackgroundColor = System.Drawing.Color.Silver;
+            this.dtgPedidos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dtgPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -175,7 +175,7 @@
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
-            this.toolStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.toolStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel2});
@@ -189,7 +189,7 @@
             // 
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(153, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(163, 28);
             this.toolStripLabel2.Text = "Manejo de Pedidos";
             // 
             // txbidPedido

@@ -122,9 +122,25 @@ namespace XShop.GUI
             dp.IdOrden = o.idOrden;
             dp.Precio = o.precio;
             dp.Cantidad = 1;
-            list.Add(dp);
-            this.lblTotal.Text = "$" + decimal.Round(Totalizar(), 2).ToString();
-            CargarTable();
+
+            if (this.pedidos != null)
+            {
+                List<DetallePedidos> listdp = new List<DetallePedidos>();
+                PedidosDAO pdo = new PedidosDAO();
+                listdp.Add(dp);
+                pdo.InsertarDetalles(listdp, this.pedidos);
+                list = pdo.GetDetallePedidos(this.pedidos.id);
+                this.lblTotal.Text = "$" + decimal.Round(Totalizar(), 2).ToString();
+                CargarTable();
+
+            } 
+            else
+            {
+                list.Add(dp);
+                this.lblTotal.Text = "$" + decimal.Round(Totalizar(), 2).ToString();
+                CargarTable();
+            }
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -338,13 +354,27 @@ namespace XShop.GUI
             {
                 if (MessageBox.Show("Desea Eliminar el Pedido seleccionado?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                  {
-                
-                
-                    list.RemoveAt(int.Parse(this.txbIndex.Text));
-                    dtgPedido.Rows.RemoveAt(int.Parse(this.txbIndex.Text));
-                    CargarTable();
-                    this.lblTotal.Text = "$" + (Totalizar()).ToString();
-                    this.txbIndex.Text = String.Empty;
+
+                    if (this.pedidos != null)
+                    {
+                        PedidosDAO p = new PedidosDAO();
+                        int id = (int)dtgPedido.SelectedRows[0].Cells[0].Value;
+                        p.deleteDetalleFromPedido(this.pedidos.id, id);
+                        list = p.GetDetallePedidos(this.pedidos.id);
+                        CargarTable();
+                        this.lblTotal.Text = "$" + (Totalizar()).ToString();
+                        this.txbIndex.Text = String.Empty;
+
+                    }
+                    else
+                    {
+                        list.RemoveAt(int.Parse(this.txbIndex.Text));
+                        dtgPedido.Rows.RemoveAt(int.Parse(this.txbIndex.Text));
+                        CargarTable();
+                        this.lblTotal.Text = "$" + (Totalizar()).ToString();
+                        this.txbIndex.Text = String.Empty;
+                    }
+                    
                 }
                 else
                 {
