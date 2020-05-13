@@ -44,6 +44,7 @@
             this.lblConteo = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.txbidPedido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -91,40 +92,48 @@
             this.dtgPedidos.Location = new System.Drawing.Point(12, 150);
             this.dtgPedidos.MultiSelect = false;
             this.dtgPedidos.Name = "dtgPedidos";
+            this.dtgPedidos.ReadOnly = true;
             this.dtgPedidos.RowHeadersVisible = false;
             this.dtgPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPedidos.Size = new System.Drawing.Size(740, 400);
             this.dtgPedidos.TabIndex = 2;
+            this.dtgPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedidos_CellClick);
             // 
             // cID
             // 
             this.cID.HeaderText = "ID PEDIDO";
             this.cID.Name = "cID";
+            this.cID.ReadOnly = true;
             // 
             // cCliente
             // 
             this.cCliente.HeaderText = "CLIENTE";
             this.cCliente.Name = "cCliente";
+            this.cCliente.ReadOnly = true;
             // 
             // cCantidadOrdenes
             // 
             this.cCantidadOrdenes.HeaderText = "CANTIDAD ORDENES";
             this.cCantidadOrdenes.Name = "cCantidadOrdenes";
+            this.cCantidadOrdenes.ReadOnly = true;
             // 
             // cTotal
             // 
             this.cTotal.HeaderText = "TOTAL";
             this.cTotal.Name = "cTotal";
+            this.cTotal.ReadOnly = true;
             // 
             // cIncidente
             // 
             this.cIncidente.HeaderText = "COBRO DE INCIDENTE";
             this.cIncidente.Name = "cIncidente";
+            this.cIncidente.ReadOnly = true;
             // 
             // cTotalPagar
             // 
             this.cTotalPagar.HeaderText = "TOTAL A PAGAR";
             this.cTotalPagar.Name = "cTotalPagar";
+            this.cTotalPagar.ReadOnly = true;
             // 
             // btnIncidente
             // 
@@ -183,11 +192,20 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(153, 28);
             this.toolStripLabel2.Text = "Manejo de Pedidos";
             // 
+            // txbidPedido
+            // 
+            this.txbidPedido.Location = new System.Drawing.Point(651, 118);
+            this.txbidPedido.Name = "txbidPedido";
+            this.txbidPedido.Size = new System.Drawing.Size(100, 20);
+            this.txbidPedido.TabIndex = 24;
+            this.txbidPedido.Visible = false;
+            // 
             // dashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 618);
+            this.Controls.Add(this.txbidPedido);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnFacturar);
@@ -198,12 +216,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dashboardForm";
             this.Text = "dashboardForm";
+            this.Load += new System.EventHandler(this.dashboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidos)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -224,5 +244,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblConteo;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.TextBox txbidPedido;
     }
 }

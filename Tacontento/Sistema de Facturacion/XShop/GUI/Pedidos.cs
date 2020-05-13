@@ -40,27 +40,27 @@ namespace XShop.GUI
             ConfigurarTabla();
             setComboBox();
             this.txbEmpleado.Text = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().usuario;
-            if (this.pedidos!=null)
+            if (this.pedidos != null)
             {
                 PedidosDAO pdo = new PedidosDAO();
                 list = pdo.GetDetallePedidos(this.pedidos.id);
                 this.txbCliente.Text = this.pedidos.nombreCliente;
                 this.lblTotal.Text = this.pedidos.total.ToString();
-                this.cmbPago.SelectedIndex =  this.pedidos.tipoPago==1?0:1;
+                this.cmbPago.SelectedIndex = this.pedidos.tipoPago == 1 ? 0 : 1;
                 CargarTable();
             }
             else
             {
                 list = new List<DetallePedidos>();
             }
-            
+
 
         }
 
         public void setComboBox()
         {
-                this.cmbPago.Items.Add(new ComboItem(1, "Efectivo"));  
-                this.cmbPago.Items.Add(new ComboItem(2, "Tarjeta"));
+            this.cmbPago.Items.Add(new ComboItem(1, "Efectivo"));
+            this.cmbPago.Items.Add(new ComboItem(2, "Tarjeta"));
         }
 
         public void ConfigurarTabla()
@@ -74,7 +74,7 @@ namespace XShop.GUI
         {
             ComboItem item = this.cmbPago.SelectedItem as ComboItem;
             decimal desc = 0.10m;
-            if(list.Count != 0)
+            if (list.Count != 0)
             {
                 if (item.Key == 2)
                 {
@@ -87,9 +87,9 @@ namespace XShop.GUI
             }
             else
             {
-                this.lblTotal.Text = "$0.00" ;
+                this.lblTotal.Text = "$0.00";
             }
-           
+
 
         }
 
@@ -108,6 +108,7 @@ namespace XShop.GUI
                 dtgPedido.Rows.Add(o.IdOrden, CLS.Utility.getOrdenById(o.IdOrden).nombre, o.Precio, o.Cantidad, (o.Precio * o.Cantidad));
             }
             this.lblCantidadOrdenes.Text = list.Count.ToString() + " Orden(es) Registradas";
+            dtgPedido.CurrentCell = null;
         }
 
         public void AgregarOrdenes(int id)
@@ -130,7 +131,7 @@ namespace XShop.GUI
         {
             List<TextBox> list = new List<TextBox>();
             list.Add(this.txbSearch);
-            searchForm s = new searchForm(this,this.list, this.txbSearch.Text);
+            searchForm s = new searchForm(this, this.list, this.txbSearch.Text);
             if (CLS.Utility.textBoxIsEmpty(list))
             {
                 if (s.valido)
@@ -153,7 +154,7 @@ namespace XShop.GUI
         public decimal Totalizar()
         {
             decimal total = 0;
-            for (int i =0; i< list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 total += list[i].Precio * list[i].Cantidad;
             }
@@ -167,8 +168,9 @@ namespace XShop.GUI
 
         private void dtgPedido_SelectionChanged(object sender, EventArgs e)
         {
-            dtgPedido.CurrentCell = dtgPedido.CurrentRow.Cells["cCantidad"];
-            dtgPedido.BeginEdit(true);
+          /*DataGridViewCell cell = dtgPedido.Rows[0].Cells[3];
+            dtgPedido.CurrentCell = cell;
+            dtgPedido.BeginEdit(true);*/
         }
 
         private void dtgPedido_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -177,8 +179,19 @@ namespace XShop.GUI
             {
                 if ((dtgPedido.Rows[e.RowIndex].Cells[3].Value) != null)
                 {
+
                     list[e.RowIndex].Cantidad = int.Parse((dtgPedido.Rows[e.RowIndex].Cells[3].Value).ToString());
-                    dtgPedido.Rows[e.RowIndex].Cells[4].Value = list[e.RowIndex].Cantidad * list[e.RowIndex].Precio;
+                    if (list[e.RowIndex].Cantidad != 0)
+                    {
+                        dtgPedido.Rows[e.RowIndex].Cells[4].Value = list[e.RowIndex].Cantidad * list[e.RowIndex].Precio;
+                    }
+                    else
+                    {
+                        dtgPedido.Rows[e.RowIndex].Cells[3].Value = 1;
+                        list[e.RowIndex].Cantidad  = int.Parse((dtgPedido.Rows[e.RowIndex].Cells[3].Value).ToString());
+                        dtgPedido.Rows[e.RowIndex].Cells[4].Value = list[e.RowIndex].Cantidad * list[e.RowIndex].Precio;
+                    }
+
                 }
                 else
                 {
@@ -187,7 +200,7 @@ namespace XShop.GUI
                 }
                 this.lblTotal.Text = "$" + decimal.Round(Totalizar(), 2).ToString();
             }
-            
+
         }
 
         private void txbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -213,24 +226,24 @@ namespace XShop.GUI
                 {
                     MessageBox.Show("Rellene este Campo.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }   
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (this.pedidos!=null)
+            if (this.pedidos != null)
             {
                 Entidades.Entidades.Pedidos.Pedidos pp = new Entidades.Entidades.Pedidos.Pedidos();
                 ComboItem item = this.cmbPago.SelectedItem as ComboItem;
                 PedidosDAO pdo = new PedidosDAO();
                 pp.nombreCliente = txbCliente.Text;
                 pp.tipoPago = item.Key;
-                pp.total = Decimal.Parse(lblTotal.Text.Remove(0,1));
+                pp.total = Decimal.Parse(lblTotal.Text.Remove(0, 1));
                 pp.id = this.pedidos.id;
                 pp.listaDetalles = this.pedidos.listaDetalles;
 
@@ -246,24 +259,24 @@ namespace XShop.GUI
                 {
 
 
-                    for (int i = (lenght1-1); i  >= (lenght2);i--) 
-                    {   
+                    for (int i = (lenght1 - 1); i >= (lenght2); i--)
+                    {
                         listanueva.Add(list[i]);
                     }
 
                 }
 
-                
-                pp.listaDetalles = list;
-                
 
-                
+                pp.listaDetalles = list;
+
+
+
                 pdo.updatePedido(pp);
                 pdo.InsertarDetalles(listanueva, pp);
                 this.df.DisplayDatos();
                 Close();
 
-                
+
 
             }
             else
@@ -304,8 +317,46 @@ namespace XShop.GUI
                     MessageBox.Show("Se deben insertar ordenes! o Rellenar todos los campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
-        
+
+
+        }
+
+        private void dtgPedido_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void dtgPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dtgPedido.CurrentRow.Index;
+            this.txbIndex.Text = index.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.txbIndex.Text != String.Empty)
+            {
+                if (MessageBox.Show("Desea Eliminar el Pedido seleccionado?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                 {
+                
+                
+                    list.RemoveAt(int.Parse(this.txbIndex.Text));
+                    dtgPedido.Rows.RemoveAt(int.Parse(this.txbIndex.Text));
+                    CargarTable();
+                    this.lblTotal.Text = "$" + (Totalizar()).ToString();
+                    this.txbIndex.Text = String.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Operacion Cancelada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }

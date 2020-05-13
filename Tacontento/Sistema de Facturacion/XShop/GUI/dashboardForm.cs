@@ -26,26 +26,35 @@ namespace XShop.GUI
 
         public void DisplayDatos()
         {
-
-            List<Entidades.Entidades.Pedidos.Pedidos> list = pedidosDao.findAll();
-            dtgPedidos.Rows.Clear();
-            foreach (Entidades.Entidades.Pedidos.Pedidos p in list)
+            try
             {
-               
-                Entidades.Entidades.Incidentes.Incidente inc = new Entidades.Entidades.Incidentes.Incidente();
-                if (!IncidentesDao.getIncidenteByPedido(p.id).Equals(null))
+                List<Entidades.Entidades.Pedidos.Pedidos> list = pedidosDao.findAll();
+                dtgPedidos.Rows.Clear();
+                foreach (Entidades.Entidades.Pedidos.Pedidos p in list)
                 {
-                    inc = IncidentesDao.getIncidenteByPedido(p.id);
-                }
-                else
-                {
-                    inc.Precio = Decimal.Parse("0.00");
-                }
 
-                dtgPedidos.Rows.Add(p.id, p.nombreCliente, p.listaDetalles.Count, p.total, inc.Precio, p.total + inc.Precio);
+                    Entidades.Entidades.Incidentes.Incidente inc = new Entidades.Entidades.Incidentes.Incidente();
+                    if (!IncidentesDao.getIncidenteByPedido(p.id).Equals(null))
+                    {
+                        inc = IncidentesDao.getIncidenteByPedido(p.id);
+                    }
+                    else
+                    {
+                        inc.Precio = Decimal.Parse("0.00");
+                    }
 
-            }  
-            this.lblConteo.Text = dtgPedidos.Rows.Count + " Registros Encontrados";
+                    dtgPedidos.Rows.Add(p.id, p.nombreCliente, p.listaDetalles.Count, p.total, inc.Precio, p.total + inc.Precio);
+
+
+                }
+                dtgPedidos.AutoGenerateColumns = false;
+                this.lblConteo.Text = dtgPedidos.Rows.Count + " Registros Encontrados";
+            }
+            catch
+            {
+
+            }
+            
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -56,26 +65,52 @@ namespace XShop.GUI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
-            Entidades.Entidades.Pedidos.PedidosDAO pd = new Entidades.Entidades.Pedidos.PedidosDAO();
-            XShop.GUI.Pedidos pdi = new XShop.GUI.Pedidos(pd.getPedidosById(idpedido), this);
-            pdi.ShowDialog();
+            if (this.txbidPedido.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                
+                Entidades.Entidades.Pedidos.PedidosDAO pd = new Entidades.Entidades.Pedidos.PedidosDAO();
+                XShop.GUI.Pedidos pdi = new XShop.GUI.Pedidos(pd.getPedidosById(int.Parse(this.txbidPedido.Text)), this);
+                pdi.ShowDialog();
+            }
+           
 
         }
 
         private void btnIncidente_Click(object sender, EventArgs e)
         {
-            int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
-            if (Decimal.Parse(dtgPedidos.SelectedRows[0].Cells[4].Value.ToString()) == 0)
+            if (this.txbidPedido.Text == string.Empty)
             {
-                IncidenteForm inf = new IncidenteForm(idpedido, this);
-                inf.ShowDialog();
+                MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Ya tiene agregado un incidente");
+                if (Decimal.Parse(dtgPedidos.SelectedRows[0].Cells[4].Value.ToString()) == 0)
+                {
+                    IncidenteForm inf = new IncidenteForm(int.Parse(this.txbidPedido.Text), this);
+                    inf.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Ya tiene agregado un incidente");
+                }
             }
+            
 
+        }
+
+        private void dashboardForm_Load(object sender, EventArgs e)
+        {
+            dtgPedidos.CurrentCell = null;
+        }
+
+        private void dtgPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
+            this.txbidPedido.Text = idpedido.ToString();
         }
     }
 }

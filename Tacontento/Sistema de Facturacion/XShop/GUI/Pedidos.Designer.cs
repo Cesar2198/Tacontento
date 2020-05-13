@@ -50,6 +50,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblCantidadOrdenes = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txbIndex = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedido)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -63,7 +65,7 @@
             this.dtgPedido.AllowUserToResizeColumns = false;
             this.dtgPedido.AllowUserToResizeRows = false;
             this.dtgPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgPedido.BackgroundColor = System.Drawing.Color.White;
+            this.dtgPedido.BackgroundColor = System.Drawing.Color.Silver;
             this.dtgPedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgPedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dtgPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -81,7 +83,9 @@
             this.dtgPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPedido.Size = new System.Drawing.Size(699, 261);
             this.dtgPedido.TabIndex = 0;
+            this.dtgPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellClick);
             this.dtgPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellContentClick);
+            this.dtgPedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellContentDoubleClick);
             this.dtgPedido.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellEndEdit);
             this.dtgPedido.SelectionChanged += new System.EventHandler(this.dtgPedido_SelectionChanged);
             // 
@@ -245,11 +249,31 @@
             this.lblCantidadOrdenes.Size = new System.Drawing.Size(123, 17);
             this.lblCantidadOrdenes.Text = "0 Ordenes Registradas";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(24, 395);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(99, 26);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "Eliminar Orden";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // txbIndex
+            // 
+            this.txbIndex.Location = new System.Drawing.Point(143, 399);
+            this.txbIndex.Name = "txbIndex";
+            this.txbIndex.Size = new System.Drawing.Size(24, 20);
+            this.txbIndex.TabIndex = 17;
+            this.txbIndex.Visible = false;
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 579);
+            this.Controls.Add(this.txbIndex);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnTerminar);
@@ -301,5 +325,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblCantidadOrdenes;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox txbIndex;
     }
 }
