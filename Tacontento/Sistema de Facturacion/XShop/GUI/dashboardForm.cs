@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.Entidades.Pedidos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,8 +59,7 @@ namespace XShop.GUI
             catch
             {
 
-            }
-            
+            }      
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -81,7 +81,6 @@ namespace XShop.GUI
                 XShop.GUI.Pedidos pdi = new XShop.GUI.Pedidos(pd.getPedidosById(int.Parse(this.txbidPedido.Text)), this);
                 pdi.ShowDialog();
             }
-           
 
         }
 
@@ -98,10 +97,8 @@ namespace XShop.GUI
                     inf.ShowDialog();
                 
             }
-            
 
         }
-
         private void dashboardForm_Load(object sender, EventArgs e)
         {
             dtgPedidos.CurrentCell = null;
@@ -112,5 +109,41 @@ namespace XShop.GUI
             int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
             this.txbidPedido.Text = idpedido.ToString();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.txbidPedido.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("Desea Eliminar el Pedido seleccionado?", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Entidades.Entidades.Pedidos.Pedidos p = new Entidades.Entidades.Pedidos.Pedidos();
+                    p.id = int.Parse(this.txbidPedido.Text);
+
+                    PedidosDAO dao = new PedidosDAO();
+
+                    try
+                    {
+                        if (dao.DeletePedido(p) > 0)
+                        {
+                            MessageBox.Show("Pedido Eliminado Correctamente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se Pudo Eliminar.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("No se Pudo Eliminar: " + ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                this.DisplayDatos();
+            }
+         }
     }
 }

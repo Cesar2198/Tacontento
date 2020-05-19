@@ -15,6 +15,9 @@ namespace XShop.GUI
 {
     public partial class Pedidos : Form
     {
+        Entidades.Entidades.Pedidos.Pedidos pp = new Entidades.Entidades.Pedidos.Pedidos();
+        PedidosDAO pdo = new PedidosDAO();
+
         class ComboItem
         {
             public int Key { get; set; }
@@ -247,50 +250,63 @@ namespace XShop.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.df.DisplayDatos();
+            this.Close();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           
+
             if (this.pedidos != null)
             {
-                Entidades.Entidades.Pedidos.Pedidos pp = new Entidades.Entidades.Pedidos.Pedidos();
                 ComboItem item = this.cmbPago.SelectedItem as ComboItem;
-                PedidosDAO pdo = new PedidosDAO();
-                pp.nombreCliente = txbCliente.Text;
-                pp.tipoPago = item.Key;
-                pp.total = Decimal.Parse(lblTotal.Text.Remove(0, 1));
-                pp.id = this.pedidos.id;
-                pp.listaDetalles = this.pedidos.listaDetalles;
-
-                List<DetallePedidos> listanueva = new List<DetallePedidos>();
-                ///List<DetallePedidos> listeliminada = new List<DetallePedidos>();
-
-                ///Comprobar si hay nuevas ordenes
-
-                int lenght1 = list.Count;
-                int lenght2 = pdo.GetDetallePedidos(pp.id).Count;
-                List<DetallePedidos> l = pdo.GetDetallePedidos(pp.id);
-                if (lenght1 > lenght2)
+                List<TextBox> Lista = new List<TextBox>();
+                Lista.Add(this.txbCliente);
+                if (list.Count != 0 && CLS.Utility.textBoxIsEmpty(Lista) && this.cmbPago.Text != string.Empty)
                 {
+                   
+                    pp.nombreCliente = txbCliente.Text;
+                    pp.tipoPago = item.Key;
+                    pp.total = Decimal.Parse(lblTotal.Text.Remove(0, 1));
+                    pp.id = this.pedidos.id;
+                    pp.listaDetalles = this.pedidos.listaDetalles;
 
+                    List<DetallePedidos> listanueva = new List<DetallePedidos>();
+                    ///List<DetallePedidos> listeliminada = new List<DetallePedidos>();
 
-                    for (int i = (lenght1 - 1); i >= (lenght2); i--)
+                    ///Comprobar si hay nuevas ordenes
+
+                    int lenght1 = list.Count;
+                    int lenght2 = pdo.GetDetallePedidos(pp.id).Count;
+                    List<DetallePedidos> l = pdo.GetDetallePedidos(pp.id);
+                    if (lenght1 > lenght2)
                     {
-                        listanueva.Add(list[i]);
+
+
+                        for (int i = (lenght1 - 1); i >= (lenght2); i--)
+                        {
+                            listanueva.Add(list[i]);
+                        }
+
                     }
 
+
+                    pp.listaDetalles = list;
+
+
+
+                    pdo.updatePedido(pp);
+                    pdo.InsertarDetalles(listanueva, pp);
+                    this.df.DisplayDatos();
+                    Close();
+
                 }
-
-
-                pp.listaDetalles = list;
-
-
-
-                pdo.updatePedido(pp);
-                pdo.InsertarDetalles(listanueva, pp);
-                this.df.DisplayDatos();
-                Close();
+                else
+                {
+                    MessageBox.Show("Se deben insertar ordenes! o Rellenar todos los campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                   
 
 
 

@@ -196,6 +196,26 @@ namespace Entidades.Entidades.Pedidos
             return ok;
         }
 
+        public int DeletePedido(Pedidos p)
+        {
+            string Consulta = @"DELETE FROM pedidos where idPedido = " + p.id;
+            int ok = 0;
+            try
+            {
+                if (Db.Eliminar(Consulta) > 0)
+                {
+                    ok = 1;
+                }
+            }
+            catch (Exception e)
+            {
+                ok = 0;
+            }
+
+
+            return ok;
+        }
+
     }
 
 }

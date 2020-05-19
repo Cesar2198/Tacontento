@@ -46,7 +46,7 @@
             this.lblPago = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.btnTerminar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblCantidadOrdenes = new System.Windows.Forms.ToolStripStatusLabel();
@@ -213,15 +213,15 @@
             this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "$0.00";
             // 
-            // btnTerminar
+            // btnCancelar
             // 
-            this.btnTerminar.Location = new System.Drawing.Point(585, 501);
-            this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(138, 38);
-            this.btnTerminar.TabIndex = 12;
-            this.btnTerminar.Text = "Terminar Pedido";
-            this.btnTerminar.UseVisualStyleBackColor = true;
-            this.btnTerminar.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(585, 501);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(138, 38);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnGuardar
             // 
@@ -276,7 +276,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnTerminar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPago);
@@ -321,7 +321,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cSubtotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Button btnTerminar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblCantidadOrdenes;

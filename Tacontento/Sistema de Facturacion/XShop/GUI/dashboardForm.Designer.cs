@@ -45,6 +45,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.txbidPedido = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPedidos)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(210, 41);
+            this.btnModificar.Location = new System.Drawing.Point(165, 41);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(129, 35);
             this.btnModificar.TabIndex = 1;
@@ -137,7 +138,7 @@
             // 
             // btnIncidente
             // 
-            this.btnIncidente.Location = new System.Drawing.Point(427, 41);
+            this.btnIncidente.Location = new System.Drawing.Point(478, 41);
             this.btnIncidente.Name = "btnIncidente";
             this.btnIncidente.Size = new System.Drawing.Size(133, 35);
             this.btnIncidente.TabIndex = 3;
@@ -200,11 +201,22 @@
             this.txbidPedido.TabIndex = 24;
             this.txbidPedido.Visible = false;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(324, 41);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(129, 35);
+            this.btnDelete.TabIndex = 25;
+            this.btnDelete.Text = "Eliminar Pedido";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // dashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 618);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txbidPedido);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -245,5 +257,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.TextBox txbidPedido;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

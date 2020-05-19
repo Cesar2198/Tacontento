@@ -120,7 +120,7 @@ namespace Entidades.Entidades.DetallesPedido
             }
             catch (Exception e)
             {
-                Console.WriteLine("Something went wrong: " + e.Message);
+                Console.WriteLine("Ocurrio un Error:  " + e.Message);
             }
             return ok;
         }
