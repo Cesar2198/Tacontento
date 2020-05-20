@@ -22,6 +22,7 @@ namespace XShop.GUI
             pedidosDao = new Entidades.Entidades.Pedidos.PedidosDAO();
             IncidentesDao = new Entidades.Entidades.Incidentes.IncidenteDao();
             InitializeComponent();
+            ManejoTabla();
             DisplayDatos();
         }
 
@@ -55,11 +56,24 @@ namespace XShop.GUI
                 }
                 dtgPedidos.AutoGenerateColumns = false;
                 this.lblConteo.Text = dtgPedidos.Rows.Count + " Registros Encontrados";
+                ManejoTabla();
             }
             catch
             {
 
             }      
+        }
+
+        public void ManejoTabla()
+        {
+            if(this.dtgPedidos.Rows.Count == 0)
+            {
+                this.dtgPedidos.Enabled = false;
+            }
+            else
+            {
+                this.dtgPedidos.Enabled = true;
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -73,14 +87,17 @@ namespace XShop.GUI
             if (this.txbidPedido.Text == string.Empty)
             {
                 MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txbidPedido.Text = string.Empty;
             }
             else
             {
                 
                 Entidades.Entidades.Pedidos.PedidosDAO pd = new Entidades.Entidades.Pedidos.PedidosDAO();
                 XShop.GUI.Pedidos pdi = new XShop.GUI.Pedidos(pd.getPedidosById(int.Parse(this.txbidPedido.Text)), this);
+                this.txbidPedido.Text = string.Empty;
                 pdi.ShowDialog();
             }
+            this.txbidPedido.Text = string.Empty;
 
         }
 
@@ -89,14 +106,18 @@ namespace XShop.GUI
             if (this.txbidPedido.Text == string.Empty)
             {
                 MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txbidPedido.Text = string.Empty;
             }
             else
             {
                 
-                    IncidenteForm inf = new IncidenteForm(int.Parse(this.txbidPedido.Text), this);
-                    inf.ShowDialog();
-                
+                IncidenteForm inf = new IncidenteForm(int.Parse(this.txbidPedido.Text), this);
+                this.txbidPedido.Text = string.Empty;
+                inf.ShowDialog();
+                    
             }
+
+            this.txbidPedido.Text = string.Empty;
 
         }
         private void dashboardForm_Load(object sender, EventArgs e)
@@ -106,8 +127,8 @@ namespace XShop.GUI
 
         private void dtgPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
-            this.txbidPedido.Text = idpedido.ToString();
+                int idpedido = (int)dtgPedidos.SelectedRows[0].Cells[0].Value;
+                this.txbidPedido.Text = idpedido.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -142,6 +163,7 @@ namespace XShop.GUI
                         MessageBox.Show("No se Pudo Eliminar: " + ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+                this.txbidPedido.Text = string.Empty;
                 this.DisplayDatos();
             }
          }

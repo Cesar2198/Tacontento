@@ -42,6 +42,7 @@ namespace XShop.GUI
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnSubMenuLocal = new System.Windows.Forms.Panel();
+            this.btnPermisos = new System.Windows.Forms.Button();
             this.btnAgregarUsuarios = new System.Windows.Forms.Button();
             this.btnLocal = new System.Windows.Forms.Button();
             this.panelOrdenes = new System.Windows.Forms.Panel();
@@ -53,7 +54,6 @@ namespace XShop.GUI
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.btnPermisos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -180,6 +180,24 @@ namespace XShop.GUI
             this.pnSubMenuLocal.Name = "pnSubMenuLocal";
             this.pnSubMenuLocal.Size = new System.Drawing.Size(207, 151);
             this.pnSubMenuLocal.TabIndex = 9;
+            // 
+            // btnPermisos
+            // 
+            this.btnPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnPermisos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPermisos.FlatAppearance.BorderSize = 0;
+            this.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermisos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPermisos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPermisos.Location = new System.Drawing.Point(0, 105);
+            this.btnPermisos.Name = "btnPermisos";
+            this.btnPermisos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnPermisos.Size = new System.Drawing.Size(207, 43);
+            this.btnPermisos.TabIndex = 9;
+            this.btnPermisos.Text = "Control Permisos";
+            this.btnPermisos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermisos.UseVisualStyleBackColor = false;
+            this.btnPermisos.Click += new System.EventHandler(this.btnPermisos_Click);
             // 
             // btnAgregarUsuarios
             // 
@@ -350,24 +368,6 @@ namespace XShop.GUI
             this.panelContainer.Size = new System.Drawing.Size(769, 618);
             this.panelContainer.TabIndex = 2;
             // 
-            // btnPermisos
-            // 
-            this.btnPermisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnPermisos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPermisos.FlatAppearance.BorderSize = 0;
-            this.btnPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPermisos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPermisos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnPermisos.Location = new System.Drawing.Point(0, 105);
-            this.btnPermisos.Name = "btnPermisos";
-            this.btnPermisos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnPermisos.Size = new System.Drawing.Size(207, 43);
-            this.btnPermisos.TabIndex = 9;
-            this.btnPermisos.Text = "Control Permisos";
-            this.btnPermisos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPermisos.UseVisualStyleBackColor = false;
-            this.btnPermisos.Click += new System.EventHandler(this.btnPermisos_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +378,7 @@ namespace XShop.GUI
             this.Controls.Add(this.panel3);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";

@@ -17,6 +17,10 @@ namespace XShop.GUI
     {
         private Sesion sesion;
         private Usuarios user;
+
+        int lx, ly;
+        int sw, sh;
+
         private void openWindowFromPanel(object form)
         {
             if (this.panelContainer.Controls.Count > 0)
@@ -63,6 +67,16 @@ namespace XShop.GUI
             {
                 mypanel.Visible = false;
             }
+        }
+
+        public void pantallaCompleta()
+        {
+            lx = this.Location.X;
+            ly = this.Location.Y;
+            sw = this.Size.Width;
+            sh = this.Size.Height;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
 
         public MainForm()
@@ -116,7 +130,7 @@ namespace XShop.GUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            ///pantallaCompleta();
         }
 
        
