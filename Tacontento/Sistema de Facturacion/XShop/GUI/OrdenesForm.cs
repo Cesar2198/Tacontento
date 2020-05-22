@@ -270,43 +270,25 @@ namespace XShop.GUI
 
         private void txbPrecio_KeyPress(object sender, KeyPressEventArgs v)
         {
-            String Cadena = txbPrecio.Text;
-            /*string[] CadenaArray = new string[] {Cadena};
-            String[] filtro = new String[] { "0 1 2 3 4 5 6 7 8 9" };
-            
-            if (Strings.Len(Cadena) > 0)
-            {
-                string.Join(",", filtro);
-            }
-
-            foreach (var caracter in filtro)
-            {
-                if (v.KeyChar.ToString() == caracter)
-                {
-                    v.Handled = false;
-                }
-                else
-                {
-                    v.Handled = true;
-                }
-            }*/
-
-            if (v.KeyChar.ToString().Equals("0") && Strings.Mid(Cadena,1,1) == "0" && Strings.Len(Cadena) == 1)
-            {
-                txbPrecio.Text = "";
-            }else if (!v.KeyChar.ToString().Equals("0") && !v.KeyChar.ToString().Equals(".") && Strings.Mid(Cadena,1,1) == "0" && Strings.Len(Cadena).Equals(1))
-            {
-                txbPrecio.Text = "";
-            }
-
-
-            if (Char.IsControl(v.KeyChar))
+            if (char.IsDigit(v.KeyChar))
             {
                 v.Handled = false;
             }
-            if (Char.IsNumber(v.KeyChar))
+            else if (char.IsSeparator(v.KeyChar))
             {
                 v.Handled = false;
+            }
+            else if (char.IsControl(v.KeyChar))
+            {
+                v.Handled = false;
+            }
+            else if (v.KeyChar.ToString().Equals("."))
+            {
+                v.Handled = false;
+            }
+            else
+            {
+                v.Handled = true;
             }
 
         }
@@ -354,6 +336,11 @@ namespace XShop.GUI
             {
                 CargarRegistros();
             }
+        }
+
+        private void txbPrecio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

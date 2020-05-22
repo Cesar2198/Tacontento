@@ -18,7 +18,6 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\D
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\Cache.GUI.PapeleraUsuarios.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.dashboardForm.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.IncidenteForm.resources
-C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.Login.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.LoginTaco.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.MainForm.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.ClasificacionForm.resources
@@ -77,3 +76,4 @@ C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XS
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\Tacontento.csproj.CopyComplete
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.exe
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.FacturacionForm.resources

@@ -167,5 +167,26 @@ namespace XShop.GUI
                 this.DisplayDatos();
             }
          }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            if (this.txbidPedido.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione una Opcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txbidPedido.Text = string.Empty;
+            }
+            else
+            {
+                decimal total = 0;
+                total = decimal.Parse(this.dtgPedidos.CurrentRow.Cells[5].Value.ToString());
+
+                FacturacionForm fact = new FacturacionForm(int.Parse(this.txbidPedido.Text),total, this);
+                this.txbidPedido.Text = string.Empty;
+                fact.ShowDialog();
+
+            }
+
+            this.txbidPedido.Text = string.Empty;
+        }
     }
 }

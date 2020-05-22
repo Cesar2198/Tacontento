@@ -154,6 +154,7 @@
             this.btnFacturar.TabIndex = 4;
             this.btnFacturar.Text = "Facturar";
             this.btnFacturar.UseVisualStyleBackColor = true;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // statusStrip1
             // 
