@@ -130,7 +130,7 @@ namespace XShop.GUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           ///pantallaCompleta();
+            openWindowFromPanel(new dashboardForm());
         }
 
        
@@ -233,6 +233,13 @@ namespace XShop.GUI
             {
                 ShowSubMenu(this.pnSubMenuLocal);
             }
+        }
+
+        private void btnLock_Click(object sender, EventArgs e)
+        {
+            LockScreen f = new LockScreen();
+            hideSubMenu();
+            f.ShowDialog();
         }
 
         private void btnClasificaciones_Click(object sender, EventArgs e)

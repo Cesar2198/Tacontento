@@ -77,3 +77,4 @@ C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XS
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.exe
 C:\Users\ALEX\Desktop\Tacontento\Tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.pdb
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.FacturacionForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\XShop\obj\Debug\XShop.GUI.LockScreen.resources

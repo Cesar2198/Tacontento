@@ -54,6 +54,7 @@ namespace XShop.GUI
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnLock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -158,6 +159,7 @@ namespace XShop.GUI
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnLock);
             this.panel5.Controls.Add(this.pnSubMenuLocal);
             this.panel5.Controls.Add(this.btnLocal);
             this.panel5.Controls.Add(this.panelOrdenes);
@@ -368,6 +370,24 @@ namespace XShop.GUI
             this.panelContainer.Size = new System.Drawing.Size(769, 618);
             this.panelContainer.TabIndex = 2;
             // 
+            // btnLock
+            // 
+            this.btnLock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnLock.FlatAppearance.BorderSize = 0;
+            this.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLock.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLock.Image = ((System.Drawing.Image)(resources.GetObject("btnLock.Image")));
+            this.btnLock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLock.Location = new System.Drawing.Point(0, 458);
+            this.btnLock.Name = "btnLock";
+            this.btnLock.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLock.Size = new System.Drawing.Size(207, 35);
+            this.btnLock.TabIndex = 10;
+            this.btnLock.Text = "Bloquear";
+            this.btnLock.UseVisualStyleBackColor = false;
+            this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +440,6 @@ namespace XShop.GUI
         private Panel pnSubMenuLocal;
         private Button btnLocal;
         private Button btnPermisos;
+        private Button btnLock;
     }
 }

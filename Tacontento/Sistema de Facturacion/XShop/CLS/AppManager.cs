@@ -35,7 +35,7 @@ namespace XShop.CLS
             f.ShowDialog();
             return Resultado;
         }
-        private Boolean Login()
+        public Boolean Login()
         {
             Boolean Resultado = false;
             GUI.LoginTaco f = new GUI.LoginTaco();

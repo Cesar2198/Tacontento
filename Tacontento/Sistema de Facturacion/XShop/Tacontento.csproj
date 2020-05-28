@@ -97,6 +97,12 @@
     <Compile Include="GUI\IncidenteForm.Designer.cs">
       <DependentUpon>IncidenteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\LockScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LockScreen.Designer.cs">
+      <DependentUpon>LockScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\LoginTaco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\IncidenteForm.resx">
       <DependentUpon>IncidenteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LockScreen.resx">
+      <DependentUpon>LockScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginTaco.resx">
       <DependentUpon>LoginTaco.cs</DependentUpon>
