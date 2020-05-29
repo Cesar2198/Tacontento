@@ -144,7 +144,7 @@
             this.cmbRol.Location = new System.Drawing.Point(51, 38);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(140, 25);
-            this.cmbRol.TabIndex = 10;
+            this.cmbRol.TabIndex = 1;
             // 
             // btnEditar
             // 
@@ -169,8 +169,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(390, 111);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 23);
-            this.btnAgregar.TabIndex = 12;
-            this.btnAgregar.TabStop = false;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -273,7 +272,7 @@
             this.cmbOpciones.Location = new System.Drawing.Point(298, 38);
             this.cmbOpciones.Name = "cmbOpciones";
             this.cmbOpciones.Size = new System.Drawing.Size(198, 25);
-            this.cmbOpciones.TabIndex = 23;
+            this.cmbOpciones.TabIndex = 2;
             // 
             // btnEliminar
             // 

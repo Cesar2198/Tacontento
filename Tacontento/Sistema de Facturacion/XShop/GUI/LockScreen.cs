@@ -120,5 +120,10 @@ namespace XShop.GUI
 
             }
         }
+
+        private void LockScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

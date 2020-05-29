@@ -76,24 +76,22 @@
             // 
             this.txbDireccion.AcceptsTab = true;
             this.txbDireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbDireccion.Location = new System.Drawing.Point(643, 49);
-            this.txbDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDireccion.Location = new System.Drawing.Point(494, 100);
             this.txbDireccion.MaxLength = 75;
             this.txbDireccion.Multiline = true;
             this.txbDireccion.Name = "txbDireccion";
-            this.txbDireccion.Size = new System.Drawing.Size(343, 57);
-            this.txbDireccion.TabIndex = 7;
+            this.txbDireccion.Size = new System.Drawing.Size(258, 47);
+            this.txbDireccion.TabIndex = 12;
             this.txbDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
             // txbNombres
             // 
             this.txbNombres.AcceptsTab = true;
             this.txbNombres.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbNombres.Location = new System.Drawing.Point(119, 46);
-            this.txbNombres.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNombres.Location = new System.Drawing.Point(89, 37);
             this.txbNombres.MaxLength = 100;
             this.txbNombres.Name = "txbNombres";
-            this.txbNombres.Size = new System.Drawing.Size(305, 27);
+            this.txbNombres.Size = new System.Drawing.Size(230, 23);
             this.txbNombres.TabIndex = 6;
             // 
             // lblNombre
@@ -101,10 +99,9 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(16, 49);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(12, 40);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(89, 19);
+            this.lblNombre.Size = new System.Drawing.Size(71, 16);
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "NOMBRES";
             // 
@@ -114,10 +111,9 @@
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
             this.lblPrecio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPrecio.Location = new System.Drawing.Point(516, 49);
-            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecio.Location = new System.Drawing.Point(407, 100);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(103, 19);
+            this.lblPrecio.Size = new System.Drawing.Size(81, 16);
             this.lblPrecio.TabIndex = 18;
             this.lblPrecio.Text = "DIRECCION";
             // 
@@ -125,7 +121,7 @@
             // 
             this.lblRegistros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(202, 21);
+            this.lblRegistros.Size = new System.Drawing.Size(161, 17);
             this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // statusStrip1
@@ -135,10 +131,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 715);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 581);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1019, 27);
+            this.statusStrip1.Size = new System.Drawing.Size(764, 22);
             this.statusStrip1.TabIndex = 21;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -147,10 +142,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(765, 230);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(574, 187);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(115, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(86, 23);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TabStop = false;
             this.btnEliminar.Text = "Eliminar";
@@ -163,10 +157,9 @@
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(888, 230);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(666, 187);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 28);
+            this.btnClear.Size = new System.Drawing.Size(86, 23);
             this.btnClear.TabIndex = 20;
             this.btnClear.TabStop = false;
             this.btnClear.Text = "Limpiar";
@@ -180,7 +173,7 @@
             this.txbFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbFiltro.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbFiltro.Name = "txbFiltro";
-            this.txbFiltro.Size = new System.Drawing.Size(233, 38);
+            this.txbFiltro.Size = new System.Drawing.Size(175, 31);
             this.txbFiltro.TextChanged += new System.EventHandler(this.txbFiltro_TextChanged);
             // 
             // toolStripLabel1
@@ -188,14 +181,14 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(70, 35);
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 28);
             this.toolStripLabel1.Text = "Filtrar";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel2.Image")));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(215, 35);
+            this.toolStripLabel2.Size = new System.Drawing.Size(174, 28);
             this.toolStripLabel2.Text = "Manejo de Empleados";
             // 
             // toolStrip1
@@ -212,21 +205,21 @@
             this.btnPapeleraEmpleados});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1019, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(764, 31);
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // btnPapeleraEmpleados
             // 
             this.btnPapeleraEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnPapeleraEmpleados.Image")));
             this.btnPapeleraEmpleados.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPapeleraEmpleados.Name = "btnPapeleraEmpleados";
-            this.btnPapeleraEmpleados.Size = new System.Drawing.Size(231, 35);
+            this.btnPapeleraEmpleados.Size = new System.Drawing.Size(188, 28);
             this.btnPapeleraEmpleados.Text = "Papelera de Empleados";
             this.btnPapeleraEmpleados.Click += new System.EventHandler(this.btnPapeleraEmpleados_Click);
             // 
@@ -234,10 +227,9 @@
             // 
             this.cmbGenero.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Location = new System.Drawing.Point(119, 255);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbGenero.Location = new System.Drawing.Point(89, 207);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(204, 29);
+            this.cmbGenero.Size = new System.Drawing.Size(154, 25);
             this.cmbGenero.TabIndex = 10;
             // 
             // btnEditar
@@ -245,10 +237,9 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(643, 230);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(482, 187);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(115, 28);
+            this.btnEditar.Size = new System.Drawing.Size(86, 23);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.TabStop = false;
             this.btnEditar.Text = "Editar";
@@ -261,12 +252,10 @@
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(520, 230);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(390, 187);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(115, 28);
-            this.btnAgregar.TabIndex = 12;
-            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Size = new System.Drawing.Size(86, 23);
+            this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -274,11 +263,10 @@
             // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(433, 48);
-            this.txbId.Margin = new System.Windows.Forms.Padding(4);
+            this.txbId.Location = new System.Drawing.Point(325, 39);
             this.txbId.Name = "txbId";
             this.txbId.ReadOnly = true;
-            this.txbId.Size = new System.Drawing.Size(31, 22);
+            this.txbId.Size = new System.Drawing.Size(24, 20);
             this.txbId.TabIndex = 15;
             this.txbId.Visible = false;
             // 
@@ -287,10 +275,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(11, 105);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "APELLIDOS";
             // 
@@ -299,30 +286,27 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCategoria.Location = new System.Drawing.Point(16, 258);
-            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCategoria.Location = new System.Drawing.Point(12, 210);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(78, 19);
+            this.lblCategoria.Size = new System.Drawing.Size(62, 16);
             this.lblCategoria.TabIndex = 19;
             this.lblCategoria.Text = "GENERO";
             // 
             // txbApellido
             // 
             this.txbApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbApellido.Location = new System.Drawing.Point(119, 101);
-            this.txbApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txbApellido.Location = new System.Drawing.Point(89, 82);
             this.txbApellido.MaxLength = 100;
             this.txbApellido.Name = "txbApellido";
-            this.txbApellido.Size = new System.Drawing.Size(305, 27);
-            this.txbApellido.TabIndex = 23;
+            this.txbApellido.Size = new System.Drawing.Size(230, 23);
+            this.txbApellido.TabIndex = 7;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgDatos);
-            this.panel1.Location = new System.Drawing.Point(15, 299);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(11, 243);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 431);
+            this.panel1.Size = new System.Drawing.Size(741, 350);
             this.panel1.TabIndex = 13;
             // 
             // dtgDatos
@@ -347,14 +331,13 @@
             this.Fecha_Nac});
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 0);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDatos.MultiSelect = false;
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(988, 431);
+            this.dtgDatos.Size = new System.Drawing.Size(741, 350);
             this.dtgDatos.TabIndex = 2;
             this.dtgDatos.TabStop = false;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
@@ -430,10 +413,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(11, 213);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(8, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 19);
+            this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "NIT";
             // 
@@ -442,42 +424,38 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(16, 161);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 19);
+            this.label3.Size = new System.Drawing.Size(29, 16);
             this.label3.TabIndex = 25;
             this.label3.Text = "DUI";
             // 
             // txbDUI
             // 
             this.txbDUI.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbDUI.Location = new System.Drawing.Point(119, 158);
-            this.txbDUI.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDUI.Location = new System.Drawing.Point(89, 128);
             this.txbDUI.MaxLength = 10;
             this.txbDUI.Name = "txbDUI";
-            this.txbDUI.Size = new System.Drawing.Size(189, 27);
-            this.txbDUI.TabIndex = 26;
+            this.txbDUI.Size = new System.Drawing.Size(143, 23);
+            this.txbDUI.TabIndex = 8;
             // 
             // txbNIT
             // 
             this.txbNIT.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txbNIT.Location = new System.Drawing.Point(119, 204);
-            this.txbNIT.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNIT.Location = new System.Drawing.Point(89, 166);
             this.txbNIT.MaxLength = 18;
             this.txbNIT.Name = "txbNIT";
-            this.txbNIT.Size = new System.Drawing.Size(289, 27);
-            this.txbNIT.TabIndex = 27;
+            this.txbNIT.Size = new System.Drawing.Size(218, 23);
+            this.txbNIT.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(516, 146);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(428, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(202, 19);
+            this.label4.Size = new System.Drawing.Size(158, 16);
             this.label4.TabIndex = 29;
             this.label4.Text = "FECHA DE NACIMIENTO";
             // 
@@ -486,18 +464,17 @@
             this.dtPicker.CustomFormat = "yyyy-MM-dd";
             this.dtPicker.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPicker.Location = new System.Drawing.Point(773, 146);
-            this.dtPicker.Margin = new System.Windows.Forms.Padding(4);
+            this.dtPicker.Location = new System.Drawing.Point(592, 40);
             this.dtPicker.Name = "dtPicker";
-            this.dtPicker.Size = new System.Drawing.Size(212, 27);
-            this.dtPicker.TabIndex = 30;
+            this.dtPicker.Size = new System.Drawing.Size(160, 23);
+            this.dtPicker.TabIndex = 11;
             // 
             // EmpleadosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1019, 742);
+            this.ClientSize = new System.Drawing.Size(764, 603);
             this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbNIT);
@@ -522,7 +499,6 @@
             this.Controls.Add(this.txbNombres);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmpleadosForm";
             this.Text = "OrdenesForm";
             this.Load += new System.EventHandler(this.OrdenesForm_Load);

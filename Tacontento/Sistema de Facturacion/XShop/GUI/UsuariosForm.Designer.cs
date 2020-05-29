@@ -41,6 +41,8 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnPapeleraEmpleados = new System.Windows.Forms.ToolStripButton();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnPapeleraEmpleados = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,7 +70,7 @@
             this.txbidEmpleado.Location = new System.Drawing.Point(668, 39);
             this.txbidEmpleado.Name = "txbidEmpleado";
             this.txbidEmpleado.Size = new System.Drawing.Size(84, 23);
-            this.txbidEmpleado.TabIndex = 7;
+            this.txbidEmpleado.TabIndex = 8;
             this.txbidEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrecio_KeyPress);
             // 
             // txbUsuario
@@ -198,6 +198,20 @@
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btnPapeleraEmpleados
+            // 
+            this.btnPapeleraEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnPapeleraEmpleados.Image")));
+            this.btnPapeleraEmpleados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPapeleraEmpleados.Name = "btnPapeleraEmpleados";
+            this.btnPapeleraEmpleados.Size = new System.Drawing.Size(170, 28);
+            this.btnPapeleraEmpleados.Text = "Papelera de Usuarios";
+            this.btnPapeleraEmpleados.Click += new System.EventHandler(this.btnPapeleraEmpleados_Click);
+            // 
             // cmbRol
             // 
             this.cmbRol.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -205,7 +219,7 @@
             this.cmbRol.Location = new System.Drawing.Point(612, 74);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(140, 25);
-            this.cmbRol.TabIndex = 10;
+            this.cmbRol.TabIndex = 9;
             // 
             // btnEditar
             // 
@@ -230,8 +244,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(392, 111);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 23);
-            this.btnAgregar.TabIndex = 12;
-            this.btnAgregar.TabStop = false;
+            this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -275,7 +288,7 @@
             this.txbPassword.MaxLength = 100;
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(230, 23);
-            this.txbPassword.TabIndex = 23;
+            this.txbPassword.TabIndex = 7;
             // 
             // panel1
             // 
@@ -355,20 +368,6 @@
             this.idEmpleado.HeaderText = "id Empleado";
             this.idEmpleado.Name = "idEmpleado";
             this.idEmpleado.ReadOnly = true;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
-            // 
-            // btnPapeleraEmpleados
-            // 
-            this.btnPapeleraEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnPapeleraEmpleados.Image")));
-            this.btnPapeleraEmpleados.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPapeleraEmpleados.Name = "btnPapeleraEmpleados";
-            this.btnPapeleraEmpleados.Size = new System.Drawing.Size(170, 28);
-            this.btnPapeleraEmpleados.Text = "Papelera de Usuarios";
-            this.btnPapeleraEmpleados.Click += new System.EventHandler(this.btnPapeleraEmpleados_Click);
             // 
             // UsuariosForm
             // 

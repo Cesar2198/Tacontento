@@ -83,6 +83,7 @@
             this.dtgPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPedido.Size = new System.Drawing.Size(699, 261);
             this.dtgPedido.TabIndex = 0;
+            this.dtgPedido.TabStop = false;
             this.dtgPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellClick);
             this.dtgPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellContentClick);
             this.dtgPedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPedido_CellContentDoubleClick);
@@ -127,7 +128,7 @@
             this.txbSearch.Location = new System.Drawing.Point(469, 87);
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(159, 20);
-            this.txbSearch.TabIndex = 2;
+            this.txbSearch.TabIndex = 3;
             this.txbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbSearch_KeyDown);
             // 
             // label1
@@ -145,7 +146,7 @@
             this.txbCliente.Location = new System.Drawing.Point(24, 34);
             this.txbCliente.Name = "txbCliente";
             this.txbCliente.Size = new System.Drawing.Size(161, 20);
-            this.txbCliente.TabIndex = 4;
+            this.txbCliente.TabIndex = 1;
             // 
             // cmbPago
             // 
@@ -153,7 +154,7 @@
             this.cmbPago.Location = new System.Drawing.Point(567, 37);
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(156, 21);
-            this.cmbPago.TabIndex = 5;
+            this.cmbPago.TabIndex = 2;
             this.cmbPago.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
@@ -172,13 +173,14 @@
             this.txbEmpleado.ReadOnly = true;
             this.txbEmpleado.Size = new System.Drawing.Size(161, 20);
             this.txbEmpleado.TabIndex = 7;
+            this.txbEmpleado.TabStop = false;
             // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(648, 85);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 8;
+            this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Buscar";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -219,6 +221,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(138, 38);
             this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
@@ -229,6 +232,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(138, 38);
             this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.TabStop = false;
             this.btnGuardar.Text = "Guardar Pedido";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -255,6 +259,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 26);
             this.btnDelete.TabIndex = 16;
+            this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Eliminar Orden";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);

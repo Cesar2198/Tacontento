@@ -70,7 +70,7 @@
             this.cmbIdClasificacion.Location = new System.Drawing.Point(631, 71);
             this.cmbIdClasificacion.Name = "cmbIdClasificacion";
             this.cmbIdClasificacion.Size = new System.Drawing.Size(121, 25);
-            this.cmbIdClasificacion.TabIndex = 10;
+            this.cmbIdClasificacion.TabIndex = 8;
             // 
             // btnEliminar
             // 
@@ -81,6 +81,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 23);
             this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabStop = false;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -95,7 +96,7 @@
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(257, 36);
-            this.txbDescripcion.TabIndex = 8;
+            this.txbDescripcion.TabIndex = 9;
             // 
             // txbPrecio
             // 
@@ -128,6 +129,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(86, 23);
             this.btnEditar.TabIndex = 11;
+            this.btnEditar.TabStop = false;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -142,6 +144,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 23);
             this.btnAgregar.TabIndex = 12;
+            this.btnAgregar.TabStop = false;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -182,6 +185,7 @@
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDatos.Size = new System.Drawing.Size(739, 456);
             this.dtgDatos.TabIndex = 2;
+            this.dtgDatos.TabStop = false;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
             this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
             this.dtgDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_RowEnter);
