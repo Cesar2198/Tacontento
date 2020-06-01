@@ -248,6 +248,34 @@ namespace CacheManager.CLS
             return Resultado;
         }
 
+        public static DataTable Facturar(int idpedido)
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"select 
+                            d.cantidad as cantidad,
+                            o.nombre as nombre,
+                            d.precio as precio,
+                            (d.cantidad * d.precio) as total
+                            from ordenes o, detallespedidos d 
+                            where o.idOrden = d.idOrden and d.idPedido = " + idpedido;
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
 
     }
 }

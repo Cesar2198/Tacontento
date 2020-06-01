@@ -275,6 +275,10 @@
       <Project>{40e96f24-9fc7-43b4-8931-46165c60a282}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Reportes\Reportes.csproj">
+      <Project>{405ab02d-0cd0-4649-95ce-b1601df72264}</Project>
+      <Name>Reportes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SessionManager\SessionManager.csproj">
       <Project>{8cd73052-5d24-4b17-b121-8e725e33fbc6}</Project>
       <Name>SessionManager</Name>
