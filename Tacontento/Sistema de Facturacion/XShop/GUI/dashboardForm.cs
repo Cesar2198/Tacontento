@@ -180,15 +180,9 @@ namespace XShop.GUI
                 decimal total = 0;
                 total = decimal.Parse(this.dtgPedidos.CurrentRow.Cells[5].Value.ToString());
 
-                /*FacturacionForm fact = new FacturacionForm(int.Parse(this.txbidPedido.Text),total, this);
+                FacturacionForm fact = new FacturacionForm(int.Parse(this.txbidPedido.Text),total, this);
                 this.txbidPedido.Text = string.Empty;
-                fact.ShowDialog();*/
-                int idpedido = int.Parse(this.txbidPedido.Text);
-                Entidades.Entidades.Pedidos.Pedidos p = this.pedidosDao.getPedidosById(idpedido);
-                Reportes.GUI.vistaReporteFactura vf = new Reportes.GUI.vistaReporteFactura(p);
-                vf.ShowDialog();
-
-
+                fact.ShowDialog();
 
             }
 

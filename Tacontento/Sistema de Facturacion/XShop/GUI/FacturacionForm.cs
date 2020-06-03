@@ -39,13 +39,18 @@ namespace XShop.GUI
         {
             if (MessageBox.Show("Desea Facturar Realmente? ", "Pregunta!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
+                Entidades.Entidades.Pedidos.PedidosDAO pedidosDao = new Entidades.Entidades.Pedidos.PedidosDAO();
+                Entidades.Entidades.Pedidos.Pedidos p = pedidosDao.getPedidosById(idpedido);
+                Reportes.GUI.vistaReporteFactura vf = new Reportes.GUI.vistaReporteFactura(p);
+                vf.ShowDialog();
+                CacheManager.CLS.Cache.ChangeStatePedido(idpedido);
+                Close();
             }
             else
             {
                 this.Close();
             }
-
+            df.DisplayDatos();
         }
 
         private void label1_Click(object sender, EventArgs e)

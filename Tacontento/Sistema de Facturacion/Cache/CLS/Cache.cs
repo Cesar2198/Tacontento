@@ -64,6 +64,43 @@ namespace CacheManager.CLS
             return Resultado;
         }
 
+        public static void ChangeStatePedido(int id)
+        {
+            string sql = "update pedidos set estado = 2 where idpedido = " + id;
+            DataManager.CLS.DBOperacion Db = new DataManager.CLS.DBOperacion();
+            DataTable Elemento = new DataTable();
+            try
+            {
+                if (Db.Actualizar(sql) > 0)
+                {
+                    Console.WriteLine("Se ha actualizado!");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        public static Decimal getTotalIncidenteByPedido(int id)
+        {
+            string sql = "select sum(precio) as total from incidentes where idpedido = " + id;
+            DataManager.CLS.DBOperacion Db = new DataManager.CLS.DBOperacion();
+            DataTable Elemento = new DataTable();
+            Decimal total = 0.00m;
+            try
+            {
+                if (Db.Consultar(sql) != null)
+                {
+                    Elemento = Db.Consultar(sql);     
+                    total = (decimal)Elemento.Rows[0]["total"];
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return total;
+        }
 
         public static DataTable TODOS_LOS_ROLES()
         {
