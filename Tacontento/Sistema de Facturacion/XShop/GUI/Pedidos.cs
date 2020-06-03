@@ -327,7 +327,7 @@ namespace XShop.GUI
                     pe.nombreCliente = this.txbCliente.Text;
                     pe.idUsuario = SessionManager.CLS.Sesion.Instance.Datos.getUsuario().idUsuario;
                     pe.estado = 1;
-                    pe.total = decimal.Round(Totalizar(), 2);
+                    pe.total = Decimal.Parse(lblTotal.Text.Remove(0, 1));
                     pe.tipoPago = item.Key;
                     pe.listaDetalles = list;
 

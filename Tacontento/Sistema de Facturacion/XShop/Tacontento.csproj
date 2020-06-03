@@ -79,6 +79,24 @@
     <Compile Include="GUI AUXILIAR\PapeleraUsuarios.Designer.cs">
       <DependentUpon>PapeleraUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI REPORTES\PreRepBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepBitacora.Designer.cs">
+      <DependentUpon>PreRepBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepMesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepMesForm.Designer.cs">
+      <DependentUpon>PreRepMesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepForm.Designer.cs">
+      <DependentUpon>PreRepForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\dashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +209,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI AUXILIAR\PapeleraUsuarios.resx">
       <DependentUpon>PapeleraUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI REPORTES\PreRepBitacora.resx">
+      <DependentUpon>PreRepBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI REPORTES\PreRepMesForm.resx">
+      <DependentUpon>PreRepMesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI REPORTES\PreRepForm.resx">
+      <DependentUpon>PreRepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\dashboardForm.resx">
       <DependentUpon>dashboardForm.cs</DependentUpon>

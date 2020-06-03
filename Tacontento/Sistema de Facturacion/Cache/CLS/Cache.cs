@@ -314,5 +314,102 @@ namespace CacheManager.CLS
             return Resultado;
         }
 
+        public static DataTable VentasPorAnio()
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"select 
+                            year(a.fecha) as anio,
+                            count(a.total) as NumeroOrdenesVendidas,
+                            sum(a.total) as TotalVentas 
+                            from pedidos a,
+                            detallespedidos b
+                            where a.idPedido = b.idPedido and a.estado = 2
+                            group by anio
+                            order by YEAR(a.fecha);";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
+
+        public static DataTable VentasPorMes(int anio)
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"select "+ 
+                            "monthname(a.fecha) as mes, "+
+                            "count(a.total) as NumeroOrdenesVendidas,"+
+                            "sum(a.total) as TotalVentas "+ 
+                            "from pedidos a, "+
+                            "detallespedidos b "+
+                            "where year(a.fecha) = '"+anio+"' and a.idPedido = b.idPedido and a.estado = 2 "+ 
+                            "group by mes "+
+                            "order by MONTH(a.fecha); ";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
+
+
+        public static DataTable Bitacora(int anio)
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"select "+
+                            "a.idPedido, "+
+                            "a.nombreCliente, "+
+                            "date_format(a.fecha, '%W %M %e %r' ) as Fecha, "+ 
+                            "if (a.tipoPago = 1, 'EFECTIVO','TARJETA') as MetodoPago, "+
+                            "a.total, "+
+                            "c.Nombres as AtendidoPor, "+
+                            "if (a.estado = 2,'TERMINADA','PENDIENTE') as Estado "+
+                            "from pedidos a, "+
+                            "usuarios b, "+
+                            "empleados c, "+
+                            "detallespedidos d " +
+                            "where a.idUsuario = b.idUsuario and c.idEmpleado = b.idEmpleado and YEAR(Fecha) = "+anio+ " and d.idPedido = a.idPedido; ";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
     }
 }

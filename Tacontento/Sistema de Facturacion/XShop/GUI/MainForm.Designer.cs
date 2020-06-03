@@ -41,6 +41,11 @@ namespace XShop.GUI
             this.btnAgregarRoles = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.subMenuReportes = new System.Windows.Forms.Panel();
+            this.btnReportesMes = new System.Windows.Forms.Button();
+            this.btnReportesxAnio = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnLock = new System.Windows.Forms.Button();
             this.pnSubMenuLocal = new System.Windows.Forms.Panel();
             this.btnPermisos = new System.Windows.Forms.Button();
             this.btnAgregarUsuarios = new System.Windows.Forms.Button();
@@ -54,11 +59,12 @@ namespace XShop.GUI
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.btnLock = new System.Windows.Forms.Button();
+            this.btnBitacora = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.subMenuReportes.SuspendLayout();
             this.pnSubMenuLocal.SuspendLayout();
             this.panelOrdenes.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -159,6 +165,8 @@ namespace XShop.GUI
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.subMenuReportes);
+            this.panel5.Controls.Add(this.btnReportes);
             this.panel5.Controls.Add(this.btnLock);
             this.panel5.Controls.Add(this.pnSubMenuLocal);
             this.panel5.Controls.Add(this.btnLocal);
@@ -170,6 +178,93 @@ namespace XShop.GUI
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(207, 534);
             this.panel5.TabIndex = 2;
+            // 
+            // subMenuReportes
+            // 
+            this.subMenuReportes.Controls.Add(this.btnBitacora);
+            this.subMenuReportes.Controls.Add(this.btnReportesMes);
+            this.subMenuReportes.Controls.Add(this.btnReportesxAnio);
+            this.subMenuReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.subMenuReportes.Location = new System.Drawing.Point(0, 366);
+            this.subMenuReportes.Name = "subMenuReportes";
+            this.subMenuReportes.Size = new System.Drawing.Size(207, 127);
+            this.subMenuReportes.TabIndex = 12;
+            // 
+            // btnReportesMes
+            // 
+            this.btnReportesMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnReportesMes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesMes.FlatAppearance.BorderSize = 0;
+            this.btnReportesMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportesMes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnReportesMes.ForeColor = System.Drawing.Color.LightGray;
+            this.btnReportesMes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesMes.Location = new System.Drawing.Point(0, 35);
+            this.btnReportesMes.Name = "btnReportesMes";
+            this.btnReportesMes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnReportesMes.Size = new System.Drawing.Size(207, 35);
+            this.btnReportesMes.TabIndex = 7;
+            this.btnReportesMes.Text = "Reportes Ventas Mes";
+            this.btnReportesMes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesMes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportesMes.UseVisualStyleBackColor = false;
+            this.btnReportesMes.Click += new System.EventHandler(this.btnReportesMes_Click);
+            // 
+            // btnReportesxAnio
+            // 
+            this.btnReportesxAnio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnReportesxAnio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportesxAnio.FlatAppearance.BorderSize = 0;
+            this.btnReportesxAnio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportesxAnio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnReportesxAnio.ForeColor = System.Drawing.Color.LightGray;
+            this.btnReportesxAnio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesxAnio.Location = new System.Drawing.Point(0, 0);
+            this.btnReportesxAnio.Name = "btnReportesxAnio";
+            this.btnReportesxAnio.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnReportesxAnio.Size = new System.Drawing.Size(207, 35);
+            this.btnReportesxAnio.TabIndex = 6;
+            this.btnReportesxAnio.Text = "Reportes Ventas Año";
+            this.btnReportesxAnio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportesxAnio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportesxAnio.UseVisualStyleBackColor = false;
+            this.btnReportesxAnio.Click += new System.EventHandler(this.btnReportesxAnio_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnReportes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReportes.Location = new System.Drawing.Point(0, 331);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(207, 35);
+            this.btnReportes.TabIndex = 11;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
+            // btnLock
+            // 
+            this.btnLock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
+            this.btnLock.FlatAppearance.BorderSize = 0;
+            this.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLock.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLock.Image = ((System.Drawing.Image)(resources.GetObject("btnLock.Image")));
+            this.btnLock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLock.Location = new System.Drawing.Point(0, 458);
+            this.btnLock.Name = "btnLock";
+            this.btnLock.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLock.Size = new System.Drawing.Size(207, 35);
+            this.btnLock.TabIndex = 10;
+            this.btnLock.Text = "Bloquear";
+            this.btnLock.UseVisualStyleBackColor = false;
+            this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
             // 
             // pnSubMenuLocal
             // 
@@ -194,7 +289,7 @@ namespace XShop.GUI
             this.btnPermisos.Location = new System.Drawing.Point(0, 105);
             this.btnPermisos.Name = "btnPermisos";
             this.btnPermisos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnPermisos.Size = new System.Drawing.Size(207, 43);
+            this.btnPermisos.Size = new System.Drawing.Size(207, 40);
             this.btnPermisos.TabIndex = 9;
             this.btnPermisos.Text = "Control Permisos";
             this.btnPermisos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -370,23 +465,25 @@ namespace XShop.GUI
             this.panelContainer.Size = new System.Drawing.Size(769, 618);
             this.panelContainer.TabIndex = 2;
             // 
-            // btnLock
+            // btnBitacora
             // 
-            this.btnLock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(142)))), ((int)(((byte)(61)))));
-            this.btnLock.FlatAppearance.BorderSize = 0;
-            this.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnLock.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLock.Image = ((System.Drawing.Image)(resources.GetObject("btnLock.Image")));
-            this.btnLock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLock.Location = new System.Drawing.Point(0, 458);
-            this.btnLock.Name = "btnLock";
-            this.btnLock.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLock.Size = new System.Drawing.Size(207, 35);
-            this.btnLock.TabIndex = 10;
-            this.btnLock.Text = "Bloquear";
-            this.btnLock.UseVisualStyleBackColor = false;
-            this.btnLock.Click += new System.EventHandler(this.btnLock_Click);
+            this.btnBitacora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnBitacora.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBitacora.FlatAppearance.BorderSize = 0;
+            this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBitacora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnBitacora.ForeColor = System.Drawing.Color.LightGray;
+            this.btnBitacora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBitacora.Location = new System.Drawing.Point(0, 70);
+            this.btnBitacora.Name = "btnBitacora";
+            this.btnBitacora.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnBitacora.Size = new System.Drawing.Size(207, 35);
+            this.btnBitacora.TabIndex = 8;
+            this.btnBitacora.Text = "Bitácora de Pedidos";
+            this.btnBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBitacora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBitacora.UseVisualStyleBackColor = false;
+            this.btnBitacora.Click += new System.EventHandler(this.btnBitacora_Click);
             // 
             // MainForm
             // 
@@ -407,6 +504,7 @@ namespace XShop.GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.subMenuReportes.ResumeLayout(false);
             this.pnSubMenuLocal.ResumeLayout(false);
             this.panelOrdenes.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -441,5 +539,10 @@ namespace XShop.GUI
         private Button btnLocal;
         private Button btnPermisos;
         private Button btnLock;
+        private Button btnReportes;
+        private Panel subMenuReportes;
+        private Button btnReportesxAnio;
+        private Button btnReportesMes;
+        private Button btnBitacora;
     }
 }

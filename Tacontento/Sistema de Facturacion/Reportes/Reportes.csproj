@@ -50,10 +50,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAT\BitacoraModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BitacoraModel.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\modeloFactura.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>modeloFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\VentasporAnio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasporAnio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\VentasporMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasporMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReporteBitacoraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReporteBitacoraForm.Designer.cs">
+      <DependentUpon>ReporteBitacoraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReporteVentasMesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReporteVentasMesForm.Designer.cs">
+      <DependentUpon>ReporteVentasMesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReporteVentasAnioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReporteVentasAnioForm.Designer.cs">
+      <DependentUpon>ReporteVentasAnioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\vistaReporteFactura.cs">
       <SubType>Form</SubType>
@@ -62,6 +95,24 @@
       <DependentUpon>vistaReporteFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REP\Bitacora.cs">
+      <DependentUpon>Bitacora.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="REP\VentasporMes.cs">
+      <DependentUpon>VentasporMes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="REP\VentasporAnio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasporAnio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REP\factura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,8 +131,29 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\ReporteBitacoraForm.resx">
+      <DependentUpon>ReporteBitacoraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReporteVentasMesForm.resx">
+      <DependentUpon>ReporteVentasMesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReporteVentasAnioForm.resx">
+      <DependentUpon>ReporteVentasAnioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\vistaReporteFactura.resx">
       <DependentUpon>vistaReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\Bitacora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bitacora.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\VentasporMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VentasporMes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\VentasporAnio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VentasporAnio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -92,6 +164,17 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DAT\BitacoraModel.xsc">
+      <DependentUpon>BitacoraModel.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\BitacoraModel.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BitacoraModel.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\BitacoraModel.xss">
+      <DependentUpon>BitacoraModel.xsd</DependentUpon>
+    </None>
     <None Include="DAT\modeloFactura.xsc">
       <DependentUpon>modeloFactura.xsd</DependentUpon>
     </None>
@@ -102,6 +185,28 @@
     </None>
     <None Include="DAT\modeloFactura.xss">
       <DependentUpon>modeloFactura.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\VentasporAnio.xsc">
+      <DependentUpon>VentasporAnio.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\VentasporAnio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VentasporAnio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\VentasporAnio.xss">
+      <DependentUpon>VentasporAnio.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\VentasporMes.xsc">
+      <DependentUpon>VentasporMes.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\VentasporMes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VentasporMes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\VentasporMes.xss">
+      <DependentUpon>VentasporMes.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

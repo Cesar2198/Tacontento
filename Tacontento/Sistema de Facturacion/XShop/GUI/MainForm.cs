@@ -40,6 +40,7 @@ namespace XShop.GUI
             ///aca esconderemos los submenus
             this.pnSubMenuLocal.Visible = false;
             this.panelOrdenes.Visible = false;
+            this.subMenuReportes.Visible = false;
         }
 
         private void hideSubMenu()
@@ -53,6 +54,11 @@ namespace XShop.GUI
             if (this.panelOrdenes.Visible == true)
             {
                 this.panelOrdenes.Visible = false;
+            }
+
+            if (this.subMenuReportes.Visible == true)
+            {
+                this.subMenuReportes.Visible = false;
             }
         }
 
@@ -240,6 +246,37 @@ namespace XShop.GUI
             LockScreen f = new LockScreen();
             hideSubMenu();
             f.ShowDialog();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            int opcion = 4;
+            if (CacheManager.CLS.Cache.VerificarPermiso(opcion) == false)
+            {
+
+            }
+            else
+            {
+                ShowSubMenu(this.subMenuReportes);
+            }
+        }
+
+        private void btnReportesxAnio_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new PreRepForm());
+            hideSubMenu();
+        }
+
+        private void btnReportesMes_Click(object sender, EventArgs e)
+        {
+           openWindowFromPanel(new PreRepMesForm());
+            hideSubMenu();
+        }
+
+        private void btnBitacora_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new PreRepBitacora());
+            hideSubMenu();
         }
 
         private void btnClasificaciones_Click(object sender, EventArgs e)

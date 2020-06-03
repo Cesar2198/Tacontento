@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VentasporMes" targetNamespace="http://tempuri.org/VentasporMes.xsd" xmlns:mstns="http://tempuri.org/VentasporMes.xsd" xmlns="http://tempuri.org/VentasporMes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="VentasporMes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="VentasporMes" msprop:Generator_UserDSName="VentasporMes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VentasxMes" msprop:Generator_TableClassName="VentasxMesDataTable" msprop:Generator_TableVarName="tableVentasxMes" msprop:Generator_TablePropName="VentasxMes" msprop:Generator_RowDeletingName="VentasxMesRowDeleting" msprop:Generator_RowChangingName="VentasxMesRowChanging" msprop:Generator_RowEvHandlerName="VentasxMesRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasxMesRowDeleted" msprop:Generator_UserTableName="VentasxMes" msprop:Generator_RowChangedName="VentasxMesRowChanged" msprop:Generator_RowEvArgName="VentasxMesRowChangeEvent" msprop:Generator_RowClassName="VentasxMesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mes" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroOrdenesVendidas" msprop:Generator_ColumnVarNameInTable="columnNumeroOrdenesVendidas" msprop:Generator_ColumnPropNameInRow="NumeroOrdenesVendidas" msprop:Generator_ColumnPropNameInTable="NumeroOrdenesVendidasColumn" msprop:Generator_UserColumnName="NumeroOrdenesVendidas" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalVentas" msprop:Generator_ColumnVarNameInTable="columnTotalVentas" msprop:Generator_ColumnPropNameInRow="TotalVentas" msprop:Generator_ColumnPropNameInTable="TotalVentasColumn" msprop:Generator_UserColumnName="TotalVentas" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
