@@ -42,6 +42,8 @@ namespace XShop.GUI
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.subMenuReportes = new System.Windows.Forms.Panel();
+            this.btnRecord = new System.Windows.Forms.Button();
+            this.btnBitacora = new System.Windows.Forms.Button();
             this.btnReportesMes = new System.Windows.Forms.Button();
             this.btnReportesxAnio = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -59,7 +61,7 @@ namespace XShop.GUI
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.btnBitacora = new System.Windows.Forms.Button();
+            this.btnRecordP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -181,14 +183,56 @@ namespace XShop.GUI
             // 
             // subMenuReportes
             // 
+            this.subMenuReportes.Controls.Add(this.btnRecordP);
+            this.subMenuReportes.Controls.Add(this.btnRecord);
             this.subMenuReportes.Controls.Add(this.btnBitacora);
             this.subMenuReportes.Controls.Add(this.btnReportesMes);
             this.subMenuReportes.Controls.Add(this.btnReportesxAnio);
             this.subMenuReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.subMenuReportes.Location = new System.Drawing.Point(0, 366);
             this.subMenuReportes.Name = "subMenuReportes";
-            this.subMenuReportes.Size = new System.Drawing.Size(207, 127);
+            this.subMenuReportes.Size = new System.Drawing.Size(207, 169);
             this.subMenuReportes.TabIndex = 12;
+            // 
+            // btnRecord
+            // 
+            this.btnRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnRecord.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRecord.FlatAppearance.BorderSize = 0;
+            this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecord.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnRecord.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecord.Location = new System.Drawing.Point(0, 105);
+            this.btnRecord.Name = "btnRecord";
+            this.btnRecord.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRecord.Size = new System.Drawing.Size(207, 35);
+            this.btnRecord.TabIndex = 9;
+            this.btnRecord.Text = "Récord Vendedores";
+            this.btnRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRecord.UseVisualStyleBackColor = false;
+            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
+            // 
+            // btnBitacora
+            // 
+            this.btnBitacora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnBitacora.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBitacora.FlatAppearance.BorderSize = 0;
+            this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBitacora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnBitacora.ForeColor = System.Drawing.Color.LightGray;
+            this.btnBitacora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBitacora.Location = new System.Drawing.Point(0, 70);
+            this.btnBitacora.Name = "btnBitacora";
+            this.btnBitacora.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnBitacora.Size = new System.Drawing.Size(207, 35);
+            this.btnBitacora.TabIndex = 8;
+            this.btnBitacora.Text = "Bitácora de Pedidos";
+            this.btnBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBitacora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBitacora.UseVisualStyleBackColor = false;
+            this.btnBitacora.Click += new System.EventHandler(this.btnBitacora_Click);
             // 
             // btnReportesMes
             // 
@@ -465,25 +509,25 @@ namespace XShop.GUI
             this.panelContainer.Size = new System.Drawing.Size(769, 618);
             this.panelContainer.TabIndex = 2;
             // 
-            // btnBitacora
+            // btnRecordP
             // 
-            this.btnBitacora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.btnBitacora.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBitacora.FlatAppearance.BorderSize = 0;
-            this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBitacora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnBitacora.ForeColor = System.Drawing.Color.LightGray;
-            this.btnBitacora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBitacora.Location = new System.Drawing.Point(0, 70);
-            this.btnBitacora.Name = "btnBitacora";
-            this.btnBitacora.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnBitacora.Size = new System.Drawing.Size(207, 35);
-            this.btnBitacora.TabIndex = 8;
-            this.btnBitacora.Text = "Bitácora de Pedidos";
-            this.btnBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBitacora.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBitacora.UseVisualStyleBackColor = false;
-            this.btnBitacora.Click += new System.EventHandler(this.btnBitacora_Click);
+            this.btnRecordP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.btnRecordP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRecordP.FlatAppearance.BorderSize = 0;
+            this.btnRecordP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecordP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnRecordP.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRecordP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecordP.Location = new System.Drawing.Point(0, 140);
+            this.btnRecordP.Name = "btnRecordP";
+            this.btnRecordP.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRecordP.Size = new System.Drawing.Size(207, 35);
+            this.btnRecordP.TabIndex = 10;
+            this.btnRecordP.Text = "Récord Productos";
+            this.btnRecordP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecordP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRecordP.UseVisualStyleBackColor = false;
+            this.btnRecordP.Click += new System.EventHandler(this.btnRecordP_Click);
             // 
             // MainForm
             // 
@@ -544,5 +588,7 @@ namespace XShop.GUI
         private Button btnReportesxAnio;
         private Button btnReportesMes;
         private Button btnBitacora;
+        private Button btnRecord;
+        private Button btnRecordP;
     }
 }

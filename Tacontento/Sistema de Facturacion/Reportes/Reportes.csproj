@@ -55,6 +55,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BitacoraModel.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\MejorProducto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MejorProducto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\MejorVendedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MejorVendedor.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\modeloFactura.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +79,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VentasporMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReporteMejorProductoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReporteMejorProductoForm.Designer.cs">
+      <DependentUpon>ReporteMejorProductoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReporteMejorVendedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReporteMejorVendedorForm.Designer.cs">
+      <DependentUpon>ReporteMejorVendedorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ReporteBitacoraForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +117,18 @@
       <DependentUpon>vistaReporteFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REP\MejorProducto.cs">
+      <DependentUpon>MejorProducto.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="REP\MejorVendedor.cs">
+      <DependentUpon>MejorVendedor.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="REP\Bitacora.cs">
       <DependentUpon>Bitacora.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -131,6 +165,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\ReporteMejorProductoForm.resx">
+      <DependentUpon>ReporteMejorProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReporteMejorVendedorForm.resx">
+      <DependentUpon>ReporteMejorVendedorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ReporteBitacoraForm.resx">
       <DependentUpon>ReporteBitacoraForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +182,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\vistaReporteFactura.resx">
       <DependentUpon>vistaReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\MejorProducto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MejorProducto.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\MejorVendedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MejorVendedor.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\Bitacora.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -174,6 +222,28 @@
     </None>
     <None Include="DAT\BitacoraModel.xss">
       <DependentUpon>BitacoraModel.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\MejorProducto.xsc">
+      <DependentUpon>MejorProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\MejorProducto.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MejorProducto.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\MejorProducto.xss">
+      <DependentUpon>MejorProducto.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\MejorVendedor.xsc">
+      <DependentUpon>MejorVendedor.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\MejorVendedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MejorVendedor.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\MejorVendedor.xss">
+      <DependentUpon>MejorVendedor.xsd</DependentUpon>
     </None>
     <None Include="DAT\modeloFactura.xsc">
       <DependentUpon>modeloFactura.xsd</DependentUpon>

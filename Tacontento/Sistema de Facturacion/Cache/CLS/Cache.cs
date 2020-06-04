@@ -11,7 +11,7 @@ namespace CacheManager.CLS
 {
     public static class Cache
     {
-       static DataTable _PERMISOS = new DataTable();
+        static DataTable _PERMISOS = new DataTable();
         public static DataTable TODOS_LOS_USUARIOS()
         {
             DataTable Resultado = new DataTable();
@@ -91,7 +91,7 @@ namespace CacheManager.CLS
             {
                 if (Db.Consultar(sql) != null)
                 {
-                    Elemento = Db.Consultar(sql);     
+                    Elemento = Db.Consultar(sql);
                     total = (decimal)Elemento.Rows[0]["total"];
                 }
             }
@@ -217,7 +217,7 @@ namespace CacheManager.CLS
             {
                 ///Vemos si los permisos son los adecuados para el rol del usuario
                 Usuarios user = new Usuarios();
-               user =  SessionManager.CLS.Sesion.Instance.Datos.getUsuario();
+                user = SessionManager.CLS.Sesion.Instance.Datos.getUsuario();
                 _PERMISOS = PERMISOS_DE_UN_ROL(user.rol.ToString());
             }
             catch (Exception)
@@ -327,11 +327,10 @@ namespace CacheManager.CLS
                             year(a.fecha) as anio,
                             count(a.total) as NumeroOrdenesVendidas,
                             sum(a.total) as TotalVentas 
-                            from pedidos a,
-                            detallespedidos b
-                            where a.idPedido = b.idPedido and a.estado = 2
+                            from pedidos a 
+                            where a.estado = 2
                             group by anio
-                            order by YEAR(a.fecha);";
+                            order by YEAR(a.fecha) asc;";
                 //Llenamos nuestra datatable con el metodo consultar
                 Resultado = oConsulta.Consultar(Consulta);
             }
@@ -354,15 +353,14 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @"select "+ 
-                            "monthname(a.fecha) as mes, "+
-                            "count(a.total) as NumeroOrdenesVendidas,"+
-                            "sum(a.total) as TotalVentas "+ 
-                            "from pedidos a, "+
-                            "detallespedidos b "+
-                            "where year(a.fecha) = '"+anio+"' and a.idPedido = b.idPedido and a.estado = 2 "+ 
-                            "group by mes "+
-                            "order by MONTH(a.fecha); ";
+                Consulta = @"select " +
+                            "monthname(a.fecha) as mes, " +
+                            "count(a.total) as NumeroOrdenesVendidas," +
+                            "sum(a.total) as TotalVentas " +
+                            "from pedidos a " +
+                            "where year(a.fecha) = '" + anio + "'and a.estado = 2 " +
+                            "group by mes " +
+                            "order by MONTH(a.fecha) asc; ";
                 //Llenamos nuestra datatable con el metodo consultar
                 Resultado = oConsulta.Consultar(Consulta);
             }
@@ -386,19 +384,92 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @"select "+
-                            "a.idPedido, "+
-                            "a.nombreCliente, "+
-                            "date_format(a.fecha, '%W %M %e %r' ) as Fecha, "+ 
-                            "if (a.tipoPago = 1, 'EFECTIVO','TARJETA') as MetodoPago, "+
-                            "a.total, "+
-                            "c.Nombres as AtendidoPor, "+
-                            "if (a.estado = 2,'TERMINADA','PENDIENTE') as Estado "+
-                            "from pedidos a, "+
-                            "usuarios b, "+
-                            "empleados c, "+
+                Consulta = @"select " +
+                            "a.idPedido, " +
+                            "a.nombreCliente, " +
+                            "date_format(a.fecha, '%W %M %e %r' ) as Fecha, " +
+                            "if (a.tipoPago = 1, 'EFECTIVO','TARJETA') as MetodoPago, " +
+                            "a.total, " +
+                            "c.Nombres as AtendidoPor, " +
+                            "if (a.estado = 2,'TERMINADA','PENDIENTE') as Estado " +
+                            "from pedidos a, " +
+                            "usuarios b, " +
+                            "empleados c, " +
                             "detallespedidos d " +
-                            "where a.idUsuario = b.idUsuario and c.idEmpleado = b.idEmpleado and YEAR(Fecha) = "+anio+ " and d.idPedido = a.idPedido; ";
+                            "where a.idUsuario = b.idUsuario and c.idEmpleado = b.idEmpleado and YEAR(Fecha) = " + anio + " and d.idPedido = a.idPedido " +
+                            "group by a.idPedido " +
+                            "ORDER BY (a.fecha) DESC; ";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
+
+        public static DataTable MejorVendedor(int anio, int mes)
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"select " +
+                            "c.idEmpleado, " +
+                            "concat(c.Nombres,' ',c.Apellidos) as Nombre, " +
+                            "count(a.idUsuario) as NumeroPedidos, " +
+                            "sum(a.total) as TotalVendido " +
+                            "from pedidos a, " +
+                            "usuarios b, " +
+                            "empleados c " +
+                            "where a.idUsuario = b.idUsuario and c.idEmpleado = b.idEmpleado and b.estado = 1 and c.estado = 0 and year(a.fecha) = " + anio + " and month(a.fecha) = " + mes + " " +
+                            "and a.estado = 2 " +
+                            "group by b.idEmpleado " +
+                            "order by TotalVendido desc " +
+                            "limit 10; ";
+                //Llenamos nuestra datatable con el metodo consultar
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch (Exception)
+            {
+                //Si algo falla reestableceriamos todo
+                Resultado = new DataTable();
+                throw;
+            }
+
+            return Resultado;
+        }
+
+        public static DataTable MejorProducto(int anio, int mes)
+        {
+            DataTable Resultado = new DataTable();
+            //El string de consulta
+            String Consulta;
+            ///Nuestro consultor, previamente agregado a las referencias
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta =      @"select " +
+                                "c.nombre as Nombre, " +
+                                "sum(a.cantidad) as cantidad, "+
+                                "sum(a.cantidad * a.precio) as totalRecaudado, "+
+                                "d.clasificacionOrden as Clasificacion "+
+                                "from detallespedidos a, "+
+                                "pedidos b, "+
+                                "ordenes c, "+
+                                "clasificacionesordenes d "+
+                                "where a.idPedido = b.idPedido and a.idOrden = c.idOrden and d.idClasificacionOrden = c.idClasificacionOrden "+
+                                "and c.Estado = 1 and YEAR(b.fecha) = "+anio+" and MONTH(b.fecha) = "+mes+" "+
+                                "group by c.idOrden "+
+                                "order by cantidad desc "+
+                                "limit 30;";
                 //Llenamos nuestra datatable con el metodo consultar
                 Resultado = oConsulta.Consultar(Consulta);
             }

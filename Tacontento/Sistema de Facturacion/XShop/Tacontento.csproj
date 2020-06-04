@@ -79,6 +79,18 @@
     <Compile Include="GUI AUXILIAR\PapeleraUsuarios.Designer.cs">
       <DependentUpon>PapeleraUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI REPORTES\PreRepMejorPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepMejorPForm.Designer.cs">
+      <DependentUpon>PreRepMejorPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepMejorVenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI REPORTES\PreRepMejorVenForm.Designer.cs">
+      <DependentUpon>PreRepMejorVenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI REPORTES\PreRepBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI AUXILIAR\PapeleraUsuarios.resx">
       <DependentUpon>PapeleraUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI REPORTES\PreRepMejorPForm.resx">
+      <DependentUpon>PreRepMejorPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI REPORTES\PreRepMejorVenForm.resx">
+      <DependentUpon>PreRepMejorVenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI REPORTES\PreRepBitacora.resx">
       <DependentUpon>PreRepBitacora.cs</DependentUpon>

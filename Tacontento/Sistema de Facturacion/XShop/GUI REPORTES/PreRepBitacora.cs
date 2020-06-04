@@ -17,7 +17,7 @@ namespace XShop.GUI
         BindingSource _DATOS = new BindingSource();
 
         int anio = 2020;
-
+        int anioselected;
         public void CargarRegistros(int anio)
         {
             try
@@ -157,14 +157,15 @@ namespace XShop.GUI
         {
             List<TextBox> list = new List<TextBox>();
             list.Add(this.txbanio);
-            int anioselected = int.Parse(this.txbanio.Text);
+            
             if (CLS.Utility.textBoxIsEmpty(list))
             {
-              
+                anioselected = int.Parse(this.txbanio.Text);
             }
             else
             {
                 MessageBox.Show("Rellene todos los Campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.txbanio.Text = anio.ToString();
             }
 
             CargarRegistros(anioselected);
@@ -176,14 +177,15 @@ namespace XShop.GUI
             {
                 List<TextBox> list = new List<TextBox>();
                 list.Add(this.txbanio);
-                int anioselected = int.Parse(this.txbanio.Text);
+
                 if (CLS.Utility.textBoxIsEmpty(list))
                 {
-                    
+                    anioselected = int.Parse(this.txbanio.Text);
                 }
                 else
                 {
                     MessageBox.Show("Rellene todos los Campos", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    this.txbanio.Text = anio.ToString();
                 }
 
                 CargarRegistros(anioselected);

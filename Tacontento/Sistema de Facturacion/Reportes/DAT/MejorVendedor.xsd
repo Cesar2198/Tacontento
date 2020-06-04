@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MejorVendedor" targetNamespace="http://tempuri.org/MejorVendedor.xsd" xmlns:mstns="http://tempuri.org/MejorVendedor.xsd" xmlns="http://tempuri.org/MejorVendedor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MejorVendedor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MejorVendedor" msprop:Generator_UserDSName="MejorVendedor">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VendedorMejor" msprop:Generator_TableClassName="VendedorMejorDataTable" msprop:Generator_TableVarName="tableVendedorMejor" msprop:Generator_TablePropName="VendedorMejor" msprop:Generator_RowDeletingName="VendedorMejorRowDeleting" msprop:Generator_RowChangingName="VendedorMejorRowChanging" msprop:Generator_RowEvHandlerName="VendedorMejorRowChangeEventHandler" msprop:Generator_RowDeletedName="VendedorMejorRowDeleted" msprop:Generator_UserTableName="VendedorMejor" msprop:Generator_RowChangedName="VendedorMejorRowChanged" msprop:Generator_RowEvArgName="VendedorMejorRowChangeEvent" msprop:Generator_RowClassName="VendedorMejorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idEmpleado" msprop:Generator_ColumnVarNameInTable="columnidEmpleado" msprop:Generator_ColumnPropNameInRow="idEmpleado" msprop:Generator_ColumnPropNameInTable="idEmpleadoColumn" msprop:Generator_UserColumnName="idEmpleado" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroPedidos" msprop:Generator_ColumnVarNameInTable="columnNumeroPedidos" msprop:Generator_ColumnPropNameInRow="NumeroPedidos" msprop:Generator_ColumnPropNameInTable="NumeroPedidosColumn" msprop:Generator_UserColumnName="NumeroPedidos" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalVendido" msprop:Generator_ColumnVarNameInTable="columnTotalVendido" msprop:Generator_ColumnPropNameInRow="TotalVendido" msprop:Generator_ColumnPropNameInTable="TotalVendidoColumn" msprop:Generator_UserColumnName="TotalVendido" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

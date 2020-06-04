@@ -76,3 +76,5 @@ C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Reportes\ob
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Reportes\obj\Debug\Reportes.GUI.ReporteVentasAnioForm.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Reportes\obj\Debug\Reportes.GUI.ReporteVentasMesForm.resources
 C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Reportes\obj\Debug\Reportes.GUI.ReporteBitacoraForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Reportes\obj\Debug\Reportes.GUI.ReporteMejorVendedorForm.resources
+C:\Users\César\Desktop\tacontento\Tacontento\Sistema de Facturacion\Reportes\obj\Debug\Reportes.GUI.ReporteMejorProductoForm.resources

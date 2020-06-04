@@ -279,6 +279,18 @@ namespace XShop.GUI
             hideSubMenu();
         }
 
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new PreRepMejorVenForm());
+            hideSubMenu();
+        }
+
+        private void btnRecordP_Click(object sender, EventArgs e)
+        {
+            openWindowFromPanel(new PreRepMejorPForm());
+            hideSubMenu();
+        }
+
         private void btnClasificaciones_Click(object sender, EventArgs e)
         {
             openWindowFromPanel(new ClasificacionForm());
