@@ -129,6 +129,7 @@
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(159, 20);
             this.txbSearch.TabIndex = 3;
+            this.txbSearch.TextChanged += new System.EventHandler(this.txbSearch_TextChanged);
             this.txbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbSearch_KeyDown);
             // 
             // label1

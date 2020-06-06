@@ -404,5 +404,10 @@ namespace XShop.GUI
             }
            
         }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
