@@ -1,9 +1,11 @@
 ﻿using Entidades.Entidades.Ordenes;
 using Entidades.Entidades.Permisos;
 using Entidades.Entidades.Roles;
+using Entidades.Entidades.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -104,19 +106,6 @@ namespace XShop.CLS
             return o != null ? o : new Ordenes();
         }
 
-        public static string DesEncriptar(string _cadenaAdesencriptar)
-        {
-            string result = string.Empty;
-            byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
-            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
-            result = System.Text.Encoding.Unicode.GetString(decryted);
-            return result;
-        }
-
-
-
-
-
         public static Boolean textBoxIsEmpty(List<TextBox> t)
         {
             Boolean Valido = false;
@@ -192,7 +181,27 @@ namespace XShop.CLS
             }
            return mes;
         }
-       
+
+       public static string Encryptar(string clave)
+        {
+            string devolver;
+            try
+            {
+
+                UsuarioDAO dao = new UsuarioDAO();
+                devolver = dao.Encriptar(clave);
+
+                return devolver;
+            }
+            catch 
+            {
+                devolver = string.Empty;
+               
+            }
+            return devolver;
+          
+        }
+
 
     }
 

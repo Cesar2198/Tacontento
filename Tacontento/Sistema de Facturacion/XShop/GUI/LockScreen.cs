@@ -25,8 +25,9 @@ namespace XShop.GUI
 
         public Boolean Validar()
         {
+            
 
-            if (this.txbPassword.Text == this.user.password)
+            if (CLS.Utility.Encryptar(this.txbPassword.Text) == this.user.password)
             {
                 bandera = true;
             }

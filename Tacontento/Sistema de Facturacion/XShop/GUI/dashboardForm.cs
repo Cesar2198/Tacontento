@@ -56,6 +56,7 @@ namespace XShop.GUI
                 }
                 dtgPedidos.AutoGenerateColumns = false;
                 this.lblConteo.Text = dtgPedidos.Rows.Count + " Registros Encontrados";
+                dtgPedidos.CurrentCell = null;
                 ManejoTabla();
             }
             catch
@@ -97,6 +98,7 @@ namespace XShop.GUI
                 this.txbidPedido.Text = string.Empty;
                 pdi.ShowDialog();
             }
+            dtgPedidos.CurrentCell = null;
             this.txbidPedido.Text = string.Empty;
 
         }
@@ -116,7 +118,7 @@ namespace XShop.GUI
                 inf.ShowDialog();
                     
             }
-
+            dtgPedidos.CurrentCell = null;
             this.txbidPedido.Text = string.Empty;
 
         }
@@ -163,6 +165,7 @@ namespace XShop.GUI
                         MessageBox.Show("No se Pudo Eliminar: " + ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+                dtgPedidos.CurrentCell = null;
                 this.txbidPedido.Text = string.Empty;
                 this.DisplayDatos();
             }
@@ -185,7 +188,7 @@ namespace XShop.GUI
                 fact.ShowDialog();
 
             }
-
+            dtgPedidos.CurrentCell = null;
             this.txbidPedido.Text = string.Empty;
         }
     }

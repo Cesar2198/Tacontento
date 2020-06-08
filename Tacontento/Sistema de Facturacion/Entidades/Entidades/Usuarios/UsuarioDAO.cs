@@ -27,7 +27,7 @@ namespace Entidades.Entidades.Usuarios
         {
             Usuarios usuario = new Usuarios();
             string Consulta = @"insert into usuarios(usuario,password,idRol,estado,idEmpleado) 
-            values('"+user.usuario+"','"+user.password+"',"+user.rol+","+user.estado+","+user.idEmpleado+");";
+            values('"+user.usuario+"',md5(sha1('"+user.password+"')),"+user.rol+","+user.estado+","+user.idEmpleado+");";
 
             try
             {   /// Se comprueba qque se inserto o no
@@ -56,7 +56,7 @@ namespace Entidades.Entidades.Usuarios
             Usuarios user = new Usuarios();
             DataTable dato = new DataTable();
             String query = @"select * from usuarios where usuario = '" + username + "' and " +
-                "password = '" + pass + "' and estado = 1";
+                "password = md5(sha1('" + pass + "')) and estado = 1";
 
             try
             {
@@ -88,7 +88,7 @@ namespace Entidades.Entidades.Usuarios
         public Usuarios Modificar(Usuarios user)
         {
 
-            String Consulta = @"update usuarios SET usuario= '" + user.usuario + "' , password = '" + user.password + "', estado = "+user.estado+", idEmpleado = "+user.idEmpleado+"," +
+            String Consulta = @"update usuarios SET usuario= '" + user.usuario + "' , password = md5(sha1('" + user.password + "')), estado = "+user.estado+", idEmpleado = "+user.idEmpleado+"," +
                             " idRol = " + user.rol + " " +
                             "where idUsuario = " + user.idUsuario + ";";
 
@@ -156,6 +156,32 @@ namespace Entidades.Entidades.Usuarios
                 throw;
             }
             return this.user;
+        }
+
+        public string Encriptar(string pass)
+        {
+            string devolver;
+            String Consulta = @"select md5(sha1('"+pass+"')) as password;";
+            DataTable dato = new DataTable();
+            try
+            {
+                if (Operacion.Consultar(Consulta)!=null)
+                {
+                    
+                    dato = Operacion.Consultar(Consulta);
+                    devolver= dato.Rows[0]["password"].ToString();
+                }
+                else
+                {
+                    devolver = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+            return devolver;
         }
 
 

@@ -185,12 +185,12 @@ namespace XShop.GUI
                 ///son strings ya que el textbox solo eso detecta 
                 String Id = dtgDatos.SelectedRows[0].Cells[0].Value + string.Empty;
                 string Nombre = dtgDatos.SelectedRows[0].Cells[1].Value + string.Empty;
-                string Password = dtgDatos.SelectedRows[0].Cells[2].Value + string.Empty;
+                //string Password = dtgDatos.SelectedRows[0].Cells[2].Value + string.Empty;
                 String Rol = dtgDatos.SelectedRows[0].Cells[3].Value + string.Empty;
                 String idEmpleado = dtgDatos.SelectedRows[0].Cells[4].Value + string.Empty;
 
                 txbUsuario.Text = Nombre;
-                txbPassword.Text= Password;
+                ///txbPassword.Text= Password;
                 txbidEmpleado.Text = idEmpleado;
                 txbId.Text = Id;///Con esto buscas el valor de un combobox y lo ubicas, asi.
                 this.cmbRol.SelectedIndex = this.cmbRol.FindStringExact(CLS.Utility.DevolverRol(int.Parse(Rol)));
